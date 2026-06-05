@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report - June 5, 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #131315;
+        background: #f0f0f0;
+        padding: 32px 16px;
+      }
+      .page {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+        padding: 32px;
+        page-break-inside: avoid;
+      }
+      .card-header {
+        border-left: none;
+        padding: 32px 32px 24px;
+      }
+
+      /* Header */
+      .header-logo {
+        margin-bottom: 16px;
+      }
+      .header-client {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-type {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #909da3;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .header-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+        color: #909da3;
+      }
+      .header-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        margin-top: 20px;
+      }
+
+      /* Section titles */
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 17px;
+        color: #131315;
+        margin-bottom: 12px;
+        margin-top: 24px;
+      }
+      h3:first-of-type {
+        margin-top: 0;
+      }
+
+      /* Labels */
+      .label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+      }
+
+      /* Stat grid */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .stat-box .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+        line-height: 1.1;
+      }
+      .stat-box .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .stat-box .stat-sub {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      th {
+        text-align: left;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 8px 10px;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Tags */
+      .tag {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tag-search {
+        background: #e8f0fe;
+        color: #1a73e8;
+      }
+      .tag-pmax {
+        background: #fce8e6;
+        color: #d93025;
+      }
+      .tag-meta {
+        background: #e7f3ff;
+        color: #1877f2;
+      }
+      .tag-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      /* Email cards */
+      .email-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .email-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .email-box .email-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #131315;
+        margin-bottom: 2px;
+      }
+      .email-box .email-meta {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-bottom: 12px;
+      }
+      .email-stats {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 8px;
+      }
+      .email-stat .e-val {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+      }
+      .email-stat .e-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+      }
+      .email-detail {
+        font-size: 12px;
+        color: #909da3;
+        line-height: 1.6;
+      }
+
+      /* Note boxes */
+      .note-box {
+        background: #f8f8f8;
+        border-left: 3px solid #ff70db;
+        border-radius: 0 8px 8px 0;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .note-box ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .note-box li {
+        margin-bottom: 6px;
+      }
+
+      /* Status colors */
+      .status-ongoing {
+        color: #f35f36;
+        font-weight: 600;
+      }
+      .status-action {
+        color: #2079a0;
+        font-weight: 600;
+      }
+      .status-pending {
+        color: #ff70db;
+        font-weight: 600;
+      }
+      .status-confirmed {
+        color: #3f5863;
+        font-weight: 600;
+      }
+
+      /* Enrollment grid */
+      .enroll-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .enroll-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .enroll-box .enroll-program {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .enroll-box .enroll-num {
+        font-family: "DM Serif Display", serif;
+        font-size: 36px;
+        color: #131315;
+      }
+      .enroll-box .enroll-detail {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Paragraph spacing */
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+
+      /* Highlight cell */
+      .highlight {
+        background: #e8f0fe;
+        font-weight: 600;
+        border-radius: 3px;
+      }
+
+      /* Two col layout */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      /* Section divider */
+      .section-divider {
+        border: none;
+        border-top: 1px solid #f0f0f0;
+        margin: 24px 0;
+      }
+
+      /* Print */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #eee;
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="card card-header">
+        <div class="header-logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px; --fill-0: #131315"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="var(--fill-0, #F0F0F0)"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="var(--fill-0, #F0F0F0)"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="header-client">Institute for Clinical Social Work</div>
+        <div class="header-type">Weekly Report</div>
+        <div class="header-date">
+          June 1 to 4, 2026 &nbsp;|&nbsp; Prepared by Earned Impact
+        </div>
+        <hr class="header-line" />
+      </div>
+
+      <!-- PERFORMANCE MARKETING -->
+      <div class="card">
+        <h2>Performance Marketing</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Google Ads &nbsp;|&nbsp; June 1 to 4, 2026 (Both Accounts)
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Total Spend</div>
+            <div class="stat-value">$389</div>
+            <div class="stat-sub">Search + PMax combined</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Conversions</div>
+            <div class="stat-value">6</div>
+            <div class="stat-sub">1 Search + 5 PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">2.4K</div>
+            <div class="stat-sub">198 Search + 2.2K PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Avg. CPC (Search)</div>
+            <div class="stat-value">$17.83</div>
+            <div class="stat-sub">Up from $7.33 in May</div>
+          </div>
+        </div>
+
+        <h3>Campaign Breakdown</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Type</th>
+              <th>Spend</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Masters Campaign April 2026</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td class="highlight">$221.52</td>
+              <td>10</td>
+              <td>8.85%</td>
+            </tr>
+            <tr>
+              <td>PhD Program</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$10.29</td>
+              <td>3</td>
+              <td>3.53%</td>
+            </tr>
+            <tr>
+              <td>CDE_Google_PMax</td>
+              <td><span class="tag tag-pmax">PMax</span></td>
+              <td class="highlight">$156.91</td>
+              <td>78</td>
+              <td>3.54%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Top Keywords (Search, June 1 to 4)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"mental health counseling education"</td>
+              <td>8</td>
+              <td class="highlight">11.94%</td>
+              <td>$205.44</td>
+            </tr>
+            <tr>
+              <td>"counseling graduate school"</td>
+              <td>1</td>
+              <td class="highlight">10.00%</td>
+              <td>$12.80</td>
+            </tr>
+            <tr>
+              <td>"social work doctorate degree"</td>
+              <td>2</td>
+              <td>4.26%</td>
+              <td>$8.62</td>
+            </tr>
+            <tr>
+              <td>"graduate school to become a therapist"</td>
+              <td>1</td>
+              <td class="highlight">12.50%</td>
+              <td>$3.28</td>
+            </tr>
+            <tr>
+              <td>[phd social work education]</td>
+              <td>1</td>
+              <td>100.00%</td>
+              <td>$1.67</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="two-col">
+          <div>
+            <h3>Top Ad</h3>
+            <p style="font-size: 13px">
+              <strong
+                >Become a Licensed Counselor | 2 Years Master Programs | ICSW MA
+                Admission</strong
+              >
+            </p>
+            <p style="font-size: 13px">
+              76 impressions / 8 clicks / 10.53% CTR
+            </p>
+            <p style="font-size: 13px; color: #909da3">
+              The Mental Health Graduate Programs ad group in the Masters
+              Campaign is the top performer in early June, reflecting the budget
+              shift toward MA.
+            </p>
+          </div>
+          <div>
+            <h3>Audience &amp; Devices</h3>
+            <p style="font-size: 13px">
+              Primary audience: <strong>Females, ages 25 to 44</strong>
+            </p>
+            <p style="font-size: 13px">
+              Mobile continues to dominate: 76.9% of Search clicks, 89.7% of
+              PMax clicks.
+            </p>
+            <p style="font-size: 13px">
+              Top searches: "phd in social work," "cbt training," "mental health
+              counselor training," "institute for clinical social work icsw"
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <h3>What Changed This Period</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Masters Campaign is now the primary spend driver</strong>
+              as planned. The Mental Health Graduate Programs ad group accounted
+              for the majority of search spend, up +$174.95 (+573.80%) compared
+              to late May. The 8.85% CTR signals strong keyword alignment.
+            </li>
+            <li>
+              <strong>PhD Campaign scaled down significantly</strong> to $10.29
+              total for the period, preserving budget for the MA push through
+              June 30. The Clinical Social Work Niche ad group is fully paused.
+            </li>
+            <li>
+              <strong>PMax continues to ramp up.</strong> CDE_Google_PMax spend
+              is up +$80.53 (+105.44%) compared to late May, continuing to
+              deliver the highest conversion volume at $2.01 average CPC.
+            </li>
+            <li>
+              <strong>Search CPC is higher in early June</strong> ($17.83 vs.
+              $7.33 in May). This reflects the shift in spend toward the Masters
+              Campaign, which targets higher-competition counseling terms. We
+              are monitoring this as the month progresses.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="section-divider" />
+
+        <h3>New Ad Creative: Now Live</h3>
+        <p style="font-size: 14px; margin-bottom: 12px">
+          The new June 30 deadline creative is going live this week. We selected
+          <strong>Option A</strong> from the copy options presented last week:
+        </p>
+        <div class="stat-box" style="margin-bottom: 16px">
+          <div class="stat-label">Selected Copy</div>
+          <p style="font-size: 13px; margin-top: 8px">
+            "Fall cohort spots are filling fast. Applications close June 30.
+            Don't miss your chance to join the ICSW community. Apply today."
+          </p>
+        </div>
+        <p style="font-size: 14px; margin-bottom: 16px">
+          Four new image assets have been created for the MA campaigns using the
+          newest round of ICSW photography. All assets feature graduation
+          imagery and emphasize the June 30 deadline and limited availability.
+          These will run across both Google and Meta channels.
+        </p>
+        <p style="font-size: 14px">
+          <a
+            href="https://drive.google.com/drive/folders/10_J42gUYoNMnJ9KgS_GB0IcN3WCKY32V?usp=drive_link"
+            target="_blank"
+            style="color: #2079a0; font-weight: 600"
+            >ICSW June 5th &rarr;</
+          >
+        </p>
+
+        <hr class="section-divider" />
+
+        <p class="label" style="margin-bottom: 16px">
+          Meta Ads &nbsp;|&nbsp; June 1 to 4, 2026
+        </p>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(3, 1fr)">
+          <div class="stat-box">
+            <div class="stat-label">Reach</div>
+            <div class="stat-value">4,058</div>
+            <div class="stat-sub">TOFU Fall PhD 2026</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">4,886</div>
+            <div class="stat-sub">Reactivated for June</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Amount Spent</div>
+            <div class="stat-value">$11.78</div>
+            <div class="stat-sub">$3/day budget</div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: #909da3">
+          The top-of-funnel PhD awareness campaign has been
+          <strong style="color: #2079a0">reactivated for June</strong>
+          after being paused at the end of May to stay within the monthly cap.
+          Early results show healthy reach at a low cost, consistent with the
+          campaign's performance throughout May.
+        </p>
+      </div>
+
+      <!-- EMAIL MARKETING -->
+      <div class="card">
+        <h2>Email Campaigns</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Student Testimonial Campaign &nbsp;|&nbsp; Sent May 28 + Resend May 31
+        </p>
+
+        <h3>PhD List (Master PhD Enrollment)</h3>
+        <p style="font-size: 14px; margin-bottom: 12px">
+          Subject: "Hear what our students say about ICSW"
+        </p>
+        <div class="email-grid">
+          <div class="email-box">
+            <div class="email-title">Initial Send</div>
+            <div class="email-meta">
+              Thu, May 28 &nbsp;|&nbsp; 949 recipients
+            </div>
+            <div class="email-stats">
+              <div class="email-stat">
+                <div class="e-val">12.8%</div>
+                <div class="e-label">Opens</div>
+              </div>
+              <div class="email-stat">
+                <div class="e-val">0.21%</div>
+                <div class="e-label">Clicks</div>
+              </div>
+            </div>
+          </div>
+          <div class="email-box">
+            <div class="email-title">Resend (Non-Openers)</div>
+            <div class="email-meta">
+              Sun, May 31 &nbsp;|&nbsp; 352 recipients
+            </div>
+            <div class="email-stats">
+              <div class="email-stat">
+                <div class="e-val">9.4%</div>
+                <div class="e-label">Opens</div>
+              </div>
+              <div class="email-stat">
+                <div class="e-val">0.28%</div>
+                <div class="e-label">Clicks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>MA List (MA Leads)</h3>
+        <p style="font-size: 14px; margin-bottom: 12px">
+          Subject: "Don't miss it &mdash; ICSW MA application deadline is June
+          30"
+        </p>
+        <div class="email-grid">
+          <div class="email-box">
+            <div class="email-title">Initial Send</div>
+            <div class="email-meta">
+              Thu, May 28 &nbsp;|&nbsp; 552 recipients
+            </div>
+            <div class="email-stats">
+              <div class="email-stat">
+                <div class="e-val">17.8%</div>
+                <div class="e-label">Opens</div>
+              </div>
+              <div class="email-stat">
+                <div class="e-val">1.1%</div>
+                <div class="e-label">Clicks</div>
+              </div>
+            </div>
+          </div>
+          <div class="email-box">
+            <div class="email-title">Resend (Non-Openers)</div>
+            <div class="email-meta">
+              Sun, May 31 &nbsp;|&nbsp; 109 recipients
+            </div>
+            <div class="email-stats">
+              <div class="email-stat">
+                <div class="e-val">9.5%</div>
+                <div class="e-label">Opens</div>
+              </div>
+              <div class="email-stat">
+                <div class="e-val">0.95%</div>
+                <div class="e-label">Clicks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <ul>
+            <li>
+              The MA initial send (17.8% open rate) outperformed the PhD list
+              (12.8%) and continues to clear the 10 to 15% baseline. MA
+              click-through at 1.1% also showed improvement over previous sends.
+            </li>
+            <li>
+              PhD initial open rate (12.8%) is slightly below the 21.3% we saw
+              on the Q&amp;C event email two weeks ago. The testimonial format
+              may resonate differently than event announcements; we will
+              continue to test subject line approaches.
+            </li>
+            <li>
+              The Sunday resends picked up additional engagement on both lists.
+              PhD resend click-through (0.28%) slightly outpaced the initial
+              send (0.21%), suggesting the non-opener audience was still
+              receptive.
+            </li>
+            <li>
+              <strong>Next email:</strong> MA application deadline reminder
+              paired with a student testimonial from commencement. This
+              reinforces urgency around June 30 while letting prospective
+              students hear directly from graduates.
+            </li>
+            <li>
+              <strong>Following week:</strong> A targeted campaign built from
+              feedback from Sam's Questions &amp; Connections event (June 3),
+              focusing on the most common questions and themes from prospective
+              students.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GRADUATION VIDEO -->
+      <div class="card">
+        <h2>Graduation Commencement Video</h2>
+        <p style="margin-bottom: 16px">
+          We received the full graduation ceremony recording (approximately 1
+          hour and 40 minutes) and Dr. Ramirez's request for a condensed,
+          polished version for the ICSW community, highlighting the youth
+          ensemble, student and speaker remarks, and the live music. There is
+          also an opportunity to pull shorter clips for recruitment use on the
+          website and social channels.
+        </p>
+
+        <h3>Next Steps</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Scoping call with Jesse:</strong> On our next call, we
+              would like to walk through the footage together, identify the
+              specific moments and themes to prioritize, and discuss options for
+              the final deliverables. This will help us define a clear plan and
+              determine what we can accomplish within the current scope.
+            </li>
+            <li>
+              <strong>Social clips</strong> pulled from the graduation footage
+              can be handled within the existing content calendar scope.
+            </li>
+            <li>
+              <strong>Longer edits</strong> (the condensed community version and
+              dedicated recruitment clips) would draw from the monthly flex
+              hours in our current agreement. We can phase the rollout across
+              themes to make the most of that time, and we will flag it early if
+              we see the project heading beyond those hours.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IN THE PIPELINE -->
+      <div class="card">
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>
+            <strong>Questions &amp; Connections event follow-up.</strong> Sam's
+            event took place June 3. Kaelene is following up with Sam on any
+            common questions or themes from attendees. That feedback will be
+            used to build a targeted email campaign the following week,
+            addressing real concerns from prospective students.
+          </li>
+          <li>
+            <strong>Graduation video: clip selection.</strong> On our next call,
+            we will identify the specific moments and themes for both the
+            condensed community video and shorter recruitment clips.
+          </li>
+          <li>
+            <strong>MA deadline push continues through June 30.</strong> New
+            urgency-focused ad creative is now live across Google and Meta.
+            Email campaigns will continue to reinforce the deadline alongside
+            paid media.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
