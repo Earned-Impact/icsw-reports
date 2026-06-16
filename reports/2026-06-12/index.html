@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report - June 12, 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #131315;
+        background: #f0f0f0;
+        padding: 32px 16px;
+      }
+      .page {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+        padding: 32px;
+        page-break-inside: avoid;
+      }
+      .card-header {
+        border-left: none;
+        padding: 32px 32px 24px;
+      }
+
+      /* Header */
+      .header-logo {
+        margin-bottom: 16px;
+      }
+      .header-client {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-type {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #909da3;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .header-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+        color: #909da3;
+      }
+      .header-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        margin-top: 20px;
+      }
+
+      /* Section titles */
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 17px;
+        color: #131315;
+        margin-bottom: 12px;
+        margin-top: 24px;
+      }
+      h3:first-of-type {
+        margin-top: 0;
+      }
+
+      /* Labels */
+      .label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+      }
+
+      /* Stat grid */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .stat-box .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+        line-height: 1.1;
+      }
+      .stat-box .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .stat-box .stat-sub {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      th {
+        text-align: left;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 8px 10px;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Tags */
+      .tag {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tag-search {
+        background: #e8f0fe;
+        color: #1a73e8;
+      }
+      .tag-pmax {
+        background: #fce8e6;
+        color: #d93025;
+      }
+      .tag-meta {
+        background: #e7f3ff;
+        color: #1877f2;
+      }
+      .tag-new {
+        background: #e6f4ea;
+        color: #137333;
+      }
+
+      /* Email cards */
+      .email-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .email-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .email-box .email-title {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #131315;
+        margin-bottom: 2px;
+      }
+      .email-box .email-meta {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-bottom: 12px;
+      }
+      .email-stats {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 8px;
+      }
+      .email-stat .e-val {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+      }
+      .email-stat .e-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+      }
+
+      /* Note boxes */
+      .note-box {
+        background: #f8f8f8;
+        border-left: 3px solid #ff70db;
+        border-radius: 0 8px 8px 0;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .note-box ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .note-box li {
+        margin-bottom: 6px;
+      }
+
+      /* Status colors */
+      .status-ongoing {
+        color: #f35f36;
+        font-weight: 600;
+      }
+      .status-action {
+        color: #2079a0;
+        font-weight: 600;
+      }
+      .status-pending {
+        color: #ff70db;
+        font-weight: 600;
+      }
+      .status-confirmed {
+        color: #3f5863;
+        font-weight: 600;
+      }
+
+      /* Enrollment grid */
+      .enroll-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .enroll-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .enroll-box .enroll-program {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .enroll-box .enroll-num {
+        font-family: "DM Serif Display", serif;
+        font-size: 36px;
+        color: #131315;
+      }
+      .enroll-box .enroll-detail {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Program cards */
+      .program-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .program-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .program-box .program-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .program-box .program-dir {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      .program-box .program-detail {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.5;
+      }
+
+      /* CTA box */
+      .cta-box {
+        background: #131315;
+        border-radius: 8px;
+        padding: 24px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .cta-box p {
+        color: #ccc;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .cta-box a {
+        display: inline-block;
+        background: #ff70db;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 28px;
+        border-radius: 6px;
+      }
+
+      /* Paragraph spacing */
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+
+      /* Highlight cell */
+      .highlight {
+        background: #e8f0fe;
+        font-weight: 600;
+        border-radius: 3px;
+      }
+
+      /* Two col layout */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      /* Section divider */
+      .section-divider {
+        border: none;
+        border-top: 1px solid #f0f0f0;
+        margin: 24px 0;
+      }
+
+      /* Print */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #eee;
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .program-grid {
+          grid-template-columns: 1fr;
+        }
+        .enroll-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="card card-header">
+        <div class="header-logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px; --fill-0: #131315"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="var(--fill-0, #F0F0F0)"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="var(--fill-0, #F0F0F0)"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="header-client">Institute for Clinical Social Work</div>
+        <div class="header-type">Weekly Report</div>
+        <div class="header-date">
+          June 12, 2026 &nbsp;|&nbsp; Prepared by Earned Impact
+        </div>
+        <hr class="header-line" />
+      </div>
+
+      <!-- PERFORMANCE MARKETING -->
+      <div class="card">
+        <h2>Performance Marketing</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Google Ads &nbsp;|&nbsp; June 1 to 12, 2026 &mdash; Month-to-Date
+          (Both Accounts)
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Total Spend</div>
+            <div class="stat-value">$1,334</div>
+            <div class="stat-sub">Search $796 + PMax $538</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Conversions</div>
+            <div class="stat-value">27</div>
+            <div class="stat-sub">6 Search + 21 PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">10.5K</div>
+            <div class="stat-sub">1.5K Search + 9K PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Avg. CPC (Search)</div>
+            <div class="stat-value">$10.33</div>
+            <div class="stat-sub">Down from $17.83 last week</div>
+          </div>
+        </div>
+
+        <h3>Campaign Breakdown</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Type</th>
+              <th>Spend</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Masters Campaign April 2026
+                <span class="tag tag-paused" style="margin-left: 6px"
+                  >Paused</span
+                >
+              </td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$557.24</td>
+              <td>45</td>
+              <td>4.89%</td>
+            </tr>
+            <tr>
+              <td>Masters Campaign April 2026 #2</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td class="highlight">$183.10</td>
+              <td>14</td>
+              <td>4.53%</td>
+            </tr>
+            <tr>
+              <td>PhD Program</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$55.39</td>
+              <td>18</td>
+              <td>6.84%</td>
+            </tr>
+            <tr>
+              <td>CDE_Google_PMax</td>
+              <td><span class="tag tag-pmax">PMax</span></td>
+              <td class="highlight">$537.51</td>
+              <td>261</td>
+              <td>2.89%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Top Keywords (Search, June 1 to 12)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"mental health counseling education"</td>
+              <td>34</td>
+              <td>6.04%</td>
+              <td class="highlight">$509.69</td>
+            </tr>
+            <tr>
+              <td>"become a licensed professional counselor"</td>
+              <td>12</td>
+              <td>5.02%</td>
+              <td>$130.75</td>
+            </tr>
+            <tr>
+              <td>"clinical social work phd programs"</td>
+              <td>11</td>
+              <td class="highlight">8.80%</td>
+              <td>$30.12</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>New This Week</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Daily budgets have been reduced</strong> across campaigns
+              to ensure we stay within our monthly spend targets. The original
+              Masters Campaign has been paused, with Campaign #2 now carrying
+              the MA search effort at $183.10 and 14 clicks month-to-date.
+            </li>
+            <li>
+              <strong>Conversions are up significantly</strong> &mdash; 27
+              month-to-date (21 PMax + 6 Search) compared to 6 through the first
+              four days of June. PMax continues to be the primary conversion
+              driver at $2.06 average CPC.
+            </li>
+            <li>
+              <strong>Search CPC has come down</strong> from $17.83 in early
+              June to $10.33 for the month-to-date as campaign delivery
+              stabilizes.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="section-divider" />
+
+        <p class="label" style="margin-bottom: 16px">
+          Meta Ads &nbsp;|&nbsp; June 1 to 12, 2026
+        </p>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr)">
+          <div class="stat-box">
+            <div class="stat-label">Reach</div>
+            <div class="stat-value">9,547</div>
+            <div class="stat-sub">Unique people</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">13.2K</div>
+            <div class="stat-sub">TOFU Fall PhD 2026</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Amount Spent</div>
+            <div class="stat-value">$32.32</div>
+            <div class="stat-sub">$3/day budget</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Clicks</div>
+            <div class="stat-value">13</div>
+            <div class="stat-sub">All clicks</div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: #909da3">
+          The PhD awareness campaign continues to deliver steady reach at low
+          cost. At $32.32 spent across 11 days, the campaign has reached nearly
+          9,550 unique people &mdash; strong top-of-funnel visibility on a $3
+          daily budget.
+        </p>
+      </div>
+
+      <!-- EMAIL CAMPAIGNS -->
+      <div class="card">
+        <h2>Email Campaigns</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Upcoming &nbsp;|&nbsp; Addressing Common Student Concerns
+        </p>
+
+        <div class="stat-box" style="margin-bottom: 16px">
+          <div class="stat-label">Status</div>
+          <div
+            class="stat-value"
+            style="font-size: 20px; color: #ff70db; margin-top: 4px"
+          >
+            Pending Approval
+          </div>
+          <div class="stat-sub" style="margin-top: 8px">
+            Theme: Addressing common questions and concerns from prospective
+            students
+          </div>
+        </div>
+
+        <p style="font-size: 14px">
+          This campaign was built from themes that came out of the Questions
+          &amp; Connections event earlier this month. Rather than a general
+          promotional send, this email speaks directly to the real concerns
+          prospective students are raising &mdash; making the outreach feel more
+          relevant and personal.
+        </p>
+        <p style="font-size: 14px; margin-top: 12px">
+          <a
+            href="https://docs.google.com/document/d/1pk5SSU1igUIzwSkOiN4A3x3ZO0o-R4NJhNgwlg1iXQE/edit?tab=t.0"
+            target="_blank"
+            style="color: #2079a0; font-weight: 600"
+            >Preview Email in Google Drive &rarr;</a
+          >
+        </p>
+      </div>
+
+      <!-- CERTIFICATE PROGRAMS STRATEGY -->
+      <div class="card" style="border-left-color: #2079a0">
+        <h2>Certificate Programs: Fall 2026 Strategy</h2>
+        <p style="font-size: 14px; margin-bottom: 20px">
+          With three certificate programs launching alongside MA and PhD this
+          fall, we have put together a coordinated marketing strategy to give
+          each program visibility while keeping the budget focused and
+          efficient. Below is a summary of the approach &mdash; the full
+          strategy and timeline is linked at the bottom for detailed review
+          ahead of our next call.
+        </p>
+
+        <h3>The Three Programs</h3>
+        <div class="program-grid">
+          <div class="program-box">
+            <div class="program-name">JPC Certificate</div>
+            <div class="program-dir">Dir: Bill</div>
+            <div class="program-detail">
+              For post-master's clinicians with 5+ years experience seeking
+              advanced clinical formation. Program page and "at a glance"
+              overview are complete &mdash; this will serve as the template for
+              all certificate pages.
+            </div>
+          </div>
+          <div class="program-box">
+            <div class="program-name">Latinx Consultation Group</div>
+            <div class="program-dir">Dir: Mirari</div>
+            <div class="program-detail">
+              Phase 2 of the existing program. Prior cohort members can
+              re-enroll, providing a built-in base. New program page to be built
+              matching the JPC template.
+            </div>
+          </div>
+          <div class="program-box">
+            <div class="program-name">Couples Therapy Certificate</div>
+            <div class="program-dir">Dir: Carla</div>
+            <div class="program-detail">
+              Established program with strong name recognition through Carla's
+              reputation. Page content exists but will be reorganized into the
+              unified template format.
+            </div>
+          </div>
+        </div>
+
+        <h3>Marketing Approach</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Unified certificate landing page.</strong> Rather than
+              running separate ad campaigns for each program, we will drive
+              traffic to a single certificates page where visitors can explore
+              all three options. This keeps ad spend concentrated, avoids
+              keyword cannibalization across five programs, and lets visitors
+              discover programs they may not have been searching for.
+            </li>
+            <li>
+              <strong>Program directors as organic recruiters.</strong> Bill and
+              Carla in particular have strong personal brands that will drive
+              organic interest. We will draft outreach content (emails, LinkedIn
+              posts) for directors to send through their own channels and
+              listservs &mdash; a message from them carries more weight than one
+              from the institution alone.
+            </li>
+            <li>
+              <strong>Phased budget allocation.</strong> MA and PhD remain the
+              primary ad spend focus through their deadlines. As MA wraps, that
+              budget shifts toward certificate promotion for the final summer
+              push. Certificates have flexible enrollment through the start of
+              term, giving us more runway.
+            </li>
+            <li>
+              <strong>Page uniformity.</strong> All certificate pages will
+              follow Bill's JPC template for a consistent, reader-friendly
+              experience. This was flagged as important for brand
+              professionalism.
+            </li>
+          </ul>
+        </div>
+
+        <h3>What We Need from Program Directors</h3>
+        <p style="font-size: 14px">
+          Bill's "at a glance" overview has been a great model. To build
+          targeted marketing for each program, we need the same from Mirari and
+          Carla:
+        </p>
+        <ul style="font-size: 14px; margin-top: 8px">
+          <li>
+            <strong>Who should enroll?</strong> Target audience and
+            prerequisites
+          </li>
+          <li>
+            <strong>What makes it unique?</strong> Key differentiators and
+            outcomes
+          </li>
+          <li>
+            <strong>Program logistics:</strong> Duration, format, start date
+          </li>
+        </ul>
+        <p style="font-size: 14px; margin-top: 12px">
+          This gives us what we need for ad targeting, keyword strategy, and
+          email campaign messaging &mdash; without guesswork.
+        </p>
+
+        <div class="cta-box">
+          <p>
+            The complete marketing strategy and coordinated timeline is ready
+            for review:
+          </p>
+          <a href="https://icsw-marketing-strategy.vercel.app/" target="_blank">
+            View Certificate Programs Strategy &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- GRADUATION VIDEO -->
+      <div class="card">
+        <h2>Graduation Video Update</h2>
+        <p style="font-size: 14px; margin-bottom: 16px">
+          We connected with Jesse to clarify the scope for the graduation video
+          edit.
+        </p>
+
+        <div class="stat-box" style="margin-bottom: 16px">
+          <div class="stat-label">Deliverable</div>
+          <p
+            style="
+              font-size: 14px;
+              margin-top: 8px;
+              font-weight: 600;
+              margin-bottom: 4px;
+            "
+          >
+            Long-Form Ceremony Edit
+          </p>
+          <p style="font-size: 12px; color: #909da3">
+            The full 1 hr 40 min commencement recording, trimmed and polished
+            into a clean version ICSW can share with the community. Keep student
+            speeches, speaker remarks, youth ensemble, and live music. Remove
+            dead air and long pauses. Community members and graduates are
+            already asking for this.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <p style="margin-bottom: 0">
+            <strong>Status:</strong> Our team is reviewing the long-form footage
+            and scoping the edit timeline. We are targeting completion within
+            the current flex hours in our agreement and will flag early if it
+            looks like the project will extend beyond that. Timeline update
+            coming shortly.
+          </p>
+        </div>
+      </div>
+
+      <!-- WEBSITE UPDATE -->
+      <div class="card">
+        <h2>Website Update</h2>
+        <p style="font-size: 14px">
+          The new ICSW website is being built on a
+          <strong>staging site</strong> so nothing changes on the live site
+          until everything is reviewed and approved. Our developer is treating
+          this as a priority project and is moving into active build mode.
+        </p>
+        <ul style="font-size: 14px; margin-top: 12px">
+          <li>
+            <strong>Build is underway.</strong> The base setup and component
+            framework are being put in place now. Once that foundation is set,
+            the homepage will come together quickly and we will have a clearer
+            timeline for your review.
+          </li>
+          <li>
+            <strong>Homepage is the first deliverable.</strong> We will share
+            the staging link as soon as the front page is ready so your team can
+            interact with it like a real website before anything goes live.
+          </li>
+          <li>
+            <strong>This project has been escalated to top priority</strong>
+            on the development side to keep things moving on a tight timeline.
+          </li>
+        </ul>
+      </div>
+
+      <!-- IN THE PIPELINE -->
+      <div class="card">
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>
+            <strong>Certificate programs strategy review.</strong> The
+            coordinated marketing plan for all five fall programs is ready. We
+            would like to walk through it together on our next call and align on
+            timing, messaging, and what is needed from each program director.
+            <a
+              href="https://icsw-marketing-strategy.vercel.app/"
+              target="_blank"
+              style="color: #2079a0; font-weight: 600"
+              >Preview the strategy &rarr;</a
+            >
+          </li>
+          <li>
+            <strong>Email campaign: student concerns.</strong> Pending approval,
+            ready to send once reviewed. This wraps up the Q&amp;C event
+            follow-up thread.
+          </li>
+          <li>
+            <strong>Graduation video timeline.</strong> Our team is scoping the
+            long-form edit. We will have a timeline estimate by next week.
+          </li>
+          <li>
+            <strong>Website homepage review.</strong> Build is underway and has
+            been escalated to top priority. Staging link coming as soon as the
+            front page is ready.
+          </li>
+          <li>
+            <strong>MA deadline push continues through June 30.</strong> Ads,
+            email, and the new Campaign #2 are all running toward the
+            application deadline.
+          </li>
+          <li>
+            <strong>Certificate page uniformity.</strong> Once Mirari and Carla
+            provide their "at a glance" overviews, Randy can build their program
+            pages to match Bill's JPC template.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
