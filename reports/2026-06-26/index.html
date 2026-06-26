@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report - June 26, 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #131315;
+        background: #f0f0f0;
+        padding: 32px 16px;
+      }
+      .page {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+        padding: 32px;
+        page-break-inside: avoid;
+      }
+      .card-header {
+        border-left: none;
+        padding: 32px 32px 24px;
+      }
+
+      /* Header */
+      .header-logo {
+        margin-bottom: 16px;
+      }
+      .header-client {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-type {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #909da3;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .header-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+        color: #909da3;
+      }
+      .header-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        margin-top: 20px;
+      }
+
+      /* Section titles */
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 17px;
+        color: #131315;
+        margin-bottom: 12px;
+        margin-top: 24px;
+      }
+      h3:first-of-type {
+        margin-top: 0;
+      }
+
+      /* Labels */
+      .label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+      }
+
+      /* Stat grid */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .stat-box .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+        line-height: 1.1;
+      }
+      .stat-box .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .stat-box .stat-sub {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      th {
+        text-align: left;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 8px 10px;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Tags */
+      .tag {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tag-search {
+        background: #e8f0fe;
+        color: #1a73e8;
+      }
+      .tag-pmax {
+        background: #fce8e6;
+        color: #d93025;
+      }
+      .tag-meta {
+        background: #e7f3ff;
+        color: #1877f2;
+      }
+      .tag-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      /* Note boxes */
+      .note-box {
+        background: #f8f8f8;
+        border-left: 3px solid #ff70db;
+        border-radius: 0 8px 8px 0;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .note-box ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .note-box li {
+        margin-bottom: 6px;
+      }
+
+      /* Status colors */
+      .status-ongoing {
+        color: #f35f36;
+        font-weight: 600;
+      }
+      .status-action {
+        color: #2079a0;
+        font-weight: 600;
+      }
+
+      /* Highlight cell */
+      .highlight {
+        background: #e8f0fe;
+        font-weight: 600;
+        border-radius: 3px;
+      }
+
+      /* Section divider */
+      .section-divider {
+        border: none;
+        border-top: 1px solid #f0f0f0;
+        margin: 24px 0;
+      }
+
+      /* Paragraph spacing */
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+
+      /* Audit summary */
+      .audit-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      /* CTA box */
+      .cta-box {
+        background: #131315;
+        border-radius: 8px;
+        padding: 24px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .cta-box p {
+        color: #ccc;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .cta-box a {
+        display: inline-block;
+        background: #ff70db;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 28px;
+        border-radius: 6px;
+      }
+
+      /* Print */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #eee;
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .audit-summary {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="card card-header">
+        <div class="header-logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="header-client">Institute for Clinical Social Work</div>
+        <div class="header-type">Weekly Report</div>
+        <div class="header-date">
+          June 26, 2026 &nbsp;|&nbsp; Prepared by Earned Impact
+        </div>
+        <hr class="header-line" />
+      </div>
+
+      <!-- PERFORMANCE MARKETING -->
+      <div class="card">
+        <h2>Performance Marketing</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Google Ads &nbsp;|&nbsp; June 1 to 26, 2026 (Month-to-Date, Both
+          Accounts)
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Total Spend</div>
+            <div class="stat-value">$1,724</div>
+            <div class="stat-sub">Search $1,052 + PMax $672</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Conversions</div>
+            <div class="stat-value">40</div>
+            <div class="stat-sub">11 Search + 29 PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">15.3K</div>
+            <div class="stat-sub">2.2K Search + 13.1K PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Avg. CPC (Search)</div>
+            <div class="stat-value">$7.97</div>
+            <div class="stat-sub">Down from $9.07 last week</div>
+          </div>
+        </div>
+
+        <h3>Campaign Breakdown</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Type</th>
+              <th>Spend</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Masters Campaign April 2026
+                <span class="tag tag-paused" style="margin-left: 6px"
+                  >Paused</span
+                >
+              </td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$557.24</td>
+              <td>45</td>
+              <td>4.89%</td>
+            </tr>
+            <tr>
+              <td>Masters Campaign April 2026 #2</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$317.49</td>
+              <td>38</td>
+              <td>5.01%</td>
+            </tr>
+            <tr>
+              <td>PhD Program</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$177.34</td>
+              <td>49</td>
+              <td class="highlight">9.28%</td>
+            </tr>
+            <tr>
+              <td>CDE_Google_PMax_Nonbrand</td>
+              <td><span class="tag tag-pmax">PMax</span></td>
+              <td>$672.32</td>
+              <td>347</td>
+              <td>2.66%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Top Keywords (Search, June 1 to 26)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"mental health counseling education"</td>
+              <td>49</td>
+              <td>5.8%</td>
+              <td class="highlight">$588.65</td>
+            </tr>
+            <tr>
+              <td>"become a licensed professional counselor"</td>
+              <td>10</td>
+              <td>6.21%</td>
+              <td>$100.99</td>
+            </tr>
+            <tr>
+              <td>"clinical social work phd programs"</td>
+              <td>29</td>
+              <td class="highlight">10.90%</td>
+              <td>$97.52</td>
+            </tr>
+            <tr>
+              <td>"social work doctorate degree"</td>
+              <td>13</td>
+              <td>6.81%</td>
+              <td>$57.71</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>This Week</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Spend continues to taper as planned.</strong> Only about
+              $205 was added across both accounts in the past week, consistent
+              with the strategy to front-load June budgets earlier in the month
+              rather than push at the end.
+            </li>
+            <li>
+              <strong>PhD search CTR climbed to 9.28%</strong> (up from 8.87%
+              last week), making it the highest-performing campaign in the
+              account. At $177 total spend and 49 clicks, it continues to
+              deliver efficient, qualified traffic for the fall cohort.
+            </li>
+            <li>
+              <strong>Search CPC dropped again:</strong> $7.97, down from $9.07
+              through June 19. PMax continues to drive the majority of
+              conversions (29 of 40 total) at a $1.94 average CPC.
+            </li>
+            <li>
+              <strong>July budget: let's discuss on Tuesday.</strong>
+              We will review ICSW ad budget plans for July on the Tuesday call.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="section-divider" />
+
+        <p class="label" style="margin-bottom: 16px">
+          Meta Ads &nbsp;|&nbsp; June 1 to 26, 2026
+        </p>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr)">
+          <div class="stat-box">
+            <div class="stat-label">Reach</div>
+            <div class="stat-value">18,454</div>
+            <div class="stat-sub">Unique people</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">28.1K</div>
+            <div class="stat-sub">TOFU Fall PhD 2026</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Amount Spent</div>
+            <div class="stat-value">$75.04</div>
+            <div class="stat-sub">$3/day budget</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Clicks</div>
+            <div class="stat-value">27</div>
+            <div class="stat-sub">All clicks</div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: #909da3">
+          The PhD awareness campaign has now reached over 18,400 unique people
+          at $75 total spend across 26 days. Cost per reach result has risen
+          slightly to $4.07 (from $3.70 last week), which is expected as the
+          campaign expands beyond the most responsive audience segments. At this
+          budget, it remains a strong, low-cost top-of-funnel play for fall
+          enrollment.
+        </p>
+      </div>
+
+      <!-- EMAIL CAMPAIGNS / MAILCHIMP -->
+      <div class="card">
+        <h2>Email Campaigns</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Mailchimp Audience Cleanup &nbsp;|&nbsp; Phase 1 Complete
+        </p>
+
+        <p>
+          The first phase of the Mailchimp audience cleanup is complete. Our
+          team audited 5,145 contacts added before January 1, 2020 and sorted
+          them into three buckets based on engagement and role:
+        </p>
+
+        <div class="audit-summary">
+          <div class="stat-box">
+            <div class="stat-label">Archive</div>
+            <div class="stat-value">4,957</div>
+            <div class="stat-sub">Inactive, no recent engagement</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Review (Active)</div>
+            <div class="stat-value" style="color: #2079a0">102</div>
+            <div class="stat-sub">Still engaging, needs individual review</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Review (Faculty/Board)</div>
+            <div class="stat-value" style="color: #2079a0">86</div>
+            <div class="stat-sub">Held for review regardless of activity</div>
+          </div>
+        </div>
+
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>The deliverable spreadsheet has been shared.</strong>
+              No contacts were deleted. The archive recommendations are ready
+              for review, and we will walk through the results together on the
+              Tuesday call.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEBSITE UPDATE -->
+      <div class="card">
+        <h2>Website Update</h2>
+        <p>
+          Two program pages are now complete on the staging site: the PhD
+          Program page and the Masters Program page. Both are live for review.
+        </p>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+          "
+        >
+          <div class="stat-box" style="text-align: center; padding: 24px">
+            <div class="stat-label">PhD Program Page</div>
+            <a
+              href="https://icsw.tryearnedimpact.com/phd-program/"
+              target="_blank"
+              style="
+                font-family: &quot;DM Serif Display&quot;, serif;
+                font-size: 16px;
+                color: #2079a0;
+                text-decoration: none;
+              "
+            >
+              View Page &rarr;
+            </a>
+          </div>
+          <div class="stat-box" style="text-align: center; padding: 24px">
+            <div class="stat-label">Masters Program Page</div>
+            <a
+              href="https://icsw.tryearnedimpact.com/masters-program/"
+              target="_blank"
+              style="
+                font-family: &quot;DM Serif Display&quot;, serif;
+                font-size: 16px;
+                color: #2079a0;
+                text-decoration: none;
+              "
+            >
+              View Page &rarr;
+            </a>
+          </div>
+        </div>
+
+        <ul style="font-size: 14px">
+          <li>
+            <strong>Third program page is in progress</strong> and expected
+            soon.
+          </li>
+          <li>
+            <strong>Regular subpages will follow quickly</strong> once the
+            program pages are finished. The homepage-first approach from earlier
+            weeks means these pages build from an established foundation and
+            move faster.
+          </li>
+          <li>
+            <strong>Nothing changes on the live site</strong> until everything
+            has been reviewed and approved. All work continues on the staging
+            environment.
+          </li>
+        </ul>
+      </div>
+
+      <!-- IN THE PIPELINE -->
+      <div class="card">
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>
+            <strong>Third program page and subpages.</strong> The third program
+            page is actively being built. Once the program pages are wrapped,
+            the remaining subpages are expected to come together quickly.
+          </li>
+          <li>
+            <strong>Mailchimp archive execution.</strong> Now that the audit
+            spreadsheet is complete, the next step is to archive the inactive
+            contacts identified in Phase 1. This will clean up the active
+            audience and reduce billing.
+          </li>
+          <li>
+            <strong>July ad budget planning.</strong> We will discuss ICSW
+            budget plans for July on the Tuesday call.
+          </li>
+          <li>
+            <strong>Certificate programs: waiting on review.</strong> The
+            "Program at a Glance" briefs for Couples Therapy and Latinx
+            Consultation Group were shared for director review. We are waiting
+            on feedback before moving forward with marketing materials and
+            outreach for these programs.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
