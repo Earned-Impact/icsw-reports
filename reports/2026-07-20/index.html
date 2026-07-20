@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report - July 20, 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #131315;
+        background: #f0f0f0;
+        padding: 32px 16px;
+      }
+      .page {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Cards */
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-bottom: 24px;
+        padding: 32px;
+        page-break-inside: avoid;
+      }
+      .card-header {
+        border-left: none;
+        padding: 32px 32px 24px;
+      }
+
+      /* Header */
+      .header-logo {
+        margin-bottom: 16px;
+      }
+      .header-client {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-type {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #909da3;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      .header-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+        color: #909da3;
+      }
+      .header-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        margin-top: 20px;
+      }
+
+      /* Section titles */
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 17px;
+        color: #131315;
+        margin-bottom: 12px;
+        margin-top: 24px;
+      }
+      h3:first-of-type {
+        margin-top: 0;
+      }
+
+      /* Labels */
+      .label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+      }
+
+      /* Stat grid */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .stat-box .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+        line-height: 1.1;
+      }
+      .stat-box .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+      .stat-box .stat-sub {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+      th {
+        text-align: left;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        color: #909da3;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 8px 10px;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Tags */
+      .tag {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        font-weight: 700;
+        padding: 2px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tag-search {
+        background: #e8f0fe;
+        color: #1a73e8;
+      }
+      .tag-pmax {
+        background: #fce8e6;
+        color: #d93025;
+      }
+      .tag-meta {
+        background: #e7f3ff;
+        color: #1877f2;
+      }
+      .tag-new {
+        background: #e6f4ea;
+        color: #1e8e3e;
+      }
+
+      /* Note boxes */
+      .note-box {
+        background: #f8f8f8;
+        border-left: 3px solid #ff70db;
+        border-radius: 0 8px 8px 0;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .note-box ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .note-box li {
+        margin-bottom: 6px;
+      }
+
+      /* Status colors */
+      .status-ongoing {
+        color: #f35f36;
+        font-weight: 600;
+      }
+      .status-action {
+        color: #2079a0;
+        font-weight: 600;
+      }
+
+      /* Highlight cell */
+      .highlight {
+        background: #e8f0fe;
+        font-weight: 600;
+        border-radius: 3px;
+      }
+
+      /* Section divider */
+      .section-divider {
+        border: none;
+        border-top: 1px solid #f0f0f0;
+        margin: 24px 0;
+      }
+
+      /* Paragraph spacing */
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+
+      /* Messaging callout */
+      .messaging-box {
+        background: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px 24px;
+        margin: 16px 0;
+        font-size: 14px;
+        line-height: 1.8;
+        font-style: italic;
+        color: #444;
+      }
+
+      /* Print */
+      @media print {
+        body {
+          background: #fff;
+          padding: 0;
+        }
+        .card {
+          box-shadow: none;
+          border: 1px solid #eee;
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .stat-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- HEADER -->
+      <div class="card card-header">
+        <div class="header-logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="header-client">Institute for Clinical Social Work</div>
+        <div class="header-type">Weekly Report</div>
+        <div class="header-date">
+          July 20, 2026 &nbsp;|&nbsp; Prepared by Earned Impact
+        </div>
+        <hr class="header-line" />
+      </div>
+
+      <!-- PERFORMANCE MARKETING -->
+      <div class="card">
+        <h2>Performance Marketing</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Google Ads &nbsp;|&nbsp; July 1 to 20, 2026 MTD (Both Accounts)
+        </p>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-label">Total Spend</div>
+            <div class="stat-value">$794</div>
+            <div class="stat-sub">Search $504 + PMax $290</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Conversions</div>
+            <div class="stat-value">13</div>
+            <div class="stat-sub">3 Search + 10 PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">11,790</div>
+            <div class="stat-sub">1,590 Search + 10,200 PMax</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Avg. CPC (Search)</div>
+            <div class="stat-value">$4.89</div>
+            <div class="stat-sub">Up slightly from $4.71</div>
+          </div>
+        </div>
+
+        <h3>Campaign Breakdown</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Type</th>
+              <th>Spend</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Masters Campaign April 2026 #2</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$288.87</td>
+              <td>39</td>
+              <td>4.39%</td>
+            </tr>
+            <tr>
+              <td>CDE_Google_PMax_Nonbrand</td>
+              <td><span class="tag tag-pmax">PMax</span></td>
+              <td>$290.42</td>
+              <td class="highlight">248</td>
+              <td>2.43%</td>
+            </tr>
+            <tr>
+              <td>PhD Program</td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$185.41</td>
+              <td>45</td>
+              <td class="highlight">8.67%</td>
+            </tr>
+            <tr>
+              <td>
+                Certificate Programs &nbsp;<span class="tag tag-new">New</span>
+              </td>
+              <td><span class="tag tag-search">Search</span></td>
+              <td>$29.61</td>
+              <td>19</td>
+              <td class="highlight">10.16%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Top Keywords (Search, July 1 to 20)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Clicks</th>
+              <th>CTR</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>"mental health counseling education"</td>
+              <td class="highlight">26</td>
+              <td>4.85%</td>
+              <td>$194.72</td>
+            </tr>
+            <tr>
+              <td>"clinical social work phd programs"</td>
+              <td>25</td>
+              <td class="highlight">11.21%</td>
+              <td>$106.59</td>
+            </tr>
+            <tr>
+              <td>"social work doctorate degree"</td>
+              <td>12</td>
+              <td>6.42%</td>
+              <td>$48.52</td>
+            </tr>
+            <tr>
+              <td>"become a licensed professional counselor"</td>
+              <td>6</td>
+              <td>4.32%</td>
+              <td>$49.67</td>
+            </tr>
+            <tr>
+              <td>[chicago counseling masters]</td>
+              <td>1</td>
+              <td>25.00%</td>
+              <td>$17.69</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Month-to-Date Highlights</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong
+                >The Certificate Programs search campaign launched this
+                week</strong
+              >
+              and is already the highest-CTR campaign at 10.16%. Early top
+              performers include "virtual certificate programs" (11 clicks,
+              39.29% CTR) and the Certificate Programs ad group (12 clicks,
+              30.77% CTR). Strong signal that this audience is highly responsive
+              to search ads.
+            </li>
+            <li>
+              <strong>PMax is the clear conversion leader,</strong> driving 10
+              of 13 total conversions at $1.17 average CPC. It also generated
+              the most clicks (248) across all campaigns.
+            </li>
+            <li>
+              <strong
+                >PhD continues to outperform Masters on efficiency.</strong
+              >
+              PhD drove 45 clicks at an 8.67% CTR versus Masters at 39 clicks
+              and 4.39% CTR. Masters has a higher spend ($289 vs $185), so PhD
+              is delivering significantly more traffic per dollar.
+            </li>
+            <li>
+              <strong
+                >"Clinical social work phd programs" remains the most efficient
+                keyword</strong
+              >
+              at 11.21% CTR with 25 clicks. "Mental health counseling education"
+              is the highest-volume keyword (26 clicks) but at a lower 4.85% CTR
+              and higher cost ($194.72).
+            </li>
+            <li>
+              <strong>Search CPC has risen slightly to $4.89,</strong> up from
+              $4.71 at the mid-month mark. Still well below the June average of
+              $7.82.
+            </li>
+          </ul>
+        </div>
+
+        <hr class="section-divider" />
+
+        <p class="label" style="margin-bottom: 16px">
+          Meta Ads &nbsp;|&nbsp; July 1 to 20, 2026 MTD
+        </p>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr)">
+          <div class="stat-box">
+            <div class="stat-label">Reach</div>
+            <div class="stat-value">15,989</div>
+            <div class="stat-sub">Unique people</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value">25,264</div>
+            <div class="stat-sub">TOFU Fall PhD 2026</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Amount Spent</div>
+            <div class="stat-value">$57.71</div>
+            <div class="stat-sub">$3/day budget</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Clicks</div>
+            <div class="stat-value">12</div>
+            <div class="stat-sub">All clicks</div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: #909da3">
+          The PhD awareness campaign has reached 15,989 unique people so far in
+          July at $57.71 total spend. Cost per reach is $3.61, consistent with
+          the efficient delivery we saw through mid-July. The campaign continues
+          to build top-of-funnel awareness at the $3/day budget level.
+        </p>
+      </div>
+
+      <!-- WEBSITE TRAFFIC -->
+      <div class="card">
+        <h2>Website Traffic</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Google Analytics &nbsp;|&nbsp; July 1 to 20, 2026
+        </p>
+
+        <div class="stat-grid" style="grid-template-columns: repeat(4, 1fr)">
+          <div class="stat-box">
+            <div class="stat-label">Sessions</div>
+            <div class="stat-value">234</div>
+            <div class="stat-sub">Total visitors</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Engaged Sessions</div>
+            <div class="stat-value">92</div>
+            <div class="stat-sub">39.32% engagement</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Avg. Time on Site</div>
+            <div class="stat-value">31s</div>
+            <div class="stat-sub">Per session</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Events</div>
+            <div class="stat-value">1,083</div>
+            <div class="stat-sub">4.63 per session</div>
+          </div>
+        </div>
+
+        <h3>Traffic by Channel</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Sessions</th>
+              <th>Engaged</th>
+              <th>Eng. Rate</th>
+              <th>Avg. Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cross-network (PMax)</td>
+              <td class="highlight">155 (66.2%)</td>
+              <td>70</td>
+              <td>45.16%</td>
+              <td>41s</td>
+            </tr>
+            <tr>
+              <td>Paid Search</td>
+              <td>37 (15.8%)</td>
+              <td>19</td>
+              <td class="highlight">51.35%</td>
+              <td>23s</td>
+            </tr>
+            <tr>
+              <td>Direct</td>
+              <td>26 (11.1%)</td>
+              <td>2</td>
+              <td>7.69%</td>
+              <td>1s</td>
+            </tr>
+            <tr>
+              <td>Paid Other</td>
+              <td>14 (6.0%)</td>
+              <td>0</td>
+              <td>0%</td>
+              <td>0s</td>
+            </tr>
+            <tr>
+              <td>Organic Search</td>
+              <td>2 (0.9%)</td>
+              <td>1</td>
+              <td>50%</td>
+              <td>53s</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Cross-network (PMax) drives the most traffic</strong> at
+              155 sessions (66% of total), with a solid 45% engagement rate and
+              the second-longest time on site at 41 seconds.
+            </li>
+            <li>
+              <strong>Paid Search has the highest engagement rate</strong> at
+              51.35%, meaning over half the visitors from search ads are
+              actively interacting with the site. This reinforces that the
+              search campaigns are reaching qualified prospects.
+            </li>
+            <li>
+              <strong>Organic search remains minimal</strong> at just 2
+              sessions. The new website launch will be important for improving
+              organic visibility over time.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EMAIL CAMPAIGNS -->
+      <div class="card">
+        <h2>Email Campaigns</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Certificate Programs &nbsp;|&nbsp; Ready to Send
+        </p>
+
+        <p>
+          The following email is ready for distribution to the prospective
+          student list. Coordinating this send alongside the newly launched
+          certificate search campaign will provide a multi-channel push for fall
+          enrollment.
+        </p>
+
+        <div
+          class="messaging-box"
+          style="
+            font-style: normal;
+            color: #131315;
+            line-height: 1.8;
+            margin-top: 20px;
+          "
+        >
+          <p>Dear [First Name],</p>
+
+          <p>
+            This fall, ICSW is offering three professional development programs
+            for clinicians who want to sharpen their clinical skills, earn
+            continuing education credits, and learn from nationally recognized
+            faculty, all in a virtual format designed for working professionals.
+          </p>
+
+          <p>
+            Whether you're looking to deepen your work in couple therapy,
+            explore the intersection of neuroscience and psychodynamic practice,
+            or join a culturally grounded clinical consultation community,
+            there's a program built for you.
+          </p>
+
+          <hr
+            style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0"
+          />
+
+          <p style="margin-bottom: 4px">
+            <strong style="font-size: 16px"
+              >Integrative Psychoanalytic Couple Therapy Certificate</strong
+            >
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+              margin-bottom: 8px;
+            "
+          >
+            9 months &middot; Virtual &middot; Thursdays &middot; Starts
+            September 2026
+          </p>
+          <p>
+            Now recruiting for its 6th cohort, this program has trained over 55
+            clinicians from 5 countries in psychoanalytic couple therapy. Led by
+            Dr. Carla Leone, Dr. Arthur Nielsen (Harvard/Johns Hopkins, 40+
+            publications, 2 textbooks), and Dr. Karen Bloomberg, the program
+            combines didactic learning, small-group case conferences, and
+            individual consultation. Scholarship assistance is available, with
+            priority given to BIPOC applicants and those serving marginalized
+            populations.
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+            "
+          >
+            $3,600 tuition &nbsp;|&nbsp; Space limited to 12 participants
+          </p>
+          <p>
+            <a
+              href="#"
+              style="color: #2079a0; text-decoration: none; font-weight: 600"
+              >Learn More &rarr;</a
+            >
+          </p>
+
+          <hr
+            style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0"
+          />
+
+          <p style="margin-bottom: 4px">
+            <strong style="font-size: 16px"
+              >Latinx-Centered Psychodynamic Consultation Group</strong
+            >
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 11px;
+              color: #909da3;
+              margin-bottom: 4px;
+            "
+          >
+            Dean's Distinguished Speaker Series
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+              margin-bottom: 8px;
+            "
+          >
+            9 sessions &middot; Virtual Wednesdays 3&ndash;5 PM CST &middot;
+            September 2026 to May 2027
+          </p>
+          <p>
+            A monthly consultation group designed specifically for Latinx
+            therapists and mental health professionals seeking culturally
+            grounded psychodynamic peer consultation. Participants discuss live
+            clinical material, engage with contemporary psychodynamic
+            literature, and build lasting professional relationships. Co-led by
+            Dr. Merari Fernandez, PhD, LCSW, and Dr. Kelly G. Arteaga, PsyD.
+            Returning participants from prior cohorts are welcome to re-enroll.
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+            "
+          >
+            $440 &nbsp;|&nbsp; 18 CE credits
+          </p>
+          <p>
+            <a
+              href="#"
+              style="color: #2079a0; text-decoration: none; font-weight: 600"
+              >Learn More &rarr;</a
+            >
+          </p>
+
+          <hr
+            style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0"
+          />
+
+          <p style="margin-bottom: 4px">
+            <strong style="font-size: 16px"
+              >Joseph Palombo Center: Neuroscience &amp; Psychodynamic
+              Psychotherapy Certificate</strong
+            >
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+              margin-bottom: 8px;
+            "
+          >
+            24 weeks &middot; Virtual Fridays 1&ndash;4 PM CT &middot; August
+            2026 to May 2027
+          </p>
+          <p>
+            An advanced postgraduate certificate for clinicians who want
+            neuroscience to deepen (not replace) psychodynamic understanding.
+            Grounded in Joseph Palombo's model of the self as a complex adaptive
+            system, the program integrates neuroscience, attachment, affect
+            regulation, trauma, and psychodynamic formulation into a rigorous
+            clinical sequence. Led by William D. Gieseke, Ph.D.
+          </p>
+          <p
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 12px;
+              color: #909da3;
+            "
+          >
+            $3,100 &nbsp;|&nbsp; 72 CEU hours &nbsp;|&nbsp; Application
+            deadline: July 30, 2026
+          </p>
+          <p>
+            <a
+              href="#"
+              style="color: #2079a0; text-decoration: none; font-weight: 600"
+              >Learn More &rarr;</a
+            >
+          </p>
+
+          <hr
+            style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0"
+          />
+
+          <p>
+            Each of these programs is designed for working clinicians, no MA or
+            PhD required. If you have questions about which program might be the
+            right fit, our team is standing by to help.
+          </p>
+
+          <p><strong>Questions?</strong></p>
+          <p>
+            Contact Jesse Godina, Dean of Outreach, Recruitment, Admissions, and
+            Enrollment, at
+            <a
+              href="mailto:jgodina@icsw.edu"
+              style="color: #2079a0; text-decoration: none"
+              >jgodina@icsw.edu</a
+            >
+            or (773) 575-6524.
+          </p>
+
+          <p>
+            Warm regards,<br />
+            The Office of Admissions<br />
+            Institute for Clinical Social Work
+          </p>
+
+          <p style="font-size: 13px; color: #909da3; margin-top: 12px">
+            Know someone who might be interested? Feel free to forward this
+            email.
+          </p>
+        </div>
+      </div>
+
+      <!-- WEBSITE UPDATE -->
+      <div class="card">
+        <h2>Website Update</h2>
+        <p class="label" style="margin-bottom: 16px">
+          Staging Site &nbsp;|&nbsp; Homepage Priority
+        </p>
+
+        <p>
+          The team is currently exploring options for getting the homepage live
+          as soon as possible, independent of the rest of the site. Quality
+          control review on the remaining pages is happening in parallel.
+        </p>
+
+        <div
+          class="stat-box"
+          style="text-align: center; padding: 20px; margin-bottom: 20px"
+        >
+          <div class="stat-label">Staging Site</div>
+          <a
+            href="https://icsw.tryearnedimpact.com/"
+            target="_blank"
+            style="
+              font-family: &quot;DM Serif Display&quot;, serif;
+              font-size: 16px;
+              color: #2079a0;
+              text-decoration: none;
+            "
+          >
+            icsw.tryearnedimpact.com &rarr;
+          </a>
+        </div>
+
+        <h3>Current Status</h3>
+        <div class="note-box">
+          <ul>
+            <li>
+              <strong>Homepage launch is the immediate priority.</strong> The
+              team is evaluating the fastest path to get the homepage live on
+              the production domain while the rest of the site continues through
+              QC.
+            </li>
+            <li>
+              <strong>Sitewide QC is in progress.</strong> Review of remaining
+              pages is happening async. Feedback from Jesse and Randy on staging
+              pages remains welcome.
+            </li>
+            <li>
+              <strong>Nothing changes on the live site</strong> until reviewed
+              and approved.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IN THE PIPELINE -->
+      <div class="card">
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>
+            <strong>Certificate search campaign is live.</strong> Launched this
+            week with strong early results (10.16% CTR). We will continue to
+            monitor performance and optimize keywords as data accumulates.
+          </li>
+          <li>
+            <strong>Certificate email campaign ready to send.</strong>
+            <span class="status-action">Action: Jesse</span>. Email draft covers
+            all three fall programs. Ready for review and distribution to the
+            prospective student list.
+          </li>
+          <li>
+            <strong>Homepage launch path.</strong>
+            <span class="status-action">Action: Developer + Kaelene</span>.
+            Finalizing the approach to get the homepage live on production ahead
+            of the full site.
+          </li>
+          <li>
+            <strong>Sitewide QC completion.</strong>
+            <span class="status-action">Action: Jesse &amp; Randy</span>. Async
+            review of remaining staging pages is underway. Please flag any
+            content, layout, or navigation issues.
+          </li>
+          <li>
+            <strong>Enrollment pipeline numbers.</strong>
+            <span class="status-action">Action: Jesse</span>. An update on
+            current PhD and MA pipeline numbers helps us gauge how ads are
+            converting through the funnel.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
