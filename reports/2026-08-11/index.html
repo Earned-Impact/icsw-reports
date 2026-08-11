@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, August 4 to August 11, 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 24px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+
+      .header-card {
+        text-align: left;
+      }
+
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+        font-weight: 400;
+      }
+
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        color: #909da3;
+        margin-bottom: 4px;
+      }
+
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+        color: #909da3;
+        margin-bottom: 24px;
+      }
+
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        margin: 0;
+      }
+
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        font-weight: 400;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+
+      p {
+        margin-bottom: 12px;
+      }
+
+      .label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #909da3;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .metric {
+        padding: 16px;
+        background: #f0f0f0;
+        border-radius: 8px;
+      }
+
+      .metric .label {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .metric .value {
+        font-family: "DM Serif Display", serif;
+        font-size: 24px;
+        color: #131315;
+      }
+
+      .metric .context {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        color: #909da3;
+        margin-top: 2px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      thead th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        color: #909da3;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+
+      thead th:not(:first-child) {
+        text-align: right;
+      }
+
+      tbody td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      tbody td:not(:first-child) {
+        text-align: right;
+        font-family: "Roboto Mono", monospace;
+        font-size: 13px;
+      }
+
+      .subsection {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid #f0f0f0;
+      }
+
+      .highlight {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        font-size: 14px;
+      }
+
+      .highlight p {
+        margin-bottom: 8px;
+      }
+
+      .highlight p:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      a {
+        color: #2079a0;
+      }
+
+      .status-badge {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      .status-active {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: #ffffff;
+        }
+        .card {
+          box-shadow: none;
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>ICSW</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">August 4 to August 11, 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <h2>Google Ads</h2>
+        <span class="label">August 1 to 11 MTD</span>
+
+        <div class="metrics-grid" style="margin-top: 16px">
+          <div class="metric">
+            <span class="label">Total Spend</span>
+            <div class="value">$1,424</div>
+            <div class="context">Search $1,227 + PMax $196</div>
+          </div>
+          <div class="metric">
+            <span class="label">Conversions</span>
+            <div class="value">13</div>
+            <div class="context">Search 7 + PMax 6</div>
+          </div>
+          <div class="metric">
+            <span class="label">Impressions</span>
+            <div class="value">10.3K</div>
+            <div class="context">Search 6.0K + PMax 4.3K</div>
+          </div>
+          <div class="metric">
+            <span class="label">Avg. CPC</span>
+            <div class="value">$1.96</div>
+            <div class="context">Search only</div>
+          </div>
+        </div>
+
+        <!-- Search Campaigns -->
+        <div class="subsection">
+          <h3>Search Campaigns</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Spend</th>
+                <th>Clicks</th>
+                <th>CTR</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PhD Program</td>
+                <td>$432.02</td>
+                <td>59</td>
+                <td>5.41%</td>
+                <td><span class="status-badge status-paused">Paused</span></td>
+              </tr>
+              <tr>
+                <td>Masters Program</td>
+                <td>$408.82</td>
+                <td>57</td>
+                <td>4.03%</td>
+                <td><span class="status-badge status-paused">Paused</span></td>
+              </tr>
+              <tr>
+                <td>Certificate Programs</td>
+                <td>$386.57</td>
+                <td>511</td>
+                <td>14.77%</td>
+                <td><span class="status-badge status-active">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- PMax -->
+        <div class="subsection">
+          <h3>Performance Max</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Spend</th>
+                <th>Clicks</th>
+                <th>CTR</th>
+                <th>Conv.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  CDE PMax Nonbrand
+                  <span class="status-badge status-paused">Paused</span>
+                </td>
+                <td>$196.49</td>
+                <td>132</td>
+                <td>3.04%</td>
+                <td>6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Top Keywords -->
+        <div class="subsection">
+          <h3>Top Keywords</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th>Spend</th>
+                <th>Clicks</th>
+                <th>CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"virtual certificate programs"</td>
+                <td>$212.86</td>
+                <td>289</td>
+                <td>42.75%</td>
+              </tr>
+              <tr>
+                <td>"clinical social work phd programs"</td>
+                <td>$210.98</td>
+                <td>27</td>
+                <td>5.74%</td>
+              </tr>
+              <tr>
+                <td>"mental health counseling education"</td>
+                <td>$202.68</td>
+                <td>27</td>
+                <td>6.32%</td>
+              </tr>
+              <tr>
+                <td>"virtual certificate program"</td>
+                <td>$115.21</td>
+                <td>156</td>
+                <td>43.21%</td>
+              </tr>
+              <tr>
+                <td>"social work doctorate degree"</td>
+                <td>$96.28</td>
+                <td>14</td>
+                <td>4.50%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight">
+          <p>
+            PhD and Masters search campaigns were paused following the August 10
+            application deadline, wrapping up their portion of the fall
+            enrollment push. Certificate Programs remains active and continues
+            to lead in click volume with 511 clicks at a 14.77% CTR.
+          </p>
+          <p>
+            The two "virtual certificate" keyword variants combined for 445
+            clicks at 42 to 43% CTR so far in August, confirming continued
+            strong demand for online certificate offerings.
+          </p>
+          <p>
+            PMax delivered 6 conversions from $196 in spend (roughly $33 per
+            conversion) before being paused. Search campaigns generated 7
+            conversions from $1,227. With August only 11 days in, total spend is
+            pacing well below July's $2,665 final, largely because the degree
+            program campaigns have now concluded.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <h2>Meta Ads</h2>
+        <span class="label">August 1 to 11 MTD</span>
+
+        <div class="metrics-grid" style="margin-top: 16px">
+          <div class="metric">
+            <span class="label">Reach</span>
+            <div class="value">9,854</div>
+          </div>
+          <div class="metric">
+            <span class="label">Impressions</span>
+            <div class="value">12,895</div>
+          </div>
+          <div class="metric">
+            <span class="label">Spend</span>
+            <div class="value">$30.51</div>
+            <div class="context">$3/day budget</div>
+          </div>
+          <div class="metric">
+            <span class="label">Clicks</span>
+            <div class="value">20</div>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <p>
+            The TOFU Fall PhD 2026 awareness campaign has reached 9,854 unique
+            people in the first 11 days of August at a cost per reach of $3.10.
+            Combined with July's 23,970 reach, the campaign has now put the PhD
+            program in front of over 33,000 unique people across two months of
+            running.
+          </p>
+          <p>
+            This campaign continues to serve its intended role: building
+            top-of-funnel familiarity with the PhD program that the email
+            sequence (see below) then works to convert.
+          </p>
+          <p>
+            <strong>Question for discussion:</strong> With the August 10
+            application deadline now passed and the PhD/Masters search campaigns
+            paused, should we continue running this awareness campaign, or pause
+            it as well? The campaign is low cost at $3/day, so there is a case
+            for keeping it running to maintain visibility heading into the next
+            enrollment cycle. We would like your input on the best path forward.
+          </p>
+        </div>
+      </div>
+
+      <!-- Website Traffic -->
+      <div class="card">
+        <h2>Website Traffic</h2>
+        <span class="label">August 1 to 11 (GA4)</span>
+
+        <div class="metrics-grid" style="margin-top: 16px">
+          <div class="metric">
+            <span class="label">Total Sessions</span>
+            <div class="value">3,331</div>
+            <div class="context">Across all channels</div>
+          </div>
+          <div class="metric">
+            <span class="label">From Paid Search</span>
+            <div class="value">501</div>
+            <div class="context">15% of total traffic</div>
+          </div>
+          <div class="metric">
+            <span class="label">Organic Search</span>
+            <div class="value">1,213</div>
+            <div class="context">56.2% engagement rate</div>
+          </div>
+          <div class="metric">
+            <span class="label">Organic Social</span>
+            <div class="value">72</div>
+            <div class="context">33.3% engagement rate</div>
+          </div>
+        </div>
+
+        <!-- Landing Page -->
+        <div class="subsection">
+          <h3>Ads Landing Page</h3>
+          <p>
+            The dedicated ads landing page received 182 sessions in the first 11
+            days of August, with paid channels driving the majority of that
+            traffic.
+          </p>
+          <div class="metrics-grid" style="margin-top: 12px">
+            <div class="metric">
+              <span class="label">PMax Traffic</span>
+              <div class="value">108</div>
+              <div class="context">66.7% engagement, 1m 01s avg</div>
+            </div>
+            <div class="metric">
+              <span class="label">Paid Search</span>
+              <div class="value">55</div>
+              <div class="context">45.5% engagement, 28s avg</div>
+            </div>
+            <div class="metric">
+              <span class="label">Overall Engagement</span>
+              <div class="value">56.0%</div>
+              <div class="context">182 total sessions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <p>
+            Organic search remains the strongest traffic driver with 1,213
+            sessions and a 56.2% engagement rate, reflecting continued baseline
+            demand for ICSW programs. Paid search contributed 501 sessions (15%
+            of total traffic) across the main site.
+          </p>
+          <p>
+            On the ads landing page, PMax visitors showed particularly strong
+            engagement: 66.7% engagement rate with an average session length of
+            over one minute. This suggests the landing page content is
+            resonating well with the audiences PMax is reaching.
+          </p>
+        </div>
+      </div>
+
+      <!-- Email Campaigns -->
+      <div class="card">
+        <h2>Email Campaigns</h2>
+        <p>
+          The final application deadline emails went out August 6, with resends
+          to non-openers on August 7. A separate email to the new CSCW listserv
+          also launched on August 6, promoting fall CEU offerings.
+        </p>
+
+        <!-- PhD Final Reminder -->
+        <div class="subsection">
+          <h3>PhD: Final Application Reminder</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Recipients</th>
+                <th>Open Rate</th>
+                <th>Click Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>"PhD applications close August 10th" (Aug 6)</td>
+                <td>927</td>
+                <td>25.5%</td>
+                <td>1.6%</td>
+              </tr>
+              <tr>
+                <td>Resend to non-openers (Aug 7)</td>
+                <td>274</td>
+                <td>14.6%</td>
+                <td>1.5%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MA Leads -->
+        <div class="subsection">
+          <h3>MA Leads</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Recipients</th>
+                <th>Open Rate</th>
+                <th>Click Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Final email (Aug 6)</td>
+                <td>434</td>
+                <td>19.7%</td>
+                <td>0.23%</td>
+              </tr>
+              <tr>
+                <td>Resend to non-openers (Aug 7)</td>
+                <td>140</td>
+                <td>10.1%</td>
+                <td>0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MA Program Leads -->
+        <div class="subsection">
+          <h3>MA Program Leads</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Recipients</th>
+                <th>Open Rate</th>
+                <th>Click Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Final email (Aug 6)</td>
+                <td>506</td>
+                <td>21.6%</td>
+                <td>0.60%</td>
+              </tr>
+              <tr>
+                <td>Resend to non-openers (Aug 7)</td>
+                <td>135</td>
+                <td>22.2%</td>
+                <td>0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CSCW Listserv -->
+        <div class="subsection">
+          <h3>New CSCW Listserv: Fall CEU Offerings</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subject Line</td>
+                <td>"Learn About ICSW's Fall CEU Offerings"</td>
+              </tr>
+              <tr>
+                <td>Delivered</td>
+                <td>387</td>
+              </tr>
+              <tr>
+                <td>Open Rate</td>
+                <td>22.7% (88 recipients)</td>
+              </tr>
+              <tr>
+                <td>Click Rate</td>
+                <td>1.6% (6 recipients, 24 total clicks)</td>
+              </tr>
+              <tr>
+                <td>Unsubscribes</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #909da3; margin-top: 8px">
+            Top clicked links: /phd (4 clicks), /continuing-education (3),
+            /icsw-couple-therapy (3), /icsw-latinx-consultation-group (3),
+            /icsw-jpc-certificate-program (3)
+          </p>
+        </div>
+
+        <div class="highlight">
+          <p>
+            The PhD final reminder was the strongest performer of the entire
+            email sequence, with a 25.5% open rate and 1.6% click rate. This is
+            a significant jump from the first PhD email's 16.0% open rate on
+            July 31, showing that the deadline-driven subject line ("PhD
+            applications close August 10th") drove real urgency.
+          </p>
+          <p>
+            MA open rates also improved across the board this week. MA Program
+            Leads came in at 21.6% (up from 9.8% on Aug 3) and MA Leads at 19.7%
+            (up from 8.5%). The final push clearly resonated more than the
+            mid-sequence emails.
+          </p>
+          <p>
+            The new CSCW listserv performed well for a first-time send at 22.7%
+            open rate and 1.6% click rate. Click interest was spread evenly
+            across five different program pages, suggesting this audience is
+            exploring broadly rather than fixated on a single offering.
+          </p>
+        </div>
+      </div>
+
+      <!-- Website -->
+      <div class="card">
+        <h2>Website</h2>
+        <p>
+          The new ICSW website is in the final stages of quality assurance. As
+          part of migrating content from the existing site to the new platform,
+          our team completed a full content and responsiveness review to ensure
+          everything transferred correctly.
+        </p>
+
+        <div class="subsection">
+          <h3>QC Summary</h3>
+          <ul>
+            <li>
+              <strong>400 to 500 content corrections</strong> were identified
+              and fixed during the migration. These were issues inherited from
+              the original site, including incorrect number formatting, extra
+              spacing, and spelling errors that had been present in the existing
+              content.
+            </li>
+            <li>
+              <strong>Over 45% of buttons</strong> needed updated links as part
+              of the migration to the new site structure. All have been
+              corrected, with a second pass planned after the domain switch to
+              confirm nothing was affected.
+            </li>
+            <li>
+              <strong>Placeholder text</strong> on several pages where original
+              content had not yet been migrated has been located and replaced.
+            </li>
+            <li>
+              A small number of <strong>responsiveness issues</strong> remain
+              and are being addressed by the development team. Once resolved,
+              the site is ready for launch.
+            </li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h3>Content Items Requiring ICSW Review</h3>
+          <p>
+            During QC, several content accuracy questions came up that we need
+            your help confirming before launch:
+          </p>
+          <ul>
+            <li>
+              <strong>Master's tuition (Part Time card):</strong> The per-credit
+              rate is listed as $1,014.81, and the Curriculum Overview states 60
+              credit hours, which would total $60,888.60. However, the total
+              shown on the page is $76,884.46. Can you confirm the correct
+              per-credit rate, credit count, and total?
+            </li>
+            <li>
+              <strong>Part-time credit cap:</strong> The Part Time card states
+              "Max. 9 credits / sem" over 3 years. At 9 credits per semester
+              across 3 years, that caps at 54 credits, but the program requires
+              60. Should the per-semester cap or the duration be adjusted?
+            </li>
+            <li>
+              <strong>Academic year dates:</strong> The hero section and Cost of
+              Attendance page still reference the "2025 to 2026 Academic Year."
+              Should these be updated to 2026 to 2027, or labeled as the current
+              published rate?
+            </li>
+            <li>
+              <strong>Licensure documents:</strong> Two of the eight licensure
+              document cards (under "ICSW State Disclosures for Licensure" and
+              "Illinois Examination Supplement") do not have working links. Can
+              you provide the PDFs?
+            </li>
+            <li>
+              <strong>Exam availability note:</strong> The Illinois State
+              Licensure Examinations section references exams being "now
+              available throughout the entire month (updated November 7, 2022)."
+              Can you confirm this is still accurate, or should the date be
+              updated?
+            </li>
+            <li>
+              <strong>Student Handbook:</strong> The Documents and Downloads
+              section currently offers the 2025 to 2026 Student Handbook. Should
+              the 2026 to 2027 version be uploaded?
+            </li>
+            <li>
+              <strong>Berzoff Scholarship deadline:</strong> The Dr. Joan
+              Berzoff Social Services Scholarship page does not list an
+              application deadline anywhere. Can you provide the deadline so we
+              can add it?
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          The staging site is available for review at
+          <a href="https://icsw.tryearnedimpact.com/" target="_blank"
+            >icsw.tryearnedimpact.com</a
+          >.
+        </p>
+      </div>
+
+      <!-- Client Dependencies -->
+      <div class="card">
+        <h2>Client Dependencies</h2>
+        <ul>
+          <li>
+            We need full admin access to ICSW's hosting and domain provider in
+            order to take the new website live. Our recommended approach is to
+            transfer the domain to our hosting account, which is the simpler and
+            lower-risk option.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <h2>Next Steps</h2>
+        <ul>
+          <li>
+            Discuss August email campaign performance and plan next steps for
+            prospect follow-up.
+          </li>
+          <li>
+            Discuss Certificate Programs campaign strategy: the campaign is
+            performing well and remains active. Review whether to adjust budget
+            or targeting now that the degree program campaigns have wrapped up.
+          </li>
+          <li>
+            Website launch: finalize remaining responsiveness fixes, resolve the
+            content questions listed above, and coordinate hosting/domain access
+            to go live.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
