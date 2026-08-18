@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, August 18, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">August 1 to 18, 2026 (Month-to-Date)</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$1,648</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,019</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">13</div>
+            <div class="stat-label">Conversions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$126.78</div>
+            <div class="stat-label">Cost / Conversion</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign remains the only active
+          campaign and continues to drive the majority of traffic, generating
+          771 clicks at a 14.41% CTR and spending $610.79 so far this month. The
+          top performing keywords are "virtual certificate programs" and
+          "virtual certificate program," which together account for 680 clicks
+          at CTRs above 40%.
+        </p>
+
+        <p>
+          The PhD Program and Masters campaigns are both paused. While active
+          earlier in the month, they contributed $432.02 and $408.82 in spend
+          respectively before being paused.
+        </p>
+
+        <p>
+          The CDE Performance Max (nonbrand) campaign in the second account is
+          also paused after spending $196.49 and generating 132 clicks and 6
+          conversions during its active period.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$610.79</td>
+              <td class="num">771</td>
+              <td class="num">14.41%</td>
+            </tr>
+            <tr class="paused">
+              <td>PhD Program (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$432.02</td>
+              <td class="num">59</td>
+              <td class="num">5.41%</td>
+            </tr>
+            <tr class="paused">
+              <td>Masters (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$408.82</td>
+              <td class="num">57</td>
+              <td class="num">4.03%</td>
+            </tr>
+            <tr class="paused">
+              <td>CDE PMax Nonbrand</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$196.49</td>
+              <td class="num">132</td>
+              <td class="num">3.04%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Audience Snapshot</h3>
+          <p>
+            The audience skews heavily female (73.8%) and is concentrated in the
+            35 to 54 age range (46.3% of impressions), which aligns well with
+            the target audience of working professionals pursuing advanced
+            credentials.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$51.67</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">14,631</div>
+            <div class="stat-label">Reach</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">21,624</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">24</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+        </div>
+
+        <p>
+          Two ad sets targeting Licensed Professionals are currently active. The
+          broader "Core Audience" ad set is reaching the most people (9,046) at
+          a cost per reach of $4.00, while the 1% lookalike audience is
+          performing more efficiently at $2.78 cost per reach with 5,585 people
+          reached.
+        </p>
+
+        <p>
+          The team is currently working on updating the Meta campaign to focus
+          specifically on certificate programs, which will better align the paid
+          social strategy with the active Google Ads campaign.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Ad Set</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Reach</th>
+              <th class="num">CPR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Core Audience: Licensed Professionals</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$36.14</td>
+              <td class="num">9,046</td>
+              <td class="num">$4.00</td>
+            </tr>
+            <tr>
+              <td>1% Lookalike: Licensed Professionals</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$15.53</td>
+              <td class="num">5,585</td>
+              <td class="num">$2.78</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Website -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">5,303</div>
+            <div class="stat-label">Sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">2,079</div>
+            <div class="stat-label">Engaged Sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">39.2%</div>
+            <div class="stat-label">Engagement Rate</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">32s</div>
+            <div class="stat-label">Avg Engagement Time</div>
+          </div>
+        </div>
+
+        <p>
+          Organic Search is the top traffic source with 2,128 sessions (40%), a
+          55.78% engagement rate, and 1 minute of average engagement time per
+          session. Direct traffic is close behind at 2,058 sessions (39%),
+          though with a lower engagement rate of 30.81%. Paid Search brought in
+          765 sessions (14%) with a 22.35% engagement rate. Notably, AI
+          Assistant traffic (47 sessions) showed strong engagement at 53.19%
+          with over 1 minute of average time on site.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th class="num">Sessions</th>
+              <th class="num">Engaged</th>
+              <th class="num">Eng. Rate</th>
+              <th class="num">Avg Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Organic Search</td>
+              <td class="num">2,128</td>
+              <td class="num">1,187</td>
+              <td class="num">55.78%</td>
+              <td class="num">1m 00s</td>
+            </tr>
+            <tr>
+              <td>Direct</td>
+              <td class="num">2,058</td>
+              <td class="num">634</td>
+              <td class="num">30.81%</td>
+              <td class="num">14s</td>
+            </tr>
+            <tr>
+              <td>Paid Search</td>
+              <td class="num">765</td>
+              <td class="num">171</td>
+              <td class="num">22.35%</td>
+              <td class="num">5s</td>
+            </tr>
+            <tr>
+              <td>Organic Social</td>
+              <td class="num">89</td>
+              <td class="num">32</td>
+              <td class="num">35.96%</td>
+              <td class="num">7s</td>
+            </tr>
+            <tr>
+              <td>Referral</td>
+              <td class="num">52</td>
+              <td class="num">31</td>
+              <td class="num">59.62%</td>
+              <td class="num">51s</td>
+            </tr>
+            <tr>
+              <td>AI Assistant</td>
+              <td class="num">47</td>
+              <td class="num">25</td>
+              <td class="num">53.19%</td>
+              <td class="num">1m 05s</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Ad Landing Page</h3>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value">186</div>
+              <div class="stat-label">Sessions</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">103</div>
+              <div class="stat-label">Engaged Sessions</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">55.4%</div>
+              <div class="stat-label">Engagement Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">44s</div>
+              <div class="stat-label">Avg Engagement Time</div>
+            </div>
+          </div>
+
+          <p>
+            The WordPress landing page that ad traffic is directed to received
+            186 sessions this month. Cross-network is the top source at 108
+            sessions (58%) with a 66.67% engagement rate and over 1 minute of
+            average time on page. Paid Search brought 57 sessions (31%) with a
+            43.86% engagement rate and 27 seconds of average time.
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Channel</th>
+                <th class="num">Sessions</th>
+                <th class="num">Engaged</th>
+                <th class="num">Eng. Rate</th>
+                <th class="num">Avg Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cross-network</td>
+                <td class="num">108</td>
+                <td class="num">72</td>
+                <td class="num">66.67%</td>
+                <td class="num">1m 01s</td>
+              </tr>
+              <tr>
+                <td>Paid Search</td>
+                <td class="num">57</td>
+                <td class="num">25</td>
+                <td class="num">43.86%</td>
+                <td class="num">27s</td>
+              </tr>
+              <tr>
+                <td>Direct</td>
+                <td class="num">19</td>
+                <td class="num">3</td>
+                <td class="num">15.79%</td>
+                <td class="num">2s</td>
+              </tr>
+              <tr>
+                <td>Organic Search</td>
+                <td class="num">3</td>
+                <td class="num">3</td>
+                <td class="num">100%</td>
+                <td class="num">20s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Client feedback on the website has been received and is being
+          incorporated today and tomorrow. The team also just received domain
+          information and is reviewing it today.
+        </p>
+      </div>
+
+      <!-- Email -->
+      <div class="card">
+        <div class="section-label">Email</div>
+        <h2>Email Campaigns</h2>
+        <p>
+          Kaelene will send Jesse a certificate programs email campaign for
+          review after today's call. The campaign will target the MA and PhD
+          audience groups with a "missed this path? here's another option"
+          angle, highlighting certificate programs as an alternative.
+        </p>
+      </div>
+
+      <!-- In the Pipeline -->
+      <div class="card">
+        <div class="section-label">In the Pipeline</div>
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>Meta campaign update to focus on certificate programs</li>
+          <li>Website updates based on client feedback (in progress)</li>
+          <li>Domain setup and configuration (under review)</li>
+          <li>
+            Certificate programs email campaign for MA and PhD groups (draft to
+            Jesse for review)
+          </li>
+          <li>Mailchimp database cleanup</li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <div class="section-label">Next Steps</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Finalize website updates incorporating client feedback</li>
+          <li>Complete domain review and setup</li>
+          <li>
+            Kaelene to send Jesse the certificate programs email campaign draft
+            for review
+          </li>
+          <li>
+            Update Meta campaign creative and targeting to focus on certificate
+            programs
+          </li>
+          <li>Mailchimp database cleanup</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
