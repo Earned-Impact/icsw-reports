@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, August 22, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .option-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .option-box strong {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">August 1 to 22, 2026 (Month-to-Date)</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$1,767</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,187</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">13</div>
+            <div class="stat-label">Conversions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$135.95</div>
+            <div class="stat-label">Cost / Conversion</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign remains the only active
+          campaign and continues to be the strongest performer, generating 939
+          clicks at a 14.53% CTR on $730.02 in spend. The PhD Program and
+          Masters campaigns are both paused after contributing $432.02 and
+          $408.82 in spend respectively earlier in the month. The CDE
+          Performance Max (nonbrand) campaign in the second account is also
+          paused after spending $196.49 and generating 132 clicks and 6
+          conversions during its active period.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$730.02</td>
+              <td class="num">939</td>
+              <td class="num">14.53%</td>
+            </tr>
+            <tr class="paused">
+              <td>PhD Program (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$432.02</td>
+              <td class="num">59</td>
+              <td class="num">5.41%</td>
+            </tr>
+            <tr class="paused">
+              <td>Masters (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$408.82</td>
+              <td class="num">57</td>
+              <td class="num">4.03%</td>
+            </tr>
+            <tr class="paused">
+              <td>CDE PMax Nonbrand</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$196.49</td>
+              <td class="num">132</td>
+              <td class="num">3.04%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$63.65</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">17,249</div>
+            <div class="stat-label">Reach</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">26,399</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">30</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+        </div>
+
+        <p>
+          Two ad sets targeting Licensed Professionals are currently active. The
+          broader "Core Audience" ad set has reached 10,758 people at a $4.16
+          cost per thousand reached, while the 1% lookalike audience is
+          performing more efficiently at $2.92 cost per thousand reached with
+          6,491 people.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Ad Set</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Reach</th>
+              <th class="num">CPR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Core Audience: Licensed Professionals</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$44.72</td>
+              <td class="num">10,758</td>
+              <td class="num">$4.16</td>
+            </tr>
+            <tr>
+              <td>1% Lookalike: Licensed Professionals</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$18.93</td>
+              <td class="num">6,491</td>
+              <td class="num">$2.92</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Our ads team is currently troubleshooting ad account access so we can
+          build the updated learning certificate campaign. We are aiming to have
+          the new campaign completed and live by next week.
+        </p>
+      </div>
+
+      <!-- Website -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website Analytics</h2>
+
+        <p>
+          Website traffic patterns remain consistent with prior weeks. No
+          significant changes to report in channel mix or engagement rates.
+        </p>
+      </div>
+
+      <!-- Website Development -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website Development Update</h2>
+
+        <p>
+          All updates from the feedback we received from the ICSW team mid-week
+          have been completed, concluding the QC process. We have also
+          successfully accessed the domain through EDUCAUSE.
+        </p>
+
+        <p>
+          The final step before we can begin the site migration is a decision on
+          hosting. Because the current site is hosted on Squarespace and the new
+          site is built on WordPress, a different hosting provider will be
+          needed. There are two options:
+        </p>
+
+        <div class="option-box">
+          <strong>Option A: Transfer the domain to our hosting account.</strong>
+          This is the simpler, lower-risk path because we manage the migration
+          end to end. Pricing ranges from $25 to $50 per month depending on
+          whether we host on a shared server or a dedicated one.
+        </div>
+
+        <div class="option-box">
+          <strong
+            >Option B: Move the new site to a hosting provider of ICSW's
+            choice.</strong
+          >
+          Because Squarespace cannot host a WordPress site, this would mean
+          selecting a new provider on your end. This option requires more
+          coordination but is doable.
+        </div>
+
+        <p>
+          Once we have a decision on hosting, we can finalize and begin the
+          migration of the site for launch.
+        </p>
+      </div>
+
+      <!-- Email Campaigns -->
+      <div class="card">
+        <div class="section-label">Email</div>
+        <h2>Email Campaigns</h2>
+
+        <p>
+          We sent email campaigns on August 20 to three ICSW audiences promoting
+          the Latinx and JPC continuing education programs. We ran A/B subject
+          line tests on the PhD and General audiences.
+        </p>
+
+        <ul>
+          <li>
+            <strong>PhD audience (916 recipients):</strong> "Keep Growing Your
+            Clinical Skills This Fall" won the A/B test with an 11.1% open rate.
+          </li>
+          <li>
+            <strong>MA audience (502 recipients):</strong> 9.7% open rate, 0.4%
+            click rate.
+          </li>
+          <li>
+            <strong>ICSW General (3,792 recipients):</strong> "Explore Virtual
+            Continuing Education at ICSW This Fall" won the A/B test with a
+            16.9% open rate and 43 unique clicks. We also tested send times for
+            this group.
+          </li>
+        </ul>
+      </div>
+
+      <!-- In the Pipeline -->
+      <div class="card">
+        <div class="section-label">In the Pipeline</div>
+        <h2>In the Pipeline</h2>
+        <ul>
+          <li>
+            Updated learning certificate campaign for Meta Ads (resolving
+            account access, aiming to go live next week)
+          </li>
+          <li>Website migration and launch (pending hosting decision)</li>
+        </ul>
+      </div>
+
+      <!-- Client Dependencies -->
+      <div class="card">
+        <div class="section-label">Action Needed</div>
+        <h2>Client Dependencies</h2>
+        <ul>
+          <li>
+            <strong>Hosting decision:</strong> Please confirm whether you would
+            like to go with Option A (transfer domain to our hosting, $25 to $50
+            per month) or Option B (select a new hosting provider on your end).
+            Once we have this decision, we can begin the site migration.
+          </li>
+          <li>
+            <strong>August invoice:</strong> The August invoice was due on
+            August 20. You can
+            <a
+              href="https://earned-impact.myhelcim.com/order/?token=396879a4905fd644041fb3"
+              style="color: #2079a0"
+              >view and pay the invoice here</a
+            >.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <div class="section-label">Next Steps</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>
+            Resolve Meta Ads account access and launch the updated learning
+            certificate campaign
+          </li>
+          <li>Finalize hosting decision and begin website migration</li>
+          <li>
+            Continue monitoring Google Ads optimizations and email campaign
+            performance
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
