@@ -1,0 +1,1278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Monthly Report, August 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+      .status-resolved {
+        background: #e8f4fd;
+        color: #1a6ba0;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+
+      .option-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .option-box strong {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Monthly Report</div>
+        <div class="date">August 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$1,849</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,311</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">13</div>
+            <div class="stat-label">Conversions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$142.22</div>
+            <div class="stat-label">Cost / Conversion</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign remains the primary active
+          campaign and the strongest performer, generating 1,063 clicks at a
+          15.26% CTR on $811.59 in spend. The PhD Program and Masters campaigns
+          are both paused after contributing $432.02 and $408.82 in spend
+          respectively earlier in the month. The CDE Performance Max (nonbrand)
+          campaign in the second account ran through August 10, generating 132
+          clicks and 6 conversions on $196.49 in spend before being paused.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$811.59</td>
+              <td class="num">1,063</td>
+              <td class="num">15.26%</td>
+            </tr>
+            <tr class="paused">
+              <td>PhD Program (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$432.02</td>
+              <td class="num">59</td>
+              <td class="num">5.41%</td>
+            </tr>
+            <tr class="paused">
+              <td>Masters (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$408.82</td>
+              <td class="num">57</td>
+              <td class="num">4.03%</td>
+            </tr>
+            <tr class="paused">
+              <td>CDE PMax Nonbrand</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$196.49</td>
+              <td class="num">132</td>
+              <td class="num">3.04%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Behind-the-Scenes Work This Month</h3>
+
+          <p>
+            As part of the new website build, several of the page URLs on the
+            ICSW site changed. Because the Google Ads campaigns were still
+            pointing to the old URLs, this caused a few issues that our team
+            identified and resolved during August:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Broken ad links fixed:</strong> With the new website in
+              place, some of the links in your Google Ads&mdash;including key
+              pages like admissions and schedules&mdash;were leading to "page
+              not found" errors (404s) because those URLs had changed. Our team
+              updated all links across the ads to point to the correct new
+              pages. This also uncovered a tracking issue: because the ads had
+              been pointing to the main website instead of the dedicated landing
+              page, conversions were not being recorded properly. We corrected
+              the tracking setup so all future form submissions and inquiries
+              are captured accurately.
+            </li>
+            <li>
+              <strong>Broken sitelinks paused:</strong> We audited the extra
+              links that appear below your main ad (called "sitelinks") and
+              paused any that were leading to error pages due to the URL
+              changes, so every link a prospective student clicks takes them to
+              a working, relevant page.
+            </li>
+            <li>
+              <strong>Ads temporarily paused for website DNS updates:</strong>
+              While we made updates to the website domain settings (DNS) as part
+              of the site migration, we proactively paused the ads for a short
+              period to make sure no visitors encountered errors during the
+              transition. Ads were restarted once the changes took effect.
+            </li>
+            <li>
+              <strong>Google account verification resolved:</strong> Mid-month,
+              Google paused the ads account because a verification deadline had
+              passed. Our team worked to complete the verification process and
+              successfully reactivated the account. To prevent this from
+              happening again, we are now setting up a direct relationship with
+              a Google account manager who will help us stay on top of account
+              health and proactively flag any issues before they impact your
+              campaigns.
+            </li>
+          </ul>
+
+          <div class="callout-blue">
+            <div class="callout-label">Resolved</div>
+            <p>
+              All of the above issues have been fully resolved. Your Certificate
+              Programs campaign is live and running smoothly, and we have
+              stronger safeguards in place going forward.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads</h2>
+
+        <p>
+          This month our primary focus on the Meta (Facebook/Instagram) side was
+          getting the right team access in place so we can build and launch new
+          campaigns. We successfully added our ads team to the ICSW Meta
+          account&mdash;this required some creative workarounds due to how the
+          account permissions were set up, but everything is now in place. We
+          also sent an invite to Jesse so he has direct access.
+        </p>
+
+        <p>
+          With access secured, we have prepared new ad creative for the
+          <strong>CEU (Continuing Education) classes</strong>. The creative is
+          ready for your review:
+        </p>
+
+        <div class="callout">
+          <div class="callout-label">Action Needed</div>
+          <p>
+            Please review the new CEU ad creative and let us know your feedback:
+            <br />
+            <a
+              href="https://drive.google.com/drive/u/0/folders/1xwBoEwpWRK6AMf8AH4vr-_wopqueymXx"
+              style="color: #2079a0; word-break: break-all"
+              >View Creative in Google Drive</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Website Analytics -->
+      <!-- No significant traffic increase identified for August; section omitted -->
+
+      <!-- Website Development -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website Build Update</h2>
+
+        <p>
+          All website accessibility fixes have been completed. Our development
+          team made updates across the site to ensure it meets WCAG
+          accessibility standards&mdash;this included adjusting color contrast
+          (such as updating the gold color used across multiple pages) and other
+          improvements that ensure the site is usable for visitors with
+          disabilities. The team has confirmed no remaining accessibility
+          errors.
+        </p>
+
+        <div class="callout-blue">
+          <div class="callout-label">What This Means</div>
+          <p>
+            Accessibility compliance is both a best practice and, for many
+            institutions, a legal requirement. Having an accessible website
+            ensures all prospective students&mdash;including those using screen
+            readers or other assistive technology&mdash;can navigate and engage
+            with your content.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Remaining Item: Email Setup</h3>
+
+          <p>
+            The last step to finalize the website build is connecting the site
+            to your Microsoft 365 email system so that forms and notifications
+            on the new website can send from your
+            <strong>admissions@icsw.edu</strong> address. Our development team
+            has completed the technical configuration on our end (app
+            registration, credentials, and redirect URI), but there is one final
+            step that requires action from the ICSW side because it involves
+            signing into the admissions mailbox. There are two options:
+          </p>
+
+          <div class="option-box">
+            <strong>Option A: ICSW completes the sign-in step.</strong>
+            <p style="margin-top: 8px; margin-bottom: 0">
+              We provide a WordPress admin login and simple step-by-step
+              instructions. You sign into Microsoft, accept the permissions
+              prompt, and send a test email to confirm. Takes about 5 minutes.
+            </p>
+          </div>
+
+          <div class="option-box">
+            <strong
+              >Option B (Recommended): Give our team temporary access.</strong
+            >
+            <p style="margin-top: 8px; margin-bottom: 0">
+              Provide our developer temporary access to the admissions@icsw.edu
+              mailbox, and we handle the entire setup from our end. This is the
+              simpler path and what our team recommends.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Homepage Scorecard Update -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Homepage Scorecard Update</h2>
+
+        <p>
+          With the Latinx Dean Series and Neuroscience &amp; Psychodynamic
+          Psychotherapy (Karla&rsquo;s program) cohorts now at capacity, the
+          homepage scorecard needs to be updated. The current version reads as
+          though all programs are open for enrollment:
+        </p>
+
+        <div style="margin: 20px 0; text-align: center">
+          <img
+            src="homepage-scorecard-current.png"
+            alt="Current homepage enrollment scorecard showing Applications Now Open"
+            style="
+              max-width: 100%;
+              border-radius: 8px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            "
+          />
+          <div
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 11px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              color: #909da3;
+              margin-top: 8px;
+            "
+          >
+            Current Version
+          </div>
+        </div>
+
+        <p>
+          Below are two options for updating this card. We recommend choosing
+          one so we can make the change promptly:
+        </p>
+
+        <div
+          style="
+            background: #1e2a3a;
+            border-radius: 12px;
+            padding: 28px 24px;
+            margin-bottom: 16px;
+            color: #ffffff;
+          "
+        >
+          <div
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 10px;
+              text-transform: uppercase;
+              letter-spacing: 1.5px;
+              color: #d4a04a;
+              margin-bottom: 8px;
+            "
+          >
+            Enrollment Update
+          </div>
+          <div
+            style="
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-weight: 600;
+              font-size: 18px;
+              margin-bottom: 8px;
+            "
+          >
+            Now Enrolling: JPC Program
+          </div>
+          <div
+            style="
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-size: 14px;
+              color: #c0c8d0;
+              margin-bottom: 16px;
+            "
+          >
+            Earn 72 CEU hours. Now accepting applications for the fall cohort.
+          </div>
+          <div
+            style="
+              display: inline-block;
+              background: #ffffff;
+              color: #131315;
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              padding: 8px 20px;
+              border-radius: 24px;
+            "
+          >
+            Learn More &rarr;
+          </div>
+        </div>
+        <div
+          style="
+            font-family: &quot;Roboto Mono&quot;, monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #909da3;
+            text-align: center;
+            margin-bottom: 24px;
+          "
+        >
+          Option 1 &mdash; JPC Focus
+        </div>
+
+        <div
+          style="
+            background: #1e2a3a;
+            border-radius: 12px;
+            padding: 28px 24px;
+            margin-bottom: 16px;
+            color: #ffffff;
+          "
+        >
+          <div
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 10px;
+              text-transform: uppercase;
+              letter-spacing: 1.5px;
+              color: #d4a04a;
+              margin-bottom: 8px;
+            "
+          >
+            Enrollment Update
+          </div>
+          <div
+            style="
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-weight: 600;
+              font-size: 18px;
+              margin-bottom: 8px;
+            "
+          >
+            Explore Open Programs
+          </div>
+          <div
+            style="
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-size: 14px;
+              color: #c0c8d0;
+              margin-bottom: 16px;
+            "
+          >
+            Learn which continuing education programs are currently accepting
+            applications this fall.
+          </div>
+          <div
+            style="
+              display: inline-block;
+              background: #ffffff;
+              color: #131315;
+              font-family: &quot;Poppins&quot;, sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              padding: 8px 20px;
+              border-radius: 24px;
+            "
+          >
+            View Programs &rarr;
+          </div>
+        </div>
+        <div
+          style="
+            font-family: &quot;Roboto Mono&quot;, monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #909da3;
+            text-align: center;
+            margin-bottom: 16px;
+          "
+        >
+          Option 2 &mdash; Continuing Education Overview
+        </div>
+
+        <div class="callout">
+          <div class="callout-label">Action Needed</div>
+          <p>
+            Please let us know which option you prefer and we will update the
+            homepage right away.
+          </p>
+        </div>
+      </div>
+
+      <!-- Program Cards Update -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Continuing Education Program Cards</h2>
+
+        <p>
+          With the Integrative Psychoanalytic Couple Therapy and Latinx-Centered
+          Psychodynamic Consultation Group cohorts both at capacity, we
+          recommend updating these program cards so that visitors are not met
+          with a dead end. The goal is to still showcase the programs, create
+          interest, and most importantly, capture contact information so we can
+          nurture these prospective students for future cohorts and other
+          upcoming opportunities.
+        </p>
+
+        <p>
+          Here is how the cards currently appear on the continuing education
+          page:
+        </p>
+
+        <div style="margin: 20px 0; text-align: center">
+          <img
+            src="ce-cards-current.png"
+            alt="Current continuing education program cards"
+            style="
+              max-width: 100%;
+              border-radius: 8px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            "
+          />
+          <div
+            style="
+              font-family: &quot;Roboto Mono&quot;, monospace;
+              font-size: 11px;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              color: #909da3;
+              margin-top: 8px;
+            "
+          >
+            Current Version
+          </div>
+        </div>
+
+        <p>
+          For programs that have reached capacity, we recommend the following
+          update to the bottom of each card:
+        </p>
+
+        <!-- Mockup: Three cards side by side -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 20px 0;
+          "
+        >
+          <!-- Card 1: Couple Therapy - Filled -->
+          <div
+            style="
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <div
+              style="
+                display: inline-block;
+                background: #1e2a3a;
+                color: #ffffff;
+                font-family: &quot;Roboto Mono&quot;, monospace;
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 4px 10px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: fit-content;
+              "
+            >
+              Certificate
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                color: #1e2a3a;
+                margin-bottom: 8px;
+                line-height: 1.3;
+              "
+            >
+              Integrative Psychoanalytic Couple Therapy
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-size: 11px;
+                color: #909da3;
+                margin-bottom: 12px;
+              "
+            >
+              Dr. Carla Leone / Dr. Arthur Nielsen
+            </div>
+            <div style="flex-grow: 1"></div>
+            <div
+              style="
+                border-top: 1px solid #e5e7eb;
+                padding-top: 12px;
+                margin-top: 8px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: #d4a04a;
+                  margin-bottom: 6px;
+                "
+              >
+                Fall 2026 Cohort at Capacity
+              </div>
+              <div
+                style="
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 11px;
+                  color: #6b7280;
+                  margin-bottom: 12px;
+                  line-height: 1.4;
+                "
+              >
+                Leave your information to be the first to know when the next
+                cohort opens.
+              </div>
+              <div
+                style="
+                  background: #1e2a3a;
+                  color: #ffffff;
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-weight: 500;
+                  font-size: 13px;
+                  text-align: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
+              >
+                Stay Informed
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: JPC - Still Enrolling -->
+          <div
+            style="
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <div
+              style="
+                display: inline-block;
+                background: #1e2a3a;
+                color: #ffffff;
+                font-family: &quot;Roboto Mono&quot;, monospace;
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 4px 10px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: fit-content;
+              "
+            >
+              Certificate
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                color: #1e2a3a;
+                margin-bottom: 8px;
+                line-height: 1.3;
+              "
+            >
+              JPC: Neuroscience &amp; Psychodynamic Psychotherapy
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-size: 11px;
+                color: #909da3;
+                margin-bottom: 12px;
+              "
+            >
+              William D. Gieseke, Ph.D.
+            </div>
+            <div style="flex-grow: 1"></div>
+            <div
+              style="
+                border-top: 1px solid #e5e7eb;
+                padding-top: 12px;
+                margin-top: 8px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 11px;
+                  color: #6b7280;
+                  margin-bottom: 4px;
+                "
+              >
+                <span>Credits</span
+                ><span style="color: #1e2a3a">72 CEU hours</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 11px;
+                  color: #6b7280;
+                  margin-bottom: 12px;
+                "
+              >
+                <span>Start</span><span style="color: #1e2a3a">Fall 2026</span>
+              </div>
+              <div
+                style="
+                  background: #1e2a3a;
+                  color: #ffffff;
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-weight: 500;
+                  font-size: 13px;
+                  text-align: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
+              >
+                Learn More
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Latinx - Filled -->
+          <div
+            style="
+              background: #ffffff;
+              border: 1px solid #e5e7eb;
+              border-radius: 12px;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+            "
+          >
+            <div
+              style="
+                display: inline-block;
+                background: #1e2a3a;
+                color: #ffffff;
+                font-family: &quot;Roboto Mono&quot;, monospace;
+                font-size: 9px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 4px 10px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: fit-content;
+              "
+            >
+              Certificate
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                color: #1e2a3a;
+                margin-bottom: 8px;
+                line-height: 1.3;
+              "
+            >
+              Latinx-Centered Psychodynamic Consultation Group
+            </div>
+            <div
+              style="
+                font-family: &quot;Poppins&quot;, sans-serif;
+                font-size: 11px;
+                color: #909da3;
+                margin-bottom: 12px;
+              "
+            >
+              Dr. Merari Fernandez / Dr. Kelly G. Arteaga
+            </div>
+            <div style="flex-grow: 1"></div>
+            <div
+              style="
+                border-top: 1px solid #e5e7eb;
+                padding-top: 12px;
+                margin-top: 8px;
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: #d4a04a;
+                  margin-bottom: 6px;
+                "
+              >
+                Fall 2026 Cohort at Capacity
+              </div>
+              <div
+                style="
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-size: 11px;
+                  color: #6b7280;
+                  margin-bottom: 12px;
+                  line-height: 1.4;
+                "
+              >
+                Leave your information to be the first to know when the next
+                cohort opens.
+              </div>
+              <div
+                style="
+                  background: #1e2a3a;
+                  color: #ffffff;
+                  font-family: &quot;Poppins&quot;, sans-serif;
+                  font-weight: 500;
+                  font-size: 13px;
+                  text-align: center;
+                  padding: 10px;
+                  border-radius: 8px;
+                "
+              >
+                Stay Informed
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            font-family: &quot;Roboto Mono&quot;, monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #909da3;
+            text-align: center;
+            margin-bottom: 16px;
+          "
+        >
+          Proposed Update
+        </div>
+
+        <p>
+          The JPC card remains unchanged since that program is still accepting
+          applications. For the filled programs, here is what happens when a
+          visitor clicks "Stay Informed":
+        </p>
+
+        <div class="subsection">
+          <h3>The Visitor Experience</h3>
+
+          <div class="option-box">
+            <strong>Step 1: Visitor clicks "Stay Informed"</strong>
+            <p style="margin-top: 8px; margin-bottom: 0">
+              They are taken to the full program page where they can read about
+              the program, the instructors, the format, and what they would gain
+              from it. This builds interest and keeps them engaged rather than
+              turning them away.
+            </p>
+          </div>
+
+          <div class="option-box">
+            <strong>Step 2: They see a short sign-up form</strong>
+            <p style="margin-top: 8px; margin-bottom: 0">
+              At the top of the program page, there is a note that the fall 2026
+              cohort is at capacity, along with a simple form (name and email)
+              to be the first to know when the next cohort opens.
+            </p>
+          </div>
+
+          <div class="option-box">
+            <strong
+              >Step 3: Their information enters our nurture pipeline</strong
+            >
+            <p style="margin-top: 8px; margin-bottom: 0">
+              Once they submit the form, they are added to a segmented email
+              list for that specific program. From there, we can send them
+              updates when the next cohort opens, as well as other relevant
+              opportunities such as fall presentations, the Dean's Distinguished
+              Series, and other continuing education offerings throughout the
+              year.
+            </p>
+          </div>
+
+          <div class="option-box">
+            <strong>Step 4: Ongoing nurture keeps them engaged</strong>
+            <p style="margin-top: 8px; margin-bottom: 0">
+              Rather than losing these prospective students, we keep them warm
+              with periodic updates. When the next enrollment period opens, they
+              are already familiar with ICSW and ready to act. This same list
+              also serves as a foundation for a broader continuing education
+              newsletter if ICSW chooses to go that route in the future.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          This approach turns a "closed" program into a lead generation tool.
+          Every visitor who clicks "Stay Informed" is someone who has already
+          shown interest. By capturing their information now, we build a
+          qualified database that grows over time and directly supports future
+          enrollment cycles.
+        </p>
+
+        <div class="callout">
+          <div class="callout-label">Action Needed</div>
+          <p>
+            Let us know if you would like to move forward with this approach and
+            we will implement the card updates and email capture form.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ongoing Website Changes & SOW -->
+      <div class="card">
+        <div class="section-label">Looking Ahead</div>
+        <h2>Ongoing Website Changes</h2>
+
+        <p>
+          As the website build wraps up, we want to make sure we are aligned on
+          how ongoing website changes and updates will be handled going forward
+          under our existing agreement. Here is a summary of what is covered:
+        </p>
+
+        <div class="option-box">
+          <strong>Website Hosting &amp; Maintenance (included)</strong>
+          <p style="margin-top: 8px; margin-bottom: 0">
+            Hosting, uptime monitoring, and technical maintenance are provided
+            at no additional cost for the duration of the contract, along with 2
+            support hours per month for hosting-related needs.
+          </p>
+        </div>
+
+        <div class="option-box">
+          <strong>SEO &amp; Website Support (6 hours/month)</strong>
+          <p style="margin-top: 8px; margin-bottom: 0">
+            4 hours per month are allocated for SEO services (keyword tracking,
+            on-page optimizations, metadata, and technical adjustments). An
+            additional 2 hours per month cover website content edits, page
+            adjustments, and troubleshooting. Website support beyond those 2
+            hours is available at $35/hour.
+          </p>
+        </div>
+
+        <div class="option-box">
+          <strong>Flex Hours (8 hours/month)</strong>
+          <p style="margin-top: 8px; margin-bottom: 0">
+            8 hours per month of flex time are available for ad-hoc needs, which
+            can include website updates when needed. These hours are reconciled
+            quarterly to accommodate busy months.
+          </p>
+        </div>
+
+        <p>
+          In practice, this means routine content updates, page edits, and
+          smaller design adjustments can be handled within the existing monthly
+          hours. For larger changes&mdash;like adding new pages or significant
+          redesigns&mdash;we would scope those together and determine whether
+          they fit within flex time or should be scoped separately.
+        </p>
+
+        <div class="callout">
+          <div class="callout-label">Let's Discuss</div>
+          <p>
+            We would love to walk through this on our next call so we can align
+            on your priorities for the site post-launch and make sure the
+            monthly hours are being used in the way that is most valuable to
+            ICSW.
+          </p>
+        </div>
+      </div>
+
+      <!-- Client Dependencies -->
+      <div class="card">
+        <div class="section-label">Action Needed</div>
+        <h2>Client Dependencies</h2>
+        <ul>
+          <li>
+            <strong>Homepage scorecard:</strong> Please confirm which option you
+            prefer (Option 1: JPC focus or Option 2: Continuing Education
+            overview) so we can update the homepage.
+          </li>
+          <li>
+            <strong>Program card updates:</strong> Confirm the proposed "at
+            capacity" treatment for the filled program cards so we can implement
+            and set up the email capture form.
+          </li>
+          <li>
+            <strong>CEU ad creative review:</strong> Please review the new Meta
+            ad creative for CEU classes and share your feedback so we can get
+            the campaign live.
+            <a
+              href="https://drive.google.com/drive/u/0/folders/1xwBoEwpWRK6AMf8AH4vr-_wopqueymXx"
+              style="color: #2079a0"
+              >View Creative</a
+            >
+          </li>
+          <li>
+            <strong>August invoice:</strong> The August invoice is outstanding.
+            You can
+            <a
+              href="https://earned-impact.myhelcim.com/order/?token=396879a4905fd644041fb3"
+              style="color: #2079a0"
+              >view and pay the invoice here</a
+            >.
+          </li>
+          <li>
+            <strong>Email setup for new website:</strong> Please let us know
+            whether you prefer Option A (you complete the sign-in) or Option B
+            (give our team temporary access to admissions@icsw.edu) so we can
+            finalize the website build.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <div class="section-label">Next Steps</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>
+            Launch the new CEU Meta Ads campaign once creative is approved
+          </li>
+          <li>
+            Continue monitoring and optimizing Google Ads Certificate Programs
+            campaign with improved tracking in place
+          </li>
+          <li>
+            Complete email setup (pending ICSW mailbox access decision) to close
+            out the final website build item
+          </li>
+          <li>
+            Discuss post-launch website change process and priorities on our
+            next call
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
