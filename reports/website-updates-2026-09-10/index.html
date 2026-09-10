@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Website Updates - September 10, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+      .callout-amber {
+        background: #fef7e8;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-amber .callout-label {
+        color: #a07a1a;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-ready {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-hold {
+        background: #fef7e8;
+        color: #a07a1a;
+      }
+      .task-number {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+      .checklist {
+        list-style: none;
+        margin-left: 0;
+      }
+      .checklist li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 10px;
+      }
+      .checklist li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #d0d5d8;
+        border-radius: 3px;
+        background: #fff;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Website Updates</h1>
+        <div class="subtitle">Task List for Web Team</div>
+        <div class="date">September 10, 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Task 1: Course Catalog -->
+      <div class="card">
+        <div class="task-number">Task 1 of 5</div>
+        <div class="section-label">Course Catalog</div>
+        <h2>Remove Outdated Academic Calendar</h2>
+        <span class="status status-ready">Ready to start</span>
+
+        <ul class="checklist" style="margin-top: 16px">
+          <li>
+            Remove the 2025/26 academic calendar tab from the course catalog
+          </li>
+          <li>
+            Confirm the remaining calendar still shows:
+            <ul style="margin-top: 8px">
+              <li><strong>September 4</strong> - 100% refund drop deadline</li>
+              <li><strong>September 11</strong> - 50% refund deadline</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="callout-blue">
+          <div class="callout-label">Why</div>
+          <p>
+            The old calendar is outdated and could confuse prospective students
+            looking at current term dates.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 2: Homepage Hero -->
+      <div class="card">
+        <div class="task-number">Task 2 of 5</div>
+        <div class="section-label">Homepage</div>
+        <h2>Update Hero Slider to 3 Slides</h2>
+        <span class="status status-ready">Ready to start</span>
+
+        <ul class="checklist" style="margin-top: 16px">
+          <li>Remove the "Limited seats available for fall 2026" slide/copy</li>
+          <li>
+            Set up a three-slide rotation:
+            <ul style="margin-top: 8px">
+              <li>
+                <strong>Slide 1:</strong> ICSW mission / general institutional
+                overview with "Learn More" CTA
+              </li>
+              <li>
+                <strong>Slide 2:</strong> Graduate programs (MA &amp; PhD) with
+                "Learn More" CTA
+              </li>
+              <li>
+                <strong>Slide 3:</strong> Continuing education programs with
+                "Learn More" CTA linking to the continuing-ed page
+              </li>
+            </ul>
+          </li>
+          <li>Change all CTAs from "Apply Now" to "Learn More"</li>
+        </ul>
+
+        <div class="callout-blue">
+          <div class="callout-label">Why</div>
+          <p>
+            The "limited seats" copy is no longer accurate, and the shift from
+            "Apply Now" to "Learn More" better matches where prospective
+            students are in the decision process.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 3: JPC Enrollment Callout -->
+      <div class="card">
+        <div class="task-number">Task 3 of 5</div>
+        <div class="section-label">Homepage</div>
+        <h2>Add JPC Enrollment Callout</h2>
+        <span class="status status-ready">Ready to start</span>
+
+        <ul class="checklist" style="margin-top: 16px">
+          <li>
+            Add the approved JPC (Jungian Psychoanalytic Consultation)
+            enrollment callout to the homepage
+          </li>
+          <li>Keep the focus on JPC as the currently open program</li>
+          <li>
+            Build it so it is easy to swap to a generic "Explore Open Programs"
+            version once JPC fills
+          </li>
+        </ul>
+
+        <div class="callout-blue">
+          <div class="callout-label">Why</div>
+          <p>
+            JPC is the only continuing-ed program with open seats right now.
+            Once it fills, this block should be updatable without a full
+            redesign.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 4: Continuing Education -->
+      <div class="card">
+        <div class="task-number">Task 4 of 5</div>
+        <div class="section-label">Continuing Education Page</div>
+        <h2>At Capacity Messaging + Stay Informed CTA</h2>
+        <span class="status status-ready">Ready to start</span>
+
+        <ul class="checklist" style="margin-top: 16px">
+          <li>
+            Add "At Capacity" messaging to filled programs:
+            <ul style="margin-top: 8px">
+              <li>Integrative Psychoanalytic Couple Therapy</li>
+              <li>Latinx-Centered Psychodynamic Consultation Group</li>
+            </ul>
+          </li>
+          <li>
+            Add a "Stay Informed" CTA that links to the existing info-request
+            form
+          </li>
+          <li>
+            Confirm form submissions route to
+            <strong>admissions@icsw.edu</strong>
+          </li>
+          <li>
+            Set up tagging so continuing-ed submissions can be identified and
+            segmented by program interest
+          </li>
+        </ul>
+
+        <div class="callout-blue">
+          <div class="callout-label">Why</div>
+          <p>
+            This turns filled programs into lead-gen opportunities. Visitors who
+            submit the form get nurtured for the next cohort instead of bouncing
+            away.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 5: ICSW News Block -->
+      <div class="card">
+        <div class="task-number">Task 5 of 5</div>
+        <div class="section-label">Homepage</div>
+        <h2>Replace Accreditation Section with ICSW News</h2>
+        <span class="status status-hold">On hold</span>
+
+        <ul class="checklist" style="margin-top: 16px">
+          <li>
+            Replace the accreditation announcement block with an "ICSW News" /
+            updates block
+          </li>
+          <li>Keep the existing three-item card layout</li>
+          <li>
+            Hold implementation until content examples and direction are
+            reviewed at next week's meeting
+          </li>
+        </ul>
+
+        <div class="callout-amber">
+          <div class="callout-label">On hold</div>
+          <p>
+            Do not build yet. Kaelene will bring content examples next week. For
+            now, just plan the component swap.
+          </p>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="card">
+        <div class="section-label">Notes</div>
+        <h2>For the Team</h2>
+        <ul>
+          <li>
+            These changes fall within the existing monthly service allocation (2
+            hrs content edits + 8 flex hours).
+          </li>
+          <li>
+            Tasks 1 through 4 can proceed now. Task 5 is on hold pending content
+            direction.
+          </li>
+          <li>
+            Route any questions to Kaelene / Earned Impact before building.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
