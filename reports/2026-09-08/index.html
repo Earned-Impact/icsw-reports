@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, September 8, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+
+      .option-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+      }
+      .option-box strong {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">September 1 to 8, 2026 (Month-to-Date)</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$226</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">340</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,940</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$0.66</div>
+            <div class="stat-label">Avg. CPC</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign remains the only active
+          campaign and continues to perform well, generating 340 clicks at a
+          strong 17.55% CTR on $225.81 in spend. The average cost per click came
+          in at $0.66, which is efficient for this category. Conversions are not
+          reflected this week because conversion tracking is being
+          re-established following the new website transfer.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$225.81</td>
+              <td class="num">340</td>
+              <td class="num">17.55%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Top Keywords</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="num">Cost</th>
+                <th class="num">Clicks</th>
+                <th class="num">CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>virtual certificate programs</td>
+                <td class="num">$132.12</td>
+                <td class="num">208</td>
+                <td class="num">40.08%</td>
+              </tr>
+              <tr>
+                <td>virtual certificate program</td>
+                <td class="num">$66.84</td>
+                <td class="num">105</td>
+                <td class="num">37.23%</td>
+              </tr>
+              <tr>
+                <td>psychotherapy certificate</td>
+                <td class="num">$13.08</td>
+                <td class="num">15</td>
+                <td class="num">4.25%</td>
+              </tr>
+              <tr>
+                <td>continuing education programs</td>
+                <td class="num">$7.22</td>
+                <td class="num">6</td>
+                <td class="num">4.69%</td>
+              </tr>
+              <tr>
+                <td>online CE credits</td>
+                <td class="num">$4.42</td>
+                <td class="num">3</td>
+                <td class="num">7.69%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The top two keywords&mdash;&ldquo;virtual certificate
+            programs&rdquo; and &ldquo;virtual certificate
+            program&rdquo;&mdash;account for the majority of traffic and carry
+            exceptionally high click-through rates (40% and 37% respectively),
+            which signals strong alignment between what people are searching for
+            and what the ads are offering.
+          </p>
+        </div>
+
+        <div class="callout-blue">
+          <div class="callout-label">Note</div>
+          <p>
+            The majority of clicks this week (93.5%) came through Google Search
+            Partners rather than Google Search directly. Search Partners
+            typically deliver lower cost-per-click traffic ($0.63 vs $1.15 on
+            Google Search), which is keeping costs efficient. We will continue
+            monitoring the quality of this traffic to ensure it is driving
+            meaningful engagement on the site.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$21.71</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">6,455</div>
+            <div class="stat-label">Reach</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">8,120</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">10</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Dependencies -->
+      <div class="card">
+        <div class="section-label">Action Needed</div>
+        <h2>Client Dependencies</h2>
+        <ul>
+          <li>
+            <strong>Homepage scorecard:</strong>
+            <span
+              class="status status-active"
+              style="font-size: 9px; vertical-align: middle; margin-left: 4px"
+              >Confirmed</span
+            >
+            - JPC-focused enrollment callout approved. Now in progress with the
+            web team.
+          </li>
+          <li>
+            <strong>Program card updates:</strong>
+            <span
+              class="status status-active"
+              style="font-size: 9px; vertical-align: middle; margin-left: 4px"
+              >Confirmed</span
+            >
+            - "At Capacity" treatment approved. Now in progress with the web
+            team.
+          </li>
+          <li>
+            <strong>Email setup for new website:</strong> Email setup is still
+            pending with our team. We will follow up once it is ready.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Website Updates In Progress -->
+      <div class="card">
+        <div class="section-label">In Progress</div>
+        <h2>Website Updates</h2>
+        <p>
+          The following website changes are now with the web team for
+          implementation. Full task list with approved designs:
+          <a
+            href="/reports/website-updates-2026-09-10/index.html"
+            style="color: #ff70db"
+          >
+            View website update tasks
+          </a>
+        </p>
+        <ul>
+          <li>Remove outdated 2025/26 academic calendar tab (complete)</li>
+          <li>
+            Update homepage hero slider to 3 slides with "Learn More" CTAs
+          </li>
+          <li>Add JPC enrollment callout to homepage</li>
+          <li>
+            Add "At Capacity" messaging and "Stay Informed" CTA to continuing
+            education page and individual program pages
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <div class="section-label">Next Steps</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Go live with CE Meta Ads campaign</li>
+          <li>
+            Complete remaining website updates (hero slider, JPC callout,
+            at-capacity messaging)
+          </li>
+          <li>
+            Complete email setup to close out the final website build item
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
