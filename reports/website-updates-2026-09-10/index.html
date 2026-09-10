@@ -175,6 +175,43 @@
         border-color: #1a7a3a;
       }
 
+      /* Comment box */
+      .comment-box {
+        margin-top: 16px;
+        border-top: 1px solid #f0f0f0;
+        padding-top: 16px;
+      }
+      .comment-box label {
+        display: block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      .comment-box textarea {
+        width: 100%;
+        min-height: 72px;
+        border: 1px solid #d0d5d8;
+        border-radius: 8px;
+        padding: 12px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #131315;
+        background: #f8f8f8;
+        resize: vertical;
+        line-height: 1.5;
+      }
+      .comment-box textarea:focus {
+        outline: none;
+        border-color: #ff70db;
+        background: #fff;
+      }
+      .comment-box textarea::placeholder {
+        color: #b0b8be;
+      }
+
       /* Mockup: JPC enrollment card */
       .mockup-label {
         font-family: "Roboto Mono", monospace;
@@ -376,6 +413,14 @@
             </ul>
           </li>
         </ul>
+
+        <div class="comment-box">
+          <label for="comment-1">Team Notes</label>
+          <textarea
+            id="comment-1"
+            placeholder="Add any notes or questions about this task..."
+          ></textarea>
+        </div>
       </div>
 
       <!-- Task 2: Homepage Hero -->
@@ -414,6 +459,14 @@
             "Apply Now" to "Learn More" better matches where prospective
             students are in the decision process.
           </p>
+        </div>
+
+        <div class="comment-box">
+          <label for="comment-2">Team Notes</label>
+          <textarea
+            id="comment-2"
+            placeholder="Add any notes or questions about this task..."
+          ></textarea>
         </div>
       </div>
 
@@ -456,6 +509,14 @@
             Once it fills, this block should be updatable without a full
             redesign.
           </p>
+        </div>
+
+        <div class="comment-box">
+          <label for="comment-3">Team Notes</label>
+          <textarea
+            id="comment-3"
+            placeholder="Add any notes or questions about this task..."
+          ></textarea>
         </div>
       </div>
 
@@ -555,6 +616,14 @@
             submit the form get nurtured for the next cohort instead of bouncing
             away.
           </p>
+        </div>
+
+        <div class="comment-box">
+          <label for="comment-4">Team Notes</label>
+          <textarea
+            id="comment-4"
+            placeholder="Add any notes or questions about this task..."
+          ></textarea>
         </div>
       </div>
 
