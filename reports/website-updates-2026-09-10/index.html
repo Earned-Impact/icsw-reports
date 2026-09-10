@@ -37,6 +37,10 @@
         margin-bottom: 24px;
         page-break-inside: avoid;
       }
+      .card-done {
+        border-left-color: #1a7a3a;
+        opacity: 0.7;
+      }
       .header-card {
         text-align: left;
         border-left: none;
@@ -105,22 +109,6 @@
       li:last-child {
         margin-bottom: 0;
       }
-      .callout {
-        background: #fdf2fb;
-        border-radius: 8px;
-        padding: 16px;
-        margin-top: 16px;
-        margin-bottom: 12px;
-        font-size: 14px;
-      }
-      .callout-label {
-        font-family: "Roboto Mono", monospace;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #ff70db;
-        margin-bottom: 4px;
-      }
       .callout-blue {
         background: #e8f4fd;
         border-radius: 8px;
@@ -132,16 +120,12 @@
       .callout-blue .callout-label {
         color: #1a6ba0;
       }
-      .callout-amber {
-        background: #fef7e8;
-        border-radius: 8px;
-        padding: 16px;
-        margin-top: 16px;
-        margin-bottom: 12px;
-        font-size: 14px;
-      }
-      .callout-amber .callout-label {
-        color: #a07a1a;
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
       }
       .status {
         display: inline-block;
@@ -156,9 +140,9 @@
         background: #e6f9ee;
         color: #1a7a3a;
       }
-      .status-hold {
-        background: #fef7e8;
-        color: #a07a1a;
+      .status-done {
+        background: #1a7a3a;
+        color: #fff;
       }
       .task-number {
         font-family: "Roboto Mono", monospace;
@@ -186,6 +170,144 @@
         border-radius: 3px;
         background: #fff;
       }
+      .checklist-done li::before {
+        background: #1a7a3a;
+        border-color: #1a7a3a;
+      }
+
+      /* Mockup: JPC enrollment card */
+      .mockup-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        text-align: center;
+        margin-bottom: 12px;
+        margin-top: 20px;
+      }
+      .jpc-mockup {
+        background: #2b3038;
+        border-radius: 12px;
+        padding: 28px 24px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      .jpc-mockup .mock-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #c8943e;
+        margin-bottom: 8px;
+      }
+      .jpc-mockup .mock-title {
+        font-family: "DM Serif Display", serif;
+        font-size: 20px;
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+      .jpc-mockup .mock-desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        color: #b0b8be;
+        margin-bottom: 16px;
+      }
+      .jpc-mockup .mock-btn {
+        display: inline-block;
+        background: #ffffff;
+        color: #131315;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 24px;
+        text-decoration: none;
+      }
+
+      /* Mockup: Program cards */
+      .cards-mockup {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+      }
+      .prog-card {
+        background: #fff;
+        border: 1px solid #e0e4e6;
+        border-radius: 10px;
+        padding: 16px;
+        font-size: 12px;
+      }
+      .prog-card .badge {
+        display: inline-block;
+        background: #2b3038;
+        color: #c8943e;
+        font-family: "Roboto Mono", monospace;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-bottom: 10px;
+      }
+      .prog-card .prog-name {
+        font-family: "DM Serif Display", serif;
+        font-size: 14px;
+        color: #131315;
+        margin-bottom: 4px;
+        line-height: 1.3;
+      }
+      .prog-card .prog-instructor {
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        color: #909da3;
+        margin-bottom: 12px;
+      }
+      .prog-card .at-capacity {
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        color: #c8943e;
+        margin-bottom: 4px;
+      }
+      .prog-card .at-capacity-desc {
+        font-family: "Poppins", sans-serif;
+        font-size: 10px;
+        color: #606a70;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      .prog-card .prog-btn {
+        display: block;
+        text-align: center;
+        background: #2b3038;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 11px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+      }
+      .prog-card .prog-detail {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        color: #606a70;
+        padding: 4px 0;
+        border-top: 1px solid #e0e4e6;
+      }
+      .prog-card .prog-detail-val {
+        font-weight: 500;
+        color: #131315;
+      }
+      .prog-card .prog-details-wrap {
+        margin-bottom: 12px;
+      }
+
       @media (max-width: 600px) {
         body {
           padding: 24px 8px;
@@ -195,6 +317,9 @@
         }
         .header-card h1 {
           font-size: 26px;
+        }
+        .cards-mockup {
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -232,14 +357,14 @@
         <hr class="accent-line" />
       </div>
 
-      <!-- Task 1: Course Catalog -->
-      <div class="card">
-        <div class="task-number">Task 1 of 5</div>
+      <!-- Task 1: Course Catalog (DONE) -->
+      <div class="card card-done">
+        <div class="task-number">Task 1 of 4</div>
         <div class="section-label">Course Catalog</div>
         <h2>Remove Outdated Academic Calendar</h2>
-        <span class="status status-ready">Ready to start</span>
+        <span class="status status-done">Done</span>
 
-        <ul class="checklist" style="margin-top: 16px">
+        <ul class="checklist checklist-done" style="margin-top: 16px">
           <li>
             Remove the 2025/26 academic calendar tab from the course catalog
           </li>
@@ -251,19 +376,11 @@
             </ul>
           </li>
         </ul>
-
-        <div class="callout-blue">
-          <div class="callout-label">Why</div>
-          <p>
-            The old calendar is outdated and could confuse prospective students
-            looking at current term dates.
-          </p>
-        </div>
       </div>
 
       <!-- Task 2: Homepage Hero -->
       <div class="card">
-        <div class="task-number">Task 2 of 5</div>
+        <div class="task-number">Task 2 of 4</div>
         <div class="section-label">Homepage</div>
         <h2>Update Hero Slider to 3 Slides</h2>
         <span class="status status-ready">Ready to start</span>
@@ -302,15 +419,18 @@
 
       <!-- Task 3: JPC Enrollment Callout -->
       <div class="card">
-        <div class="task-number">Task 3 of 5</div>
+        <div class="task-number">Task 3 of 4</div>
         <div class="section-label">Homepage</div>
         <h2>Add JPC Enrollment Callout</h2>
         <span class="status status-ready">Ready to start</span>
 
         <ul class="checklist" style="margin-top: 16px">
           <li>
-            Add the approved JPC (Jungian Psychoanalytic Consultation)
-            enrollment callout to the homepage
+            Add the approved JPC enrollment callout to the homepage (see
+            approved design below)
+          </li>
+          <li>
+            "Learn More" button should link directly to the JPC program page
           </li>
           <li>Keep the focus on JPC as the currently open program</li>
           <li>
@@ -318,6 +438,16 @@
             version once JPC fills
           </li>
         </ul>
+
+        <div class="mockup-label">Approved Design</div>
+        <div class="jpc-mockup">
+          <div class="mock-label">Enrollment Update</div>
+          <div class="mock-title">Now Enrolling: JPC Program</div>
+          <div class="mock-desc">
+            Earn 72 CE hours. Now accepting applications for the fall cohort.
+          </div>
+          <span class="mock-btn">Learn More &rarr;</span>
+        </div>
 
         <div class="callout-blue">
           <div class="callout-label">Why</div>
@@ -331,23 +461,31 @@
 
       <!-- Task 4: Continuing Education -->
       <div class="card">
-        <div class="task-number">Task 4 of 5</div>
-        <div class="section-label">Continuing Education Page</div>
+        <div class="task-number">Task 4 of 4</div>
+        <div class="section-label">
+          Continuing Education Page + Program Pages
+        </div>
         <h2>At Capacity Messaging + Stay Informed CTA</h2>
         <span class="status status-ready">Ready to start</span>
 
         <ul class="checklist" style="margin-top: 16px">
           <li>
-            Add "At Capacity" messaging to filled programs:
+            Add "At Capacity" messaging to filled programs on the continuing
+            education overview page (see approved design below):
             <ul style="margin-top: 8px">
               <li>Integrative Psychoanalytic Couple Therapy</li>
               <li>Latinx-Centered Psychodynamic Consultation Group</li>
             </ul>
           </li>
           <li>
+            Also add "At Capacity" messaging to each filled program's individual
+            program page
+          </li>
+          <li>
             Add a "Stay Informed" CTA that links to the existing info-request
             form
           </li>
+          <li>JPC card keeps "Learn More" linking to its program page</li>
           <li>
             Confirm form submissions route to
             <strong>admissions@icsw.edu</strong>
@@ -358,40 +496,64 @@
           </li>
         </ul>
 
+        <div class="mockup-label">Approved Card Design</div>
+        <div class="cards-mockup">
+          <div class="prog-card">
+            <div class="badge">Certificate</div>
+            <div class="prog-name">
+              Integrative Psychoanalytic Couple Therapy
+            </div>
+            <div class="prog-instructor">
+              Dr. Carla Leone / Dr. Arthur Nielsen
+            </div>
+            <div class="at-capacity">Fall 2026 Cohort at Capacity</div>
+            <div class="at-capacity-desc">
+              Leave your information to be the first to know when the next
+              cohort opens.
+            </div>
+            <span class="prog-btn">Stay Informed</span>
+          </div>
+          <div class="prog-card">
+            <div class="badge">Certificate</div>
+            <div class="prog-name">
+              JPC: Neuroscience &amp; Psychodynamic Psychotherapy
+            </div>
+            <div class="prog-instructor">William D. Gieseke, Ph.D.</div>
+            <div class="prog-details-wrap" style="margin-top: 12px">
+              <div class="prog-detail">
+                <span>Credits</span>
+                <span class="prog-detail-val">72 CE hours</span>
+              </div>
+              <div class="prog-detail">
+                <span>Start</span>
+                <span class="prog-detail-val">Fall 2026</span>
+              </div>
+            </div>
+            <span class="prog-btn">Learn More</span>
+          </div>
+          <div class="prog-card">
+            <div class="badge">Certificate</div>
+            <div class="prog-name">
+              Latinx-Centered Psychodynamic Consultation Group
+            </div>
+            <div class="prog-instructor">
+              Dr. Merari Fernandez / Dr. Kelly G. Arteaga
+            </div>
+            <div class="at-capacity">Fall 2026 Cohort at Capacity</div>
+            <div class="at-capacity-desc">
+              Leave your information to be the first to know when the next
+              cohort opens.
+            </div>
+            <span class="prog-btn">Stay Informed</span>
+          </div>
+        </div>
+
         <div class="callout-blue">
           <div class="callout-label">Why</div>
           <p>
             This turns filled programs into lead-gen opportunities. Visitors who
             submit the form get nurtured for the next cohort instead of bouncing
             away.
-          </p>
-        </div>
-      </div>
-
-      <!-- Task 5: ICSW News Block -->
-      <div class="card">
-        <div class="task-number">Task 5 of 5</div>
-        <div class="section-label">Homepage</div>
-        <h2>Replace Accreditation Section with ICSW News</h2>
-        <span class="status status-hold">On hold</span>
-
-        <ul class="checklist" style="margin-top: 16px">
-          <li>
-            Replace the accreditation announcement block with an "ICSW News" /
-            updates block
-          </li>
-          <li>Keep the existing three-item card layout</li>
-          <li>
-            Hold implementation until content examples and direction are
-            reviewed at next week's meeting
-          </li>
-        </ul>
-
-        <div class="callout-amber">
-          <div class="callout-label">On hold</div>
-          <p>
-            Do not build yet. Kaelene will bring content examples next week. For
-            now, just plan the component swap.
           </p>
         </div>
       </div>
@@ -406,8 +568,7 @@
             hrs content edits + 8 flex hours).
           </li>
           <li>
-            Tasks 1 through 4 can proceed now. Task 5 is on hold pending content
-            direction.
+            Tasks 2 through 4 can proceed now. Task 1 is already complete.
           </li>
           <li>
             Route any questions to Kaelene / Earned Impact before building.
