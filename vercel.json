@@ -7,6 +7,14 @@
     {
       "source": "/:date(\\d{4}-\\d{2}-\\d{2})/",
       "destination": "/reports/:date/index.html"
+    },
+    {
+      "source": "/:slug",
+      "destination": "/reports/:slug/index.html"
+    },
+    {
+      "source": "/:slug/",
+      "destination": "/reports/:slug/index.html"
     }
   ]
 }
