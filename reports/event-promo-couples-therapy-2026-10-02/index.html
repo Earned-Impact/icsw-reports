@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ICSW Email Campaign - Couples Therapy CE Event, October 2, 2026
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .card-gold {
+        border-left-color: #c8943e;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+      .badge {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+      .badge-pink {
+        background: #fff0fb;
+        color: #d94fbf;
+      }
+      .badge-gold {
+        background: #fdf6e8;
+        color: #c8943e;
+      }
+      .badge-green {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .email-preview {
+        background: #f8f8f8;
+        border: 1px solid #e0e4e6;
+        border-radius: 10px;
+        padding: 24px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+      }
+      .email-meta {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #606a70;
+        margin-bottom: 4px;
+      }
+      .email-meta strong {
+        color: #131315;
+      }
+      .email-divider {
+        border: none;
+        border-top: 1px solid #e0e4e6;
+        margin: 12px 0;
+      }
+      .email-body {
+        font-size: 14px;
+        color: #131315;
+        line-height: 1.7;
+      }
+      .email-body p {
+        margin-bottom: 14px;
+      }
+      .email-cta {
+        display: inline-block;
+        background: #131315;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        margin: 8px 0;
+      }
+      .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f0f0f0;
+        border: 1px solid #d0d5d8;
+        color: #606a70;
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: all 0.2s;
+      }
+      .copy-btn:hover {
+        background: #e0e4e6;
+        color: #131315;
+      }
+      .timeline {
+        margin-top: 16px;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #909da3;
+        min-width: 100px;
+        padding-top: 2px;
+      }
+      .timeline-content {
+        flex: 1;
+        font-size: 14px;
+        border-left: 2px solid #e0e4e6;
+        padding-left: 16px;
+      }
+      .timeline-content strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+        .timeline-item {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Email Campaign</h1>
+        <div class="subtitle">Couples Therapy CE Event - October 2, 2026</div>
+        <div class="date">Prepared September 15, 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Event Overview -->
+      <div class="card card-gold">
+        <div class="section-label">Event Details</div>
+        <h2>
+          Striving for Excellence in Couples Therapy: Zeroing in on What Matters
+        </h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Date</div>
+            <div class="timeline-content">
+              <strong>Friday, October 2, 2026</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Time</div>
+            <div class="timeline-content">
+              <strong>11:00 AM - 12:30 PM CT</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Presenter</div>
+            <div class="timeline-content">
+              <strong>Enrico Gnaulati, PhD</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Credits</div>
+            <div class="timeline-content"><strong>1.5 CEs</strong></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Registration</div>
+            <div class="timeline-content">
+              <strong
+                ><a
+                  href="https://www.psian.org/excellence"
+                  style="color: #c8943e"
+                  >www.psian.org/excellence</a
+                ></strong
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Send Schedule -->
+      <div class="card">
+        <div class="section-label">Recommended Send Schedule</div>
+        <h2>Campaign Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Sept 17-18</div>
+            <div class="timeline-content">
+              <strong>Email 1: Announcement</strong>
+              Initial invite to full list. Introduce the event, presenter, and
+              registration link.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Sept 25-26</div>
+            <div class="timeline-content">
+              <strong>Email 2: Reminder</strong>
+              One-week-out nudge. Emphasize the CE credits and limited time to
+              register.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Sept 30</div>
+            <div class="timeline-content">
+              <strong>Email 3: Last Chance</strong>
+              Final send 2 days before the event. Short, urgent, focused on the
+              registration link.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email 1: Announcement -->
+      <div class="card">
+        <span class="badge badge-pink">Email 1 of 3</span>
+        <div class="section-label">Announcement</div>
+        <h2>You're Invited: CE Event on Couples Therapy</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> Upcoming CE Event: Couples Therapy with
+            Dr. Enrico Gnaulati - Oct. 2
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> Join us for a 90-minute session on
+            what drives real progress in couples work. 1.5 CEs available.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> September 17-18, 2026
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Dear [First Name],</p>
+
+            <p>
+              As part of our commitment to supporting the ongoing professional
+              development of the ICSW community, we're excited to share an
+              upcoming continuing education opportunity focused on couples
+              therapy.
+            </p>
+
+            <p>
+              <strong
+                >Striving for Excellence in Couples Therapy: Zeroing in on What
+                Matters</strong
+              >
+            </p>
+
+            <p>
+              <strong>Date:</strong> Friday, October 2, 2026<br />
+              <strong>Time:</strong> 11:00 AM - 12:30 PM CT<br />
+              <strong>Presenter:</strong> Enrico Gnaulati, PhD<br />
+              <strong>Credits:</strong> 1.5 CEs
+            </p>
+
+            <p>
+              Dr. Gnaulati is a clinical psychologist with over 30 years of
+              experience in private practice and an Affiliate Professor at
+              Seattle University. He is the author of four books, including
+              <em
+                >Flourishing Love: A Secular Guide to Lasting Intimate
+                Relationships</em
+              >, and has published widely on couples therapy in both academic
+              journals and outlets like <em>The Atlantic</em> and
+              <em>Salon</em>.
+            </p>
+
+            <p>
+              In this 90-minute session, Dr. Gnaulati will explore what
+              distinguishes effective couples therapy from sessions that stall -
+              helping clinicians zero in on the interventions and moments that
+              drive real progress. Whether you're building a couples practice or
+              looking to sharpen your current approach, this is a chance to earn
+              1.5 CE credits while learning from one of the field's most
+              experienced voices.
+            </p>
+
+            <p><span class="email-cta">Register Now</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Registration link: www.psian.org/excellence
+            </p>
+
+            <p>
+              Know a colleague who works with couples or is looking for CE
+              opportunities? Please feel free to share this event with anyone in
+              your network who might be interested.
+            </p>
+
+            <p>We hope to see you there.</p>
+
+            <p>
+              Warm regards,<br />
+              The Institute for Clinical Social Work
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(1)">Copy email text</button>
+      </div>
+
+      <!-- Email 2: Reminder -->
+      <div class="card">
+        <span class="badge badge-gold">Email 2 of 3</span>
+        <div class="section-label">One-Week Reminder</div>
+        <h2>Reminder: Couples Therapy CE Event Next Friday</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> Reminder: CE Event Next Friday - Couples
+            Therapy with Dr. Gnaulati
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> There's still time to register. 1.5
+            CE credits in 90 minutes, Oct. 2 at 11 AM CT.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> September 25-26, 2026
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Hi [First Name],</p>
+
+            <p>
+              A quick reminder about a CE opportunity for the ICSW community
+              next Friday - there's still time to register.
+            </p>
+
+            <p>
+              <strong
+                >"Striving for Excellence in Couples Therapy: Zeroing in on What
+                Matters"</strong
+              ><br />
+              with Dr. Enrico Gnaulati, PhD
+            </p>
+
+            <p>
+              <strong>When:</strong> Friday, October 2 | 11:00 AM - 12:30 PM
+              CT<br />
+              <strong>Credits:</strong> 1.5 CEs
+            </p>
+
+            <p>
+              Dr. Gnaulati brings over 30 years of clinical experience, four
+              published books - including <em>Flourishing Love</em>, his guide
+              to lasting intimate relationships - and a track record of writing
+              on couples therapy for both academic journals and national
+              publications. This is a focused, practical session on the clinical
+              moments and interventions that actually move couples work forward.
+            </p>
+
+            <p>This session is a great fit if you:</p>
+            <ul style="margin-left: 20px; margin-bottom: 14px">
+              <li>
+                Work with couples and want to sharpen your clinical approach
+              </li>
+              <li>
+                Need focused, practical CE hours you can earn in 90 minutes
+              </li>
+              <li>
+                Want to learn directly from a seasoned clinician and published
+                author
+              </li>
+            </ul>
+
+            <p>
+              Earn 1.5 continuing education credits while investing in your
+              practice - register before spots fill up.
+            </p>
+
+            <p><span class="email-cta">Register Now</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Registration link: www.psian.org/excellence
+            </p>
+
+            <p>
+              Best,<br />
+              ICSW
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(2)">Copy email text</button>
+      </div>
+
+      <!-- Email 3: Last Chance -->
+      <div class="card">
+        <span class="badge badge-green">Email 3 of 3</span>
+        <div class="section-label">Last Chance</div>
+        <h2>Last Chance: Register for Friday's CE Event</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> Last Call: CE Event This Friday - Couples
+            Therapy with Dr. Gnaulati
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> This Friday at 11 AM CT. 1.5 CEs in
+            90 minutes. Register now or share with a colleague.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> September 30, 2026
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Hi [First Name],</p>
+
+            <p>
+              Last chance to register for Friday's CE event with the ICSW
+              community.
+            </p>
+
+            <p>
+              <strong
+                >Striving for Excellence in Couples Therapy: Zeroing in on What
+                Matters</strong
+              ><br />
+              with Dr. Enrico Gnaulati, PhD<br />
+              Friday, October 2 | 11:00 AM - 12:30 PM CT | 1.5 CEs
+            </p>
+
+            <p>
+              Dr. Gnaulati - a clinical psychologist with 30+ years in practice,
+              author of <em>Flourishing Love</em>, and Affiliate Professor at
+              Seattle University - will share what he's learned about the
+              moments and moves that matter most in couples work.
+            </p>
+
+            <p>
+              It's 90 minutes, focused and practical, and a straightforward way
+              to pick up 1.5 CE credits.
+            </p>
+
+            <p><span class="email-cta">Register Before Friday</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Registration link: www.psian.org/excellence
+            </p>
+
+            <p>
+              Even if this one isn't for you, please consider sharing it with a
+              colleague or someone in your network who works with couples. The
+              event is open to all.
+            </p>
+
+            <p>
+              See you Friday,<br />
+              ICSW
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(3)">Copy email text</button>
+      </div>
+
+      <!-- Notes -->
+      <div class="card">
+        <div class="section-label">Notes</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>
+            <strong>Review email copy</strong> and confirm tone/details are
+            accurate. Adjust subject lines to match ICSW's usual Mailchimp voice
+            if needed.
+          </li>
+          <li>
+            <strong>Confirm registration link</strong> - verify
+            www.psian.org/excellence is live and working before the first email
+            goes out.
+          </li>
+          <li>
+            <strong>First send is Sept 17-18</strong> - so this needs a quick
+            turnaround on review.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function copyEmail(num) {
+        const emails = document.querySelectorAll(".email-body");
+        const email = emails[num - 1];
+        if (email) {
+          const text = email.innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            const btns = document.querySelectorAll(".copy-btn");
+            const btn = btns[num - 1];
+            btn.textContent = "Copied!";
+            setTimeout(() => {
+              btn.textContent = "Copy email text";
+            }, 2000);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
