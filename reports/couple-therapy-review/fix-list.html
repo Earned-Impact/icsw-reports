@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Couple Therapy Page - Fix List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0f0f0;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+      }
+      .header-card {
+        border-left: none;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: #ff70db;
+      }
+
+      .task {
+        background: #f8f8f8;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .task:last-child {
+        margin-bottom: 0;
+      }
+      .task-check {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        border: 2px solid #d0d0d0;
+        border-radius: 4px;
+        margin-top: 2px;
+      }
+      .task-content {
+        flex: 1;
+      }
+      .task-title {
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+      .task-detail {
+        font-size: 13px;
+        color: #3a3a3c;
+      }
+      .task-ref {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      .priority-high {
+        border-left: 3px solid #c0392b;
+      }
+      .priority-med {
+        border-left: 3px solid #a07800;
+      }
+      .priority-low {
+        border-left: 3px solid #2079a0;
+      }
+      .priority-decision {
+        border-left: 3px solid #ff70db;
+      }
+
+      .legend {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+        font-size: 13px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .legend-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+      }
+      .legend-dot.high {
+        background: #c0392b;
+      }
+      .legend-dot.med {
+        background: #a07800;
+      }
+      .legend-dot.low {
+        background: #2079a0;
+      }
+      .legend-dot.decision {
+        background: #ff70db;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .legend {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card header-card">
+        <h1>Couple Therapy Page - Fix List</h1>
+        <div class="subtitle">For Fida / Web Team</div>
+        <div class="date">September 16, 2026</div>
+        <hr class="accent-line" />
+        <p style="margin-top: 16px">
+          All changes should be made on the live page at
+          <a
+            href="https://icsw.edu/continuing-education/integrative-psychoanalytic-couple-therapy/"
+          >
+            icsw.edu/continuing-education/integrative-psychoanalytic-couple-therapy</a
+          >. Use the old Squarespace page as the source of truth:
+          <a href="https://mandolin-wombat-n4bt.squarespace.com/coupletherapy">
+            mandolin-wombat-n4bt.squarespace.com/coupletherapy</a
+          >.
+        </p>
+
+        <div class="legend" style="margin-top: 16px">
+          <div class="legend-item">
+            <div class="legend-dot high"></div>
+            High Priority
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot med"></div>
+            Medium Priority
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot low"></div>
+            Low Priority
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot decision"></div>
+            Waiting on Jesse
+          </div>
+        </div>
+      </div>
+
+      <!-- High Priority -->
+      <div class="card">
+        <div class="section-label">High Priority</div>
+        <h2>Fix Immediately</h2>
+
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Restore the program mission statement</div>
+            <div class="task-detail">
+              The current "Core Value" block has copy from the Master's degree
+              page (describes a hybrid format with in-person residencies).
+              Replace with the original mission statement from the old page. It
+              starts with: "To create a stimulating, supportive learning
+              community that helps master's and doctoral-level clinicians..."
+            </div>
+            <div class="task-ref">Location: Overview tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Add dated heading to Adjunct Clinical Consultants
+            </div>
+            <div class="task-detail">
+              The consultant section heading currently just says "Adjunct
+              Clinical Consultants." It needs to say "Adjunct Clinical
+              Consultants 2025-26 and continuing to 2026-27." The dated heading
+              matters because listing these individuals is a contractual
+              commitment.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Restore full program name in page title
+            </div>
+            <div class="task-detail">
+              Page title should be "Certificate Program in Integrative
+              Psychoanalytic Couple Therapy" (not just "Integrative
+              Psychoanalytic Couple Therapy"). The words "Certificate Program
+              in" were dropped during the migration.
+            </div>
+            <div class="task-ref">Location: H1 heading</div>
+          </div>
+        </div>
+
+        <div class="task priority-high">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Ensure testimonials are displayed in full
+            </div>
+            <div class="task-detail">
+              Two testimonials from the old page need to be present with their
+              complete quotes: (1) Todd Frugia, MFA, MA, LCPC, Chicago Talk
+              Therapy, and (2) Ying-Ling Liu, Taipei, Taiwan. Verify both are on
+              the page and not truncated.
+            </div>
+            <div class="task-ref">Location: Overview tab</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Medium Priority -->
+      <div class="card">
+        <div class="section-label">Medium Priority</div>
+        <h2>Fix This Week</h2>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Restore tuition breakdown details</div>
+            <div class="task-detail">
+              The Quick Facts shows $4,600 as a combined number, which is fine.
+              But the full page should also include the breakdown: $3,600
+              tuition + $1,000 individual consultation (10 sessions x $100, paid
+              directly to the assigned consultant). Include the note "due one
+              week prior to the first class."
+            </div>
+            <div class="task-ref">Location: Admissions tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Verify class counts match old page</div>
+            <div class="task-detail">
+              Old page: 29 classes total, 18 by core faculty, 10 by guest
+              lecturers, plus 1 wrap-up class. New page currently says 28
+              classes / 12 guest-led. Cross-check and correct to match the
+              source of truth. If the numbers have legitimately changed, confirm
+              with Jesse before updating.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Restore case conference details</div>
+            <div class="task-detail">
+              Old page specifies: 18 of 29 classes include a case conference
+              component, 90-minute lecture/discussion + 75-minute clinical
+              conferences after break, small groups of 5-7 participants, each
+              student presents 3 times (once to each core faculty). Verify this
+              level of detail is present.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Restore individual consultation component details
+            </div>
+            <div class="task-detail">
+              Old page specifies: minimum 10 meetings over academic year,
+              approximately biweekly, scheduled separately outside Thursday
+              classes, all consultants are experienced psychoanalytic couple
+              therapists offering reduced-rate sessions. Verify this detail is
+              present.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Fix duplicate consultant description</div>
+            <div class="task-detail">
+              The description for the adjunct clinical consultants prints twice
+              in a row on the current page. Remove the duplicate. Also check
+              that the word "psychoanalytic" is included in the description, as
+              it was removed during the migration.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Verify CE credit details</div>
+            <div class="task-detail">
+              Old page: 84 CEUs available, must attend all sessions (28
+              three-hour classes), individual consultation hours don't earn CEs,
+              wrap-up/goodbye class does not award CEs. Confirm these details
+              are accurate on the new page.
+            </div>
+            <div class="task-ref">Location: Curriculum or Overview tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-med">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Verify capstone paper requirements</div>
+            <div class="task-detail">
+              Old page: 5-8 page paper on personal theoretical approach, option
+              to draft for publication, core faculty read and respond, at least
+              one previous capstone became a peer-reviewed publication. Check
+              this is present.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Low Priority -->
+      <div class="card">
+        <div class="section-label">Low Priority</div>
+        <h2>Clean Up</h2>
+
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Fix "between thepartners" typo</div>
+            <div class="task-detail">
+              Missing space in the intro paragraph. Should be "between the
+              partners."
+            </div>
+            <div class="task-ref">Location: Overview tab, intro paragraph</div>
+          </div>
+        </div>
+
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Fix credential punctuation on consultant list
+            </div>
+            <div class="task-detail">
+              Some credentials are inconsistently punctuated (e.g., periods
+              after some abbreviations but not others). Standardize to match the
+              old page.
+            </div>
+            <div class="task-ref">Location: Curriculum tab</div>
+          </div>
+        </div>
+
+        <div class="task priority-low">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">Confirm URL redirect is working</div>
+            <div class="task-detail">
+              Verify that icsw.edu/coupletherapy redirects to
+              icsw.edu/continuing-education/integrative-psychoanalytic-couple-therapy/
+              correctly in all browsers.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waiting on Jesse -->
+      <div class="card">
+        <div class="section-label">Waiting on Jesse</div>
+        <h2>Do Not Change Until Confirmed</h2>
+
+        <div class="task priority-decision">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Learning objectives: restore full CE language?
+            </div>
+            <div class="task-detail">
+              Currently condensed into short bullet points under "Professional
+              Capabilities Achieved." The original full-sentence versions are
+              tied to CE accreditation filings. Recommendation is to restore
+              verbatim, but need Jesse's sign-off.
+            </div>
+          </div>
+        </div>
+
+        <div class="task priority-decision">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Curriculum detail: how much long-form copy to restore?
+            </div>
+            <div class="task-detail">
+              The old page had extensive syllabus-level detail for Parts I-IV
+              (Basic Tenets, Major Models, Non-Psychoanalytic Models, Specific
+              Populations). Options: (A) restore all verbatim, (B) keep
+              condensed but ensure data points are correct, (C) hybrid, restore
+              the descriptions but keep the tab layout. Need Jesse's direction.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QC Checklist -->
+      <div class="card" style="border-left-color: #131315">
+        <div class="section-label">Before We Send to Jesse</div>
+        <h2>Final QC Checklist</h2>
+        <p>
+          Once all fixes above are complete, do a full side-by-side pass of the
+          old page vs. the new page and confirm:
+        </p>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Every section from the old page has a home on the new page
+            </div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              All names are spelled correctly (faculty, lecturers, consultants)
+            </div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              All numbers match the old page (class counts, CEs, tuition, cohort
+              size)
+            </div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              No content from other program pages appears on this page
+            </div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              URL redirect works (icsw.edu/coupletherapy)
+            </div>
+          </div>
+        </div>
+
+        <div class="task">
+          <div class="task-check"></div>
+          <div class="task-content">
+            <div class="task-title">
+              Notify Kaelene when complete so she can review and send to Jesse
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

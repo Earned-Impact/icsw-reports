@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Couple Therapy Page - Content Review for Jesse</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f0f0f0;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+      }
+      .header-card {
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      .compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin: 16px 0;
+      }
+      .compare-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        font-size: 14px;
+      }
+      .compare-box.old {
+        border-top: 3px solid #909da3;
+      }
+      .compare-box.new {
+        border-top: 3px solid #2079a0;
+      }
+      .compare-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      .compare-box.new .compare-label {
+        color: #2079a0;
+      }
+      .callout {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #1a6ba0;
+        margin-bottom: 4px;
+      }
+      .callout-green {
+        background: #e6f9ee;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+        font-size: 14px;
+      }
+      .callout-green .callout-label {
+        color: #1a7a3a;
+      }
+      .callout-amber {
+        background: #fff8e6;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+        font-size: 14px;
+      }
+      .callout-amber .callout-label {
+        color: #a07800;
+      }
+      ul {
+        margin: 0 0 12px 24px;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      a {
+        color: #ff70db;
+      }
+      .url-box {
+        background: #131315;
+        color: #afd7e9;
+        border-radius: 8px;
+        padding: 16px 20px;
+        margin: 16px 0;
+        font-family: "Roboto Mono", monospace;
+        font-size: 14px;
+      }
+      .url-box .arrow {
+        color: #ff70db;
+        margin: 8px 0;
+        display: block;
+      }
+      .url-box .url-result {
+        color: #e6f9ee;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .compare {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <h1>Couple Therapy Page &mdash; Content Review</h1>
+        <div class="subtitle">Prepared for Jesse Godina</div>
+        <div class="date">September 16, 2026</div>
+        <hr class="accent-line" />
+        <p style="margin-top: 16px">
+          Below is a summary of the concerns raised about the Couple Therapy
+          Certificate Program page, along with specific examples showing how the
+          content was carried over from the original page to the new site. The
+          content has not been removed &mdash; it has been reformatted to align
+          with the design of the refreshed ICSW website.
+        </p>
+      </div>
+
+      <!-- URL -->
+      <div class="card">
+        <div class="section-label">URL</div>
+        <h2>The Original URL Still Works</h2>
+        <p>
+          The original URL that has been shared with students, colleagues, and
+          partners continues to work. Typing it into a browser will take
+          visitors directly to the updated Couple Therapy program page.
+        </p>
+        <div class="url-box">
+          <span>icsw.edu/coupletherapy</span>
+          <span class="arrow">&darr; automatically redirects to</span>
+          <span class="url-result"
+            >icsw.edu/continuing-education/integrative-psychoanalytic-couple-therapy/</span
+          >
+        </div>
+        <p>
+          The longer URL reflects the new site structure, where all continuing
+          education programs are organized under a shared section. But anyone
+          using the original short URL will land on the correct page without any
+          issues.
+        </p>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Old Page (Squarespace)</div>
+            <p
+              style="
+                font-family: &quot;Roboto Mono&quot;, monospace;
+                font-size: 13px;
+                word-break: break-all;
+                margin-bottom: 0;
+              "
+            >
+              mandolin-wombat-n4bt.squarespace.com/coupletherapy
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page (Live)</div>
+            <p
+              style="
+                font-family: &quot;Roboto Mono&quot;, monospace;
+                font-size: 13px;
+                word-break: break-all;
+                margin-bottom: 0;
+              "
+            >
+              icsw.edu/continuing-education/integrative-psychoanalytic-couple-therapy/
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program Name -->
+      <div class="card">
+        <div class="section-label">Example 1</div>
+        <h2>Program Name</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <strong
+              >Certificate Program in Integrative Psychoanalytic Couple
+              Therapy</strong
+            >
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page</div>
+            <strong>Integrative Psychoanalytic Couple Therapy</strong>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">What Happened</div>
+          <p>
+            When the new continuing education section was built, the page title
+            was shortened to fit the format used across all certificate program
+            pages. &ldquo;Certificate Program in&rdquo; was dropped from the
+            heading. The full program name has been restored.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tuition -->
+      <div class="card">
+        <div class="section-label">Example 2</div>
+        <h2>Tuition &amp; Cost</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <p><strong>Tuition:</strong> $3,600</p>
+            <p>
+              <strong>Individual Consultation:</strong> $1,000 (10 sessions
+              &times; $100, paid directly to the assigned consultant)
+            </p>
+            <p style="margin-bottom: 0">
+              <em>Due one week prior to the first class</em>
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page (Quick Facts)</div>
+            <p><strong>Tuition:</strong> $4,600</p>
+            <p><em>Payment plans available</em></p>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">What Happened</div>
+          <p>
+            The new page combined the $3,600 tuition and $1,000 consultation fee
+            into a single $4,600 figure in the Quick Facts box. The underlying
+            cost is the same &mdash; it was presented as a total rather than
+            broken out. The detailed breakdown (including the note that
+            consultation fees are paid directly to the consultant) has been
+            restored to the full page.
+          </p>
+        </div>
+      </div>
+
+      <!-- Content Structure -->
+      <div class="card">
+        <div class="section-label">Example 3</div>
+        <h2>Page Layout &mdash; One Page vs. Tabs</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <p>
+              Single scrolling page with all content visible at once: mission,
+              curriculum (Parts I&ndash;V), faculty bios, guest lecturers,
+              consultants, learning objectives, admissions, tuition, and
+              application steps.
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page</div>
+            <p>
+              Content organized across tabs: <strong>Overview</strong>,
+              <strong>Curriculum</strong>, and <strong>Admissions</strong>. Same
+              content, navigated by clicking the tab headings.
+            </p>
+          </div>
+        </div>
+        <div class="callout">
+          <div class="callout-label">What Happened</div>
+          <p>
+            The original page was a single long-scrolling page. The new website
+            organizes program content across tabs to create a consistent
+            experience across all ICSW programs. The content is still there
+            &mdash; it may require clicking into a different tab to find a
+            specific section. This is a design change, not a content change.
+          </p>
+        </div>
+      </div>
+
+      <!-- Faculty & Guest Lecturers -->
+      <div class="card">
+        <div class="section-label">Example 4</div>
+        <h2>Faculty, Guest Lecturers &amp; Clinical Consultants</h2>
+        <div class="callout-green">
+          <div class="callout-label">Confirmed Present</div>
+          <p>
+            As of September 16, 2026, the following are all listed on the
+            current live page:
+          </p>
+          <ul>
+            <li>
+              <strong>3 core faculty</strong> &mdash; Carla Leone PhD, Arthur
+              Nielsen MD, Karen Bloomberg PhD &mdash; each with a link to their
+              full individual bio page on the ICSW site
+            </li>
+            <li>
+              <strong>17 guest lecturers</strong> &mdash; full list from Mona
+              Fishbane through Michelle Avigan, same order as the original page
+            </li>
+            <li>
+              <strong>12 adjunct clinical consultants</strong> &mdash; with
+              credentials listed (screenshot below)
+            </li>
+          </ul>
+        </div>
+
+        <p><strong>Adjunct Clinical Consultants on the live page:</strong></p>
+        <img
+          src="adjunct-consultants-screenshot.png"
+          alt="Screenshot showing all 12 Adjunct Clinical Consultants listed on the new page with dated heading"
+          style="
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin: 8px 0 16px;
+          "
+        />
+
+        <div class="callout-amber">
+          <div class="callout-label">Still Needs Attention</div>
+          <p>
+            The consultant section heading on the curriculum tab does not
+            currently show the year designation (&ldquo;2025&ndash;26 and
+            continuing to 2026&ndash;27&rdquo;). This dated heading matters
+            because listing these individuals is a contractual commitment. Needs
+            to be added back.
+          </p>
+        </div>
+      </div>
+
+      <!-- Learning Objectives -->
+      <div class="card">
+        <div class="section-label">Example 5</div>
+        <h2>Learning Objectives</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <p>
+              Full-sentence learning objectives as submitted for CE
+              accreditation (e.g., including phrases like &ldquo;such as
+              psychoeducation&rdquo; and &ldquo;highlighting the psychoanalytic
+              components, if integrative&rdquo;).
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page (Current)</div>
+            <p>
+              Six shortened bullet points under &ldquo;Professional Capabilities
+              Achieved&rdquo; &mdash; condensed versions of the original
+              objectives.
+            </p>
+          </div>
+        </div>
+        <div class="callout-amber">
+          <div class="callout-label">Needs Jesse&rsquo;s Decision</div>
+          <p>
+            These are CE accreditation language that has stood for 5 years.
+            Should we restore the full original wording verbatim, or keep the
+            condensed format? <strong>Recommendation:</strong> restore verbatim
+            since these are tied to the CE filing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mission Statement -->
+      <div class="card">
+        <div class="section-label">Example 6</div>
+        <h2>Program Mission</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <p>
+              &ldquo;To create a stimulating, supportive learning community that
+              helps master&rsquo;s and doctoral-level clinicians improve their
+              ability to apply psychoanalytic theory to understanding and
+              working effectively with couples, thereby increasing the
+              availability of excellent psychoanalytic couple therapy for
+              couples of all income levels.&rdquo;
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page (Current)</div>
+            <p>
+              Replaced with a &ldquo;Core Value&rdquo; block describing the
+              Master&rsquo;s program hybrid format &mdash; content from a
+              different program page.
+            </p>
+          </div>
+        </div>
+        <div class="callout-amber">
+          <div class="callout-label">Needs Restoration</div>
+          <p>
+            The mission statement was replaced with copy from the Master&rsquo;s
+            degree page (describes a hybrid format with in-person residencies,
+            which is wrong for an all-virtual certificate). The original mission
+            needs to be restored.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="card">
+        <div class="section-label">Example 7</div>
+        <h2>Testimonials</h2>
+        <div class="callout">
+          <div class="callout-label">Ensure Listed in Full</div>
+          <p>
+            The original page included two testimonials that should be present
+            on the new page in their full form:
+          </p>
+          <ul>
+            <li>
+              <strong>Todd Frugia, MFA, MA, LCPC</strong> &mdash; Chicago Talk
+              Therapy
+            </li>
+            <li><strong>Ying-Ling Liu</strong> &mdash; Taipei, Taiwan</li>
+          </ul>
+          <p>Verify both are displayed with their complete quotes.</p>
+        </div>
+      </div>
+
+      <!-- Curriculum Detail -->
+      <div class="card">
+        <div class="section-label">Example 8</div>
+        <h2>Detailed Curriculum Copy (Parts I&ndash;IV)</h2>
+        <div class="compare">
+          <div class="compare-box old">
+            <div class="compare-label">Original Page</div>
+            <p>
+              Extensive descriptions of each curriculum section: Part I (Basic
+              Tenets), Part II (Major Models &mdash; 5 approaches), Part III
+              (Non-Psychoanalytic Models), Part IV (Application to Specific
+              Populations). Includes case conference structure (18 of 29
+              classes), individual consultation details, and capstone paper
+              requirements.
+            </p>
+          </div>
+          <div class="compare-box new">
+            <div class="compare-label">New Page (Current)</div>
+            <p>
+              Condensed curriculum overview in tabbed format. Level of detail
+              varies &mdash; some sections carried over, others significantly
+              shortened.
+            </p>
+          </div>
+        </div>
+        <div class="callout-amber">
+          <div class="callout-label">Needs Jesse&rsquo;s Decision</div>
+          <p>
+            The old page reads almost like a course syllabus &mdash; very
+            detailed, faculty-written copy. The new site condenses this into a
+            cleaner format. <strong>Question for Jesse:</strong> How much of
+            this long-form curriculum copy should we restore? Options:
+          </p>
+          <ul>
+            <li>
+              <strong>Option A:</strong> Restore all original copy verbatim into
+              the curriculum tab (matches what Carla expects, but doesn&rsquo;t
+              match the format of other CE program pages)
+            </li>
+            <li>
+              <strong>Option B:</strong> Keep the condensed format but ensure
+              every data point is accurate (class counts, CE credits, case
+              conference details, consultation structure)
+            </li>
+            <li>
+              <strong>Option C:</strong> Hybrid &mdash; restore the detailed
+              Parts I&ndash;IV descriptions and key details (case conferences,
+              consultation, capstone) but keep the new page layout/tabs
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Outstanding Items Summary -->
+      <div class="card" style="border-left-color: #a07800">
+        <div class="section-label">Action Items</div>
+        <h2>What Still Needs to Be Done</h2>
+
+        <h3 style="margin-top: 16px">Restore Now (No Decision Needed)</h3>
+        <ul>
+          <li>
+            Add dated heading back to Adjunct Clinical Consultants
+            (&ldquo;2025&ndash;26 and continuing to 2026&ndash;27&rdquo;)
+          </li>
+          <li>
+            Replace Master&rsquo;s program &ldquo;Core Value&rdquo; copy with
+            the actual Couple Therapy mission statement
+          </li>
+          <li>Fix &ldquo;between thepartners&rdquo; typo (missing space)</li>
+          <li>
+            Ensure both testimonials (Todd Frugia and Ying-Ling Liu) are
+            displayed in full
+          </li>
+        </ul>
+
+        <h3 style="margin-top: 20px">Needs Jesse&rsquo;s Input</h3>
+        <ul>
+          <li>
+            <strong>Learning objectives:</strong> Restore full CE accreditation
+            language verbatim, or keep condensed?
+          </li>
+          <li>
+            <strong>Curriculum detail (Parts I&ndash;IV):</strong> How much of
+            the long-form syllabus copy should we restore? (See Options A/B/C
+            above)
+          </li>
+        </ul>
+      </div>
+
+      <!-- Summary for Carla -->
+      <div class="card" style="border-left-color: #2079a0">
+        <div class="section-label">Summary</div>
+        <h2>Key Points for Carla (Once Fixes Are Complete)</h2>
+        <ul>
+          <li>
+            <strong>The content is being fully restored.</strong> We are working
+            through every section to ensure the new page reflects everything
+            from the original.
+          </li>
+          <li>
+            <strong>The original URL still works.</strong>
+            <em>icsw.edu/coupletherapy</em> takes visitors directly to the
+            program page &mdash; no change needed on her end.
+          </li>
+          <li>
+            <strong>The page format has changed</strong> &mdash; from a single
+            scrolling page to a tabbed layout &mdash; to be consistent with how
+            all ICSW programs are now presented. The content may be in a
+            different tab, but it is all there.
+          </li>
+          <li>
+            <strong>Faculty bios now link to dedicated pages</strong> &mdash;
+            rather than displaying full bios inline, each faculty member links
+            to their own page on the ICSW site with their complete biography.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Draft Email -->
+      <div class="card" style="border-left-color: #131315">
+        <div class="section-label">Draft Email for Jesse</div>
+        <h2>Suggested Email to Carla</h2>
+        <p style="color: #909da3; font-size: 13px; margin-bottom: 20px">
+          Jesse &mdash; below is a draft you can adapt and send
+          <strong>once all fixes are confirmed complete</strong>. Adjust based
+          on which decisions you make above.
+        </p>
+
+        <div
+          style="
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 24px;
+            font-size: 14px;
+            line-height: 1.7;
+          "
+        >
+          <p>
+            <strong>Subject:</strong> Couple Therapy Program Page &mdash;
+            Updates Complete
+          </p>
+          <p style="color: #909da3; font-size: 12px">---</p>
+
+          <p>Hi Carla,</p>
+
+          <p>
+            I wanted to follow up on the concerns you raised about the Couple
+            Therapy program page. We&rsquo;ve reviewed everything and made
+            updates to ensure the content accurately reflects the program.
+          </p>
+
+          <p>
+            During the transition from the previous website to the new platform,
+            all program content was migrated over. None of your original content
+            was removed or rewritten &mdash; what changed is how it&rsquo;s
+            organized and displayed, so that it&rsquo;s consistent with how all
+            programs are now presented across the site.
+          </p>
+
+          <p>
+            As part of the website refresh, all program pages have been
+            reformatted to align with the new site design. Your program content
+            is now organized across tabs (Overview, Curriculum, Admissions)
+            rather than on a single scrolling page. The presentation looks a bit
+            different, but the content is all there &mdash; you may just need to
+            click through the tabs to find specific sections.
+          </p>
+
+          <p>A few things I wanted to highlight:</p>
+
+          <ul>
+            <li>
+              <strong>Your URL still works.</strong> Anyone who visits
+              <em>icsw.edu/coupletherapy</em> will be directed straight to the
+              program page. No need to update any links you&rsquo;ve shared with
+              students or colleagues.
+            </li>
+            <li>
+              <strong>Tuition is accurate.</strong> The $4,600 in Quick Facts
+              reflects the $3,600 program tuition plus the $1,000 in individual
+              consultation fees &mdash; the same total as before, just displayed
+              as a combined number. The itemized breakdown is also on the page.
+            </li>
+            <li>
+              <strong
+                >All faculty, guest lecturers, and adjunct clinical consultants
+                are listed</strong
+              >
+              with credentials. Faculty members also link out to their dedicated
+              biography pages on the ICSW site.
+            </li>
+            <li>
+              <strong>The program mission and learning objectives</strong>
+              have been reviewed and updated to reflect the original approved
+              language.
+            </li>
+          </ul>
+
+          <p>
+            I know how important it is that this page reflects the program
+            you&rsquo;ve built. If anything still looks off after you&rsquo;ve
+            had a chance to review, please let me know and we&rsquo;ll get it
+            taken care of.
+          </p>
+
+          <p>Thank you, Carla.</p>
+
+          <p>Best,<br />Jesse</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
