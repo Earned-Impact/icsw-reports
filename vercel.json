@@ -9,6 +9,10 @@
       "destination": "/reports/:date/index.html"
     },
     {
+      "source": "/:folder/:file",
+      "destination": "/reports/:folder/:file.html"
+    },
+    {
       "source": "/:slug",
       "destination": "/reports/:slug/index.html"
     },
