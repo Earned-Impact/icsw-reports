@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, September 23, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+      .status-pending {
+        background: #fff8e6;
+        color: #a07800;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+
+      .callout-amber {
+        background: #fff8e6;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-amber .callout-label {
+        color: #a07800;
+      }
+
+      a {
+        color: #ff70db;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">September 1 to 23, 2026 (Month-to-Date)</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$703</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,172</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">7,890</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$0.60</div>
+            <div class="stat-label">Avg. CPC</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign continues to be the only
+          active campaign and is performing well, generating 1,172 clicks at a
+          14.86% CTR on $702.85 in spend. Average cost per click holds steady at
+          $0.60.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$702.85</td>
+              <td class="num">1,172</td>
+              <td class="num">14.86%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Top Keywords</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="num">Cost</th>
+                <th class="num">Clicks</th>
+                <th class="num">CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>virtual certificate programs</td>
+                <td class="num">$410.98</td>
+                <td class="num">706</td>
+                <td class="num">34.24%</td>
+              </tr>
+              <tr>
+                <td>virtual certificate program</td>
+                <td class="num">$209.40</td>
+                <td class="num">354</td>
+                <td class="num">34.34%</td>
+              </tr>
+              <tr>
+                <td>psychotherapy certificate course</td>
+                <td class="num">$17.87</td>
+                <td class="num">32</td>
+                <td class="num">3.18%</td>
+              </tr>
+              <tr>
+                <td>continuing education programs</td>
+                <td class="num">$17.19</td>
+                <td class="num">18</td>
+                <td class="num">4.59%</td>
+              </tr>
+              <tr>
+                <td>psychodynamic training</td>
+                <td class="num">$15.18</td>
+                <td class="num">23</td>
+                <td class="num">1.66%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The top two keywords ("virtual certificate programs" and "virtual
+            certificate program") continue to drive the bulk of traffic,
+            accounting for 90% of total clicks with strong click-through rates
+            above 34%.
+          </p>
+        </div>
+
+        <div class="callout-blue">
+          <div class="callout-label">Note</div>
+          <p>
+            Search Partners continue to deliver the majority of traffic (93.8%
+            of clicks) at a lower cost per click ($0.58 vs. $0.95 on Google
+            Search directly). We are continuing to monitor traffic quality from
+            this channel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$216.73</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">16,509</div>
+            <div class="stat-label">Reach</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">23,948</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">525</div>
+            <div class="stat-label">Landing Page Views</div>
+          </div>
+        </div>
+
+        <p>
+          The JPC Program campaign has generated 525 landing page views at $0.41
+          per view, reaching over 16,500 people this month. The campaign is
+          running at a $40/day budget and delivering 990 total clicks alongside
+          strong awareness numbers.
+        </p>
+
+        <div class="callout-blue">
+          <div class="callout-label">JPC Info Session</div>
+          <p>
+            A 30-minute JPC info session is being planned for the week of
+            October 6 through 8, with Bill presenting via Zoom. Zoom
+            registration will be used to capture attendee information (name,
+            email) for follow-up nurturing. Jesse is confirming the exact date
+            and will circle back. Once confirmed, we will launch a targeted
+            campaign around the event.
+          </p>
+        </div>
+      </div>
+
+      <!-- Email Campaigns -->
+      <div class="card">
+        <div class="section-label">Email Marketing</div>
+        <h2>Email Campaigns</h2>
+
+        <div class="subsection">
+          <h3>PsiAN Couples Therapy Event (October 2)</h3>
+          <p>
+            Email 1 is confirmed and sending today. Email 2 will follow as a
+            reminder closer to the event date.
+          </p>
+          <p>
+            <a
+              href="https://icsw-reports.vercel.app/event-promo-couples-therapy-2026-10-02/"
+            >
+              Review the email campaign here</a
+            >.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>JPC Program Email</h3>
+          <p>
+            A new JPC program email is drafted and ready for review, with a
+            target send date of Friday, September 25. This provides an
+            additional touchpoint for JPC promotion ahead of the planned info
+            session.
+          </p>
+          <p>
+            <a
+              href="https://docs.google.com/document/d/1_ZUvyUhkWe4v60sOXpfw2og9K9CGAvNsWcC6AIJlK28/edit?usp=sharing"
+            >
+              Review the email draft here</a
+            >.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>MPSI Fall Conference (November 7)</h3>
+          <p>
+            The MPSI Fall Conference featuring Nancy McWilliams is scheduled for
+            November 7. The first email will go out the first full week of
+            October, with a second follow-up later in the month.
+          </p>
+          <p>
+            <a
+              href="https://docs.google.com/document/d/17cmk-KVFHFcNn6KW9f58vDhOZvEZGuQW8LDFjqwrcow/edit?usp=sharing"
+            >
+              Review the email campaign here</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <!-- Website Updates -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website Updates</h2>
+
+        <div class="subsection">
+          <h3>Completed</h3>
+          <p>
+            Website updates discussed during the last call have been completed.
+            The Forms page updates and category tabs have also been finalized.
+            Denise has reviewed the Forms page changes and is pleased with the
+            outcome.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Homepage Content Cards</h3>
+          <p>
+            The homepage supports up to five content cards. We have agreed on
+            the following five cards to go live:
+          </p>
+          <ul>
+            <li>PsiAN Couples Therapy event (October 2)</li>
+            <li>
+              Board of Directors event led by Leah (October 10, priority to get
+              live)
+            </li>
+            <li>JPC Program enrollment</li>
+            <li>Pathways enrollment</li>
+            <li>MPSI Fall Conference (November 7)</li>
+          </ul>
+          <p>
+            The Accreditation content card is being removed. The PsiAN/ICSW
+            event image distortion is being addressed by the development team.
+            Fida is coordinating with Randy on the event card workflow and will
+            schedule a working meeting so they can walk through the process
+            together.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Events Page Cleanup</h3>
+          <p>
+            Several event cards were accidentally published during testing
+            (including an outdated Accreditation post and a Sandvale recipient
+            announcement). These are being removed. Backend CSS fixes related to
+            event card layout and image rendering are also in progress with the
+            development team.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Pathways Page</h3>
+          <p>
+            The "Application Closed" text needs to be removed (applications are
+            now open, with the first application already received). The start
+            date also needs to be updated to January 2027.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Other In-Progress Items</h3>
+          <ul>
+            <li>
+              <strong>Dissertation page:</strong> Denise has provided feedback.
+              Reviewing how students can browse the full listing and exploring a
+              continuous scroll approach.
+            </li>
+            <li>
+              <strong>Student Life:</strong> Planning how to present student
+              life content on the site (event photo galleries, alumni
+              spotlights, student features). Kaelene and Lexi reviewing onsite
+              photos.
+            </li>
+            <li>
+              <strong>Website audit:</strong> Kaelene is completing a
+              page-by-page review with the EI team.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Marketing Strategy -->
+      <div class="card">
+        <div class="section-label">Marketing Strategy</div>
+        <h2>Fall Enrollment Priorities</h2>
+
+        <p>
+          With JPC as the immediate focus, we have aligned on a phased approach
+          to marketing three concurrent enrollment efforts this fall:
+        </p>
+
+        <div class="subsection">
+          <h3>1. JPC Program (Now through October)</h3>
+          <p>
+            JPC remains the top priority. Meta ads are running well. A new
+            program email goes out Friday, and an info session is being planned
+            for the week of October 6 through 8. We are also exploring LinkedIn
+            event promotion as an additional channel for this audience. The goal
+            is to fill the program by mid-to-late October, at which point Bill
+            aims to begin.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>2. Pathways (October onward)</h3>
+          <p>
+            Pathways applications are open, and the first application is already
+            on the books. A homepage content card is being added for visibility.
+            Once JPC fills, the marketing focus will pivot to give Pathways
+            standalone runway before the January 2027 start date.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>3. MA and PhD Applications (Late October)</h3>
+          <p>
+            MA and PhD applications reopen in October. To avoid diluting the JPC
+            and Pathways messaging, the MA/PhD marketing push will follow after
+            Pathways has had dedicated visibility.
+          </p>
+        </div>
+      </div>
+
+      <!-- Client Dependencies -->
+      <div class="card">
+        <div class="section-label">Client Dependencies</div>
+        <h2>Waiting On</h2>
+        <ul>
+          <li>
+            Jesse: Confirming JPC info session date with Bill (October 6, 7, or
+            8) and circling back
+          </li>
+          <li>
+            Jesse: Getting the Board of Directors event name and details to the
+            team (led by Leah, targeting October 10)
+          </li>
+          <li>
+            Randy: Content card for the Board of Directors event (coordinating
+            with Fida to get it live)
+          </li>
+        </ul>
+      </div>
+
+      <!-- Next Steps -->
+      <div class="card">
+        <div class="section-label">Next Steps</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>PsiAN Couples Therapy Email 1 sending today</li>
+          <li>
+            JPC Program email delivered for Jesse's review, targeting Friday
+            send
+          </li>
+          <li>
+            Homepage updating to five content cards (Couples Therapy, Board of
+            Directors, JPC, Pathways, MPSI November)
+          </li>
+          <li>
+            Fida scheduling working meeting with Randy on event card workflow
+          </li>
+          <li>Events page cleanup and backend CSS fixes in progress</li>
+          <li>
+            Pathways page: removing "Application Closed" text, updating start
+            date to January 2027
+          </li>
+          <li>
+            Once info session date is confirmed: set up Zoom registration and
+            launch JPC info session campaign
+          </li>
+          <li>Explore LinkedIn event promotion for JPC info session (Lexi)</li>
+          <li>
+            Kaelene and Lexi to review onsite photos for Student Life content
+          </li>
+          <li>Review Denise's dissertation page feedback</li>
+          <li>Website audit continuing (Kaelene + EI team)</li>
+          <li>
+            MPSI Fall Conference: first email going out the first full week of
+            October
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
