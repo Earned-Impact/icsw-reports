@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      ICSW Email Campaign - JPC Q&A Session with Bill Gieseke, October 6, 2026
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .card-gold {
+        border-left-color: #c8943e;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+      .badge {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-bottom: 12px;
+      }
+      .badge-pink {
+        background: #fff0fb;
+        color: #d94fbf;
+      }
+      .badge-gold {
+        background: #fdf6e8;
+        color: #c8943e;
+      }
+      .badge-green {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .email-preview {
+        background: #f8f8f8;
+        border: 1px solid #e0e4e6;
+        border-radius: 10px;
+        padding: 24px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+      }
+      .email-meta {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #606a70;
+        margin-bottom: 4px;
+      }
+      .email-meta strong {
+        color: #131315;
+      }
+      .email-divider {
+        border: none;
+        border-top: 1px solid #e0e4e6;
+        margin: 12px 0;
+      }
+      .email-body {
+        font-size: 14px;
+        color: #131315;
+        line-height: 1.7;
+      }
+      .email-body p {
+        margin-bottom: 14px;
+      }
+      .email-cta {
+        display: inline-block;
+        background: #131315;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 24px;
+        border-radius: 6px;
+        text-decoration: none;
+        margin: 8px 0;
+      }
+      .copy-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f0f0f0;
+        border: 1px solid #d0d5d8;
+        color: #606a70;
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 8px;
+        transition: all 0.2s;
+      }
+      .copy-btn:hover {
+        background: #e0e4e6;
+        color: #131315;
+      }
+      .timeline {
+        margin-top: 16px;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+      .timeline-date {
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        color: #909da3;
+        min-width: 100px;
+        padding-top: 2px;
+      }
+      .timeline-content {
+        flex: 1;
+        font-size: 14px;
+        border-left: 2px solid #e0e4e6;
+        padding-left: 16px;
+      }
+      .timeline-content strong {
+        display: block;
+        margin-bottom: 2px;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+        .timeline-item {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <path
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Email Campaign</h1>
+        <div class="subtitle">
+          JPC Q&A Session with Bill Gieseke - October 6, 2026
+        </div>
+        <div class="date">Prepared September 30, 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Event Overview -->
+      <div class="card card-gold">
+        <div class="section-label">Event Details</div>
+        <h2>JPC Program Q&A Session with Bill Gieseke</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Date</div>
+            <div class="timeline-content">
+              <strong>Tuesday, October 6, 2026</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Time</div>
+            <div class="timeline-content">
+              <strong>2:30 - 3:30 PM CT</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Host</div>
+            <div class="timeline-content">
+              <strong>William "Bill" Gieseke, Ph.D.</strong>
+              ICSW Core Faculty &amp; Executive Director, Palombo Center
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Format</div>
+            <div class="timeline-content">
+              <strong>Zoom (registration required)</strong>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Registration</div>
+            <div class="timeline-content">
+              <strong
+                ><a href="#" style="color: #c8943e"
+                  >[Zoom registration link - TBD]</a
+                ></strong
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="callout-blue" style="margin-top: 24px">
+          <div class="callout-label">Goal</div>
+          <p>
+            Give prospective students and interested participants an opportunity
+            to learn more about the JPC Neuroscience &amp; Psychotherapy
+            certificate program and engage directly with Bill Gieseke.
+          </p>
+        </div>
+      </div>
+
+      <!-- Send Schedule -->
+      <div class="card">
+        <div class="section-label">Recommended Send Schedule</div>
+        <h2>Campaign Timeline</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 1 (Wed)</div>
+            <div class="timeline-content">
+              <strong>Email 1: Announcement</strong>
+              Invite to the full list. Introduce the session, highlight the
+              chance to meet Bill and ask questions, and include the Zoom
+              registration link.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 3 (Fri)</div>
+            <div class="timeline-content">
+              <strong>Email 2: Reminder</strong>
+              Weekend-before nudge. Reinforce what attendees will get out of the
+              session and make it easy to register.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">Oct 6 (Tue AM)</div>
+            <div class="timeline-content">
+              <strong>Email 3: Day-of Reminder</strong>
+              Short, same-day send. "Today at 2:30 PM CT" with the Zoom link
+              front and center.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email 1: Announcement -->
+      <div class="card">
+        <span class="badge badge-pink">Email 1 of 3</span>
+        <div class="section-label">Announcement</div>
+        <h2>You're Invited: JPC Program Q&A with Bill Gieseke</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> Learn About the JPC Program - Live Q&A
+            with Bill Gieseke, Oct. 6
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> Join us for a free info session on
+            the Neuroscience & Psychotherapy certificate. Ask questions, get
+            answers.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> Wednesday, October 1, 2026
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Dear [First Name],</p>
+
+            <p>
+              Curious about the Joint Program in Clinical Social
+              Work/Neuroscience &amp; Psychotherapy (JPC)? We're hosting a live
+              Q&amp;A session where you can learn more about the program and ask
+              your questions directly.
+            </p>
+
+            <p>
+              <strong>JPC Program Q&amp;A Session</strong>
+            </p>
+
+            <p>
+              <strong>Date:</strong> Tuesday, October 6, 2026<br />
+              <strong>Time:</strong> 2:30 - 3:30 PM CT<br />
+              <strong>Host:</strong> William "Bill" Gieseke, Ph.D.<br />
+              <strong>Where:</strong> Zoom (free, registration required)
+            </p>
+
+            <p>
+              The JPC is a certificate program that integrates neuroscience with
+              psychotherapy practice, designed for clinicians who want to deepen
+              their understanding of how the brain informs therapeutic work.
+            </p>
+
+            <p>
+              The session will be led by Dr. Bill Gieseke, ICSW Core Faculty
+              member, Executive Director of the Palombo Center, and faculty at
+              the Chicago Psychoanalytic Institute. Bill is a founding member of
+              the Palombo Center Advisory Committee and has led many of its
+              conferences. He brings deep expertise in psychoanalytic approaches
+              and a firsthand understanding of the ICSW community, having earned
+              his own Ph.D. from ICSW.
+            </p>
+
+            <p>
+              Whether you're exploring the program for the first time or ready
+              to apply, this is your chance to hear directly from Bill about
+              what the program covers, who it's designed for, and what
+              participants walk away with.
+            </p>
+
+            <p>In this session, you'll have a chance to:</p>
+            <ul style="margin-left: 20px; margin-bottom: 14px">
+              <li>Learn about the JPC curriculum and what makes it unique</li>
+              <li>
+                Hear from Bill about his vision for the program and what
+                participants gain
+              </li>
+              <li>Ask questions about schedule, commitment, and enrollment</li>
+              <li>
+                Get a feel for whether the program is the right fit for you
+              </li>
+            </ul>
+
+            <p>
+              Space is open, but registration is required so we can send you the
+              Zoom link.
+            </p>
+
+            <p><span class="email-cta">Register for the Q&A</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Registration link: [Zoom registration link]
+            </p>
+
+            <p>
+              Know someone who might be interested? Feel free to forward this
+              along - the session is open to anyone considering the program.
+            </p>
+
+            <p>We look forward to seeing you there.</p>
+
+            <p>
+              Warm regards,<br />
+              The Institute for Clinical Social Work
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(1)">Copy email text</button>
+      </div>
+
+      <!-- Email 2: Reminder -->
+      <div class="card">
+        <span class="badge badge-gold">Email 2 of 3</span>
+        <div class="section-label">Weekend Reminder</div>
+        <h2>Reminder: JPC Q&A Session This Tuesday</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> This Tuesday: Live Q&A on the JPC
+            Neuroscience & Psychotherapy Program
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> Join Bill Gieseke on Tuesday at 2:30
+            PM CT. Free, open to all - register now.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> Friday, October 3, 2026
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Hi [First Name],</p>
+
+            <p>
+              A quick reminder - there's still time to register for next
+              Tuesday's live Q&amp;A session on the JPC Neuroscience &amp;
+              Psychotherapy certificate program.
+            </p>
+
+            <p>
+              <strong>JPC Program Q&amp;A with Dr. Bill Gieseke</strong><br />
+              Tuesday, October 6 | 2:30 - 3:30 PM CT | Zoom
+            </p>
+
+            <p>
+              Dr. Gieseke is ICSW Core Faculty, Executive Director of the
+              Palombo Center, and faculty at the Chicago Psychoanalytic
+              Institute. He earned his Ph.D. from ICSW and has deep roots in the
+              school's community and programs.
+            </p>
+
+            <p>
+              This is a relaxed, open session for anyone who wants to learn more
+              about the program - whether you've been thinking about it for a
+              while or just heard about it recently. Bill will walk through what
+              the JPC covers and leave plenty of time for questions.
+            </p>
+
+            <p>A few things people often ask about:</p>
+            <ul style="margin-left: 20px; margin-bottom: 14px">
+              <li>How neuroscience concepts are applied to clinical work</li>
+              <li>The time commitment and weekly schedule</li>
+              <li>Who the program is designed for</li>
+              <li>How to get started with the application</li>
+            </ul>
+
+            <p>
+              Register below and we'll send you the Zoom link ahead of the
+              session.
+            </p>
+
+            <p><span class="email-cta">Register Now</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Registration link: [Zoom registration link]
+            </p>
+
+            <p>
+              Best,<br />
+              ICSW
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(2)">Copy email text</button>
+      </div>
+
+      <!-- Email 3: Day-of -->
+      <div class="card">
+        <span class="badge badge-green">Email 3 of 3</span>
+        <div class="section-label">Day-of Reminder</div>
+        <h2>Today: JPC Q&A at 2:30 PM CT</h2>
+
+        <div class="email-preview">
+          <div class="email-meta">
+            <strong>Subject:</strong> Today at 2:30 PM: JPC Q&A Session with
+            Bill Gieseke
+          </div>
+          <div class="email-meta">
+            <strong>Preview text:</strong> Happening today - join the live
+            session to learn about the JPC program. Still time to register.
+          </div>
+          <div class="email-meta">
+            <strong>Send:</strong> Tuesday, October 6, 2026 (morning)
+          </div>
+          <hr class="email-divider" />
+          <div class="email-body">
+            <p>Hi [First Name],</p>
+
+            <p>
+              Just a heads up - today's the day! The JPC Q&amp;A session with
+              Dr. Bill Gieseke, ICSW Core Faculty and Executive Director of the
+              Palombo Center, is happening this afternoon.
+            </p>
+
+            <p>
+              <strong>Today, October 6 | 2:30 - 3:30 PM CT | Zoom</strong>
+            </p>
+
+            <p>
+              If you've been curious about the Neuroscience &amp; Psychotherapy
+              certificate program, this is an easy way to learn more and ask
+              questions directly. No preparation needed - just show up.
+            </p>
+
+            <p><span class="email-cta">Join the Session</span></p>
+
+            <p style="font-size: 12px; color: #909da3">
+              Zoom link: [Zoom registration/join link]
+            </p>
+
+            <p>
+              Hope to see you there,<br />
+              ICSW
+            </p>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyEmail(3)">Copy email text</button>
+      </div>
+
+      <!-- Notes -->
+      <div class="card">
+        <div class="section-label">Notes</div>
+        <h2>Next Steps</h2>
+        <ul>
+          <li>
+            <strong>Set up Zoom registration</strong> - create the Zoom event
+            and registration page so we can capture attendee names and emails
+            for follow-up nurturing.
+          </li>
+          <li>
+            <strong>Insert registration link</strong> - replace [Zoom
+            registration link] placeholders in all three emails once the Zoom
+            event is live.
+          </li>
+          <li>
+            <strong>Review email copy</strong> - confirm tone, details, and
+            Bill's title/role are accurate. Adjust subject lines to match ICSW's
+            usual Mailchimp voice if needed.
+          </li>
+          <li>
+            <strong>First send is October 1</strong> - needs a quick turnaround
+            on review and Zoom setup.
+          </li>
+          <li>
+            <strong>Consider Meta ad tie-in</strong> - the JPC Meta campaign is
+            already running strong. An event-specific ad promoting the Q&amp;A
+            could drive additional registrations.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      function copyEmail(num) {
+        const emails = document.querySelectorAll(".email-body");
+        const email = emails[num - 1];
+        if (email) {
+          const text = email.innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            const btns = document.querySelectorAll(".copy-btn");
+            const btn = btns[num - 1];
+            btn.textContent = "Copied!";
+            setTimeout(() => {
+              btn.textContent = "Copy email text";
+            }, 2000);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
