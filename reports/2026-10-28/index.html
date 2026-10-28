@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, October 28, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+      .status-pending {
+        background: #fff8e6;
+        color: #a07800;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+
+      .callout-amber {
+        background: #fff8e6;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-amber .callout-label {
+        color: #a07800;
+      }
+
+      a {
+        color: #ff70db;
+      }
+
+      .highlight-row td {
+        background: #fdf2fb;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">October 1 to 28, 2026 (Month-to-Date)</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Spotlight -->
+      <div class="card">
+        <div class="section-label">Spotlight</div>
+        <h2>
+          Continuing Education Pages Are Now the Most Visited Part of ICSW's
+          Website
+        </h2>
+
+        <p>
+          Across all of October, EI's paid campaigns have turned ICSW's
+          continuing education content into the highest-traffic section of the
+          website. The JPC Neuroscience &amp; Psychodynamic Psychotherapy page
+          alone accounts for <strong>28.3% of all site sessions</strong>, making
+          it the single most visited page on icsw.edu.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">4,120</div>
+            <div class="stat-label">CE Page Sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">39%</div>
+            <div class="stat-label">Share of All Traffic</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">3,900</div>
+            <div class="stat-label">Paid New Users</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$1,703</div>
+            <div class="stat-label">Combined Ad Spend</div>
+          </div>
+        </div>
+
+        <p>
+          When you combine the JPC page (2,992 sessions), the main continuing
+          education hub (1,007 sessions), and the Couples Therapy certificate
+          page (121 sessions), CE content represents 39% of the entire site.
+          Nearly half of all new users (3,900 of 8,400) arrived through EI's
+          paid search and paid social campaigns. The ad investment is
+          translating directly into awareness and engagement for the programs
+          ICSW is working to grow.
+        </p>
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$827</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1,194</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">8,390</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$0.69</div>
+            <div class="stat-label">Avg. CPC</div>
+          </div>
+        </div>
+
+        <p>
+          The Certificate Programs search campaign delivered 1,194 clicks across
+          October, with the primary ad creative performing at a 21.3%
+          click-through rate. Google served the ads to a much larger audience
+          this month: impressions reached 8,390 (roughly double the first three
+          weeks), while the cost per click held steady at $0.69. Mobile devices
+          continue to dominate, accounting for 82% of all clicks.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$826.79</td>
+              <td class="num">1,194</td>
+              <td class="num">14.23%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Top Keywords</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="num">Cost</th>
+                <th class="num">Clicks</th>
+                <th class="num">CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>virtual certificate programs</td>
+                <td class="num">$390.11</td>
+                <td class="num">544</td>
+                <td class="num">36.81%</td>
+              </tr>
+              <tr>
+                <td>virtual certificate program</td>
+                <td class="num">$294.93</td>
+                <td class="num">389</td>
+                <td class="num">35.33%</td>
+              </tr>
+              <tr>
+                <td>psychotherapy certificate course</td>
+                <td class="num">$59.23</td>
+                <td class="num">95</td>
+                <td class="num">4.16%</td>
+              </tr>
+              <tr>
+                <td>psychotherapy certificate</td>
+                <td class="num">$33.11</td>
+                <td class="num">65</td>
+                <td class="num">24.81%</td>
+              </tr>
+              <tr>
+                <td>continuing education for therapists</td>
+                <td class="num">$14.61</td>
+                <td class="num">19</td>
+                <td class="num">2.43%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The top two keywords ("virtual certificate programs" and "virtual
+            certificate program") account for 78% of all clicks and continue to
+            deliver strong CTRs above 35%. "Psychotherapy certificate course"
+            has grown steadily through October, now at 95 clicks (up from 86
+            last week). The "continuing education for therapists" keyword rounds
+            out the top five and captures a broader audience searching for CE
+            credits.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Ad Group Trends</h3>
+
+          <p>
+            Compared to the prior period (September 3 to 30), the Certificate
+            Programs ad group held steady with only a 2.3% decrease in spend.
+            The Neuroscience &amp; Psychodynamic ad group grew 11.7%, and the
+            Latinx-Centered Psychotherapy group increased 125% (from a small
+            base, reflecting early traction). Generic Continuing Education spend
+            decreased 35.8%, with budget shifting toward the more targeted
+            program-specific groups.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads (Facebook / Instagram)</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">2,466</div>
+            <div class="stat-label">Landing Page Views</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$0.36</div>
+            <div class="stat-label">Cost per View</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">94,017</div>
+            <div class="stat-label">People Reached</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$876</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+        </div>
+
+        <p>
+          The JPC Meta campaign has now reached over 94,000 unique people, with
+          124,509 total impressions and 3,932 clicks throughout October. Landing
+          page views climbed to 2,466 while cost per view stayed essentially
+          flat at $0.36 (up just one cent from last week). The campaign
+          continues to pace on budget at $20/day.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Views</th>
+              <th class="num">Clicks</th>
+              <th class="num">Reach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>JPC Program (Traffic)</td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">2,466</td>
+              <td class="num">3,932</td>
+              <td class="num">94,017</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Week-over-week progress: landing page views grew 17% (2,106 to 2,466),
+          reach grew 13% (82,942 to 94,017), and total clicks grew 19% (3,303 to
+          3,932). The campaign continues to get more efficient as it scales.
+        </p>
+      </div>
+
+      <!-- Website Traffic -->
+      <div class="card">
+        <div class="section-label">Website</div>
+        <h2>Website Traffic</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">10,578</div>
+            <div class="stat-label">Total Sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">8,390</div>
+            <div class="stat-label">New Users</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">511</div>
+            <div class="stat-label">Returning Users</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">239</div>
+            <div class="stat-label">Key Events</div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Top Landing Pages</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Page</th>
+                <th class="num">Sessions</th>
+                <th class="num">% of Total</th>
+                <th class="num">Key Events</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td>
+                  <strong
+                    >JPC Neuroscience &amp; Psychodynamic Psychotherapy</strong
+                  >
+                </td>
+                <td class="num">2,992</td>
+                <td class="num">28.29%</td>
+                <td class="num">63</td>
+              </tr>
+              <tr>
+                <td>Homepage</td>
+                <td class="num">1,713</td>
+                <td class="num">16.19%</td>
+                <td class="num">79</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Continuing Education (Hub)</strong></td>
+                <td class="num">1,007</td>
+                <td class="num">9.52%</td>
+                <td class="num">16</td>
+              </tr>
+              <tr>
+                <td>Events</td>
+                <td class="num">347</td>
+                <td class="num">3.28%</td>
+                <td class="num">0</td>
+              </tr>
+              <tr>
+                <td>Course Schedules</td>
+                <td class="num">170</td>
+                <td class="num">1.61%</td>
+                <td class="num">2</td>
+              </tr>
+              <tr>
+                <td>Masters Degree Program</td>
+                <td class="num">149</td>
+                <td class="num">1.41%</td>
+                <td class="num">10</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Couples Therapy Certificate</strong></td>
+                <td class="num">121</td>
+                <td class="num">1.14%</td>
+                <td class="num">12</td>
+              </tr>
+              <tr>
+                <td>Doctoral Degree Program</td>
+                <td class="num">107</td>
+                <td class="num">1.01%</td>
+                <td class="num">14</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <div class="callout-label">Continuing Education Impact</div>
+            <p>
+              The three highlighted rows (JPC, CE Hub, and Couples Therapy)
+              combine for
+              <strong>4,120 sessions, or 39% of all site traffic</strong>. The
+              JPC page alone outperforms the homepage by 75%. This is a direct
+              result of the Google Ads and Meta campaigns driving targeted users
+              to program-specific content.
+            </p>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>How Users Found the Site</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Channel</th>
+                <th class="num">New Users</th>
+                <th class="num">% of Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Direct</td>
+                <td class="num">3,500</td>
+                <td class="num">41.7%</td>
+              </tr>
+              <tr>
+                <td>Paid Social (Meta)</td>
+                <td class="num">2,800</td>
+                <td class="num">33.3%</td>
+              </tr>
+              <tr>
+                <td>Paid Search (Google)</td>
+                <td class="num">1,100</td>
+                <td class="num">13.1%</td>
+              </tr>
+              <tr>
+                <td>Organic Search</td>
+                <td class="num">856</td>
+                <td class="num">10.2%</td>
+              </tr>
+              <tr>
+                <td>Organic Social</td>
+                <td class="num">56</td>
+                <td class="num">0.7%</td>
+              </tr>
+              <tr>
+                <td>Referral</td>
+                <td class="num">33</td>
+                <td class="num">0.4%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Paid Social and Paid Search together account for
+            <strong>46% of all new users</strong> (3,900 of 8,400). Facebook is
+            the top session source at 3,000 sessions, followed by Google at
+            1,800 and Google Search Partners at 1,100. The paid campaigns are
+            the primary engine driving new visitors to ICSW's website.
+          </p>
+
+          <div class="callout-blue">
+            <div class="callout-label">Notable</div>
+            <p>
+              ICSW received 57 sessions from chatgpt.com and 22 from AI
+              assistants, a small but emerging channel. As more prospective
+              students use AI tools to research graduate programs and CE
+              options, this traffic source is worth watching.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Email Campaigns -->
+      <div class="card">
+        <div class="section-label">Email Marketing</div>
+        <h2>Email Campaigns</h2>
+
+        <p>
+          <strong>Loyola University Chicago / Greenstone Event:</strong>
+          <a
+            href="https://docs.google.com/document/d/1H8VJT1ZmM8W7-vLHKhxE5feoiwR8qElL87TaEGn-SME/edit?usp=sharing"
+            target="_blank"
+            >Draft ready</a
+          >. Sending to Jesse for review today. Objective is to drive RSVPs to
+          the conference. Target send: <strong>tomorrow, October 29</strong>.
+        </p>
+
+        <p>
+          <strong>Nathan Dougal Faculty Spotlight:</strong>
+          <a
+            href="https://docs.google.com/document/d/17cmk-KVFHFcNn6KW9f58vDhOZvEZGuQW8LDFjqwrcow/edit?usp=drive_link"
+            target="_blank"
+            >Draft ready</a
+          >
+          and being sent to Jesse for review today. Jesse confirmed prospects
+          can be added to the distribution list. Target send:
+          <strong>Monday or Tuesday, November 3 or 4</strong>. His event is
+          November 7.
+        </p>
+
+        <p>
+          <strong>Mind and Mending &rarr; JPC Targeted Campaign:</strong> The
+          Mind and Mending event topic is closely connected to the
+          JPC/Neuroscience certificate. Jesse is having Elri export the RSVP
+          list today. EI will create a new Mailchimp segment for these contacts
+          and send a targeted campaign to convert attendees into JPC applicants.
+          Jesse is taking the lead on content. Target send:
+          <strong>end of this week</strong>.
+        </p>
+
+        <p>
+          <strong>MA &amp; PhD Applications Open:</strong> Kaelene will have the
+          email draft to Jesse for review by tomorrow. These segments do not
+          overlap with the Loyola, Nathan, or Mind and Mending sends, so timing
+          is flexible. Jesse is circling back with Sam tomorrow to confirm the
+          Blackbaud segmentation for 2026 to 2027 inquiries.
+        </p>
+      </div>
+
+      <!-- Ad Campaign Shift -->
+      <div class="card">
+        <div class="section-label">Ad Campaigns</div>
+        <h2>Shifting from JPC to MA &amp; PhD</h2>
+
+        <p>
+          Jesse confirmed: JPC ad campaigns (Google and Meta) will
+          <strong>pause tomorrow, October 29</strong>. All paid budget is
+          shifting to MA and PhD recruitment for the fall 2027 cohort.
+        </p>
+
+        <p>
+          The MA and PhD Google Ads campaigns are already built and ready to go
+          live. Because these are existing campaigns with established keywords,
+          Google already recognizes them, so the ramp-up period will be
+          significantly shorter than a new campaign build. Jesse wants to be
+          more aggressive with budget allocation, noting extra wiggle room and
+          higher enrollment targets.
+        </p>
+
+        <div class="callout-blue">
+          <div class="callout-label">What Changes</div>
+          <p>
+            <strong>Pausing:</strong> JPC Google Ads, JPC Meta campaign<br />
+            <strong>Launching:</strong> MA &amp; PhD Google Ads (going live
+            today/tomorrow)<br />
+            <strong>Coming soon:</strong> Pathways campaign, targeting early
+            November
+          </p>
+        </div>
+      </div>
+
+      <!-- Resolved Items -->
+      <div class="card">
+        <div class="section-label">Resolved This Week</div>
+        <h2>Three Blockers Cleared</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box" style="background: #e6f9ee">
+            <div class="stat-value" style="font-size: 18px; color: #1a7a3a">
+              Thank You Page Tracking
+            </div>
+            <div class="stat-label">Resolved</div>
+          </div>
+          <div class="stat-box" style="background: #e6f9ee">
+            <div class="stat-value" style="font-size: 18px; color: #1a7a3a">
+              HLC Badge
+            </div>
+            <div class="stat-label">Added to Site</div>
+          </div>
+          <div class="stat-box" style="background: #e6f9ee">
+            <div class="stat-value" style="font-size: 18px; color: #1a7a3a">
+              Title IX Form
+            </div>
+            <div class="stat-label">Added to Site</div>
+          </div>
+        </div>
+
+        <p>
+          <strong>Thank you page tracking</strong> is being finalized today by
+          Randy and Fida. This was the single biggest blocker on the board: it
+          held up the MA &amp; PhD Google Ads campaigns, the enrollment
+          dashboard, and the CRM bandaid tool. With tracking in place, we can
+          now see exactly which keywords and campaigns are driving inquiry form
+          submissions, broken out by program.
+        </p>
+
+        <p>
+          <strong>HLC Mark of Affiliation</strong> has been added to the new
+          website. <strong>Title IX reporting form</strong> has been added and
+          confirmed by Jesse and Andrea.
+        </p>
+      </div>
+
+      <!-- Website & Content -->
+      <div class="card">
+        <div class="section-label">Website &amp; Content</div>
+        <h2>Website Storytelling Initiative</h2>
+
+        <p>
+          Kaelene and Lexi are collaborating on a plan to bring more student
+          life and storytelling content to the ICSW website. Lexi is compiling
+          existing material from social media and events, and Kaelene is
+          building a mockup of a "News" tab concept for Jesse to review next
+          week.
+        </p>
+      </div>
+
+      <!-- Next Week Agenda -->
+      <div class="card">
+        <div class="section-label">November 4 Call</div>
+        <h2>Next Week Agenda</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prep / Owner</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MSW launch framework</strong></td>
+              <td>
+                Kaelene bringing preliminary one-pager (positioning, branding,
+                rollout timeline)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>MA &amp; PhD campaign performance</strong></td>
+              <td>
+                First week of data from reactivated Google Ads + conversion
+                tracking
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Website storytelling mockup</strong></td>
+              <td>
+                Kaelene presenting news tab concept using Lexi's compiled
+                content
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mind and Mending campaign results</strong></td>
+              <td>Review JPC targeted email performance (if sent by then)</td>
+            </tr>
+            <tr>
+              <td><strong>CE segmentation strategy</strong></td>
+              <td>
+                Both to come with initial thinking on Mailchimp segment
+                structure
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Outlook template feedback</strong></td>
+              <td>
+                Jesse to share Denise's reaction; decide on Randy implementation
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Sam's Blackbaud segmentation</strong></td>
+              <td>Jesse confirming 2026/2027 inquiry tagging is in place</td>
+            </tr>
+            <tr>
+              <td><strong>Prep for Nov 10 to 13</strong></td>
+              <td>
+                Kaelene offline second week of November. Ensure nothing is
+                blocked during that window.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
