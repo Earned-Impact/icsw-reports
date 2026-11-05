@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICSW Weekly Report, November 4, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        color: #131315;
+        font-size: 15px;
+        line-height: 1.6;
+        padding: 48px 16px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .card {
+        background: #ffffff;
+        border-radius: 12px;
+        border-left: 3px solid #ff70db;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        padding: 32px;
+        margin-bottom: 24px;
+        page-break-inside: avoid;
+      }
+      .header-card {
+        text-align: left;
+        border-left: none;
+        padding-bottom: 24px;
+      }
+      .header-card .logo {
+        margin-bottom: 16px;
+      }
+      .header-card h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: #131315;
+        margin-bottom: 4px;
+      }
+      .header-card .subtitle {
+        font-family: "Poppins", sans-serif;
+        color: #909da3;
+        font-size: 16px;
+        margin-bottom: 4px;
+      }
+      .header-card .date {
+        font-family: "Roboto Mono", monospace;
+        color: #909da3;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      .header-card .accent-line {
+        border: none;
+        border-top: 3px solid #ff70db;
+        width: 100%;
+      }
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        color: #131315;
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        color: #131315;
+        margin-bottom: 12px;
+      }
+      .section-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: #909da3;
+        margin-bottom: 8px;
+      }
+      p {
+        margin-bottom: 12px;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .stat-box {
+        background: #f0f0f0;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: #131315;
+      }
+      .stat-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+      th {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #909da3;
+        text-align: left;
+        padding: 8px 12px;
+        border-bottom: 2px solid #f0f0f0;
+      }
+      td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+      }
+      td.num {
+        font-family: "Roboto Mono", monospace;
+        text-align: right;
+      }
+      th.num {
+        text-align: right;
+      }
+      tr.paused td {
+        color: #909da3;
+      }
+      .status {
+        display: inline-block;
+        font-family: "Roboto Mono", monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+      .status-active {
+        background: #e6f9ee;
+        color: #1a7a3a;
+      }
+      .status-paused {
+        background: #f0f0f0;
+        color: #909da3;
+      }
+      .status-pending {
+        background: #fff8e6;
+        color: #a07800;
+      }
+
+      ul {
+        margin: 0 0 12px 24px;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      .subsection {
+        margin-top: 24px;
+      }
+      .subsection:first-of-type {
+        margin-top: 0;
+      }
+
+      .callout {
+        background: #fdf2fb;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-label {
+        font-family: "Roboto Mono", monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #ff70db;
+        margin-bottom: 4px;
+      }
+
+      .callout-blue {
+        background: #e8f4fd;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-blue .callout-label {
+        color: #1a6ba0;
+      }
+
+      .callout-amber {
+        background: #fff8e6;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 16px;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .callout-amber .callout-label {
+        color: #a07800;
+      }
+
+      a {
+        color: #ff70db;
+      }
+
+      .highlight-row td {
+        background: #fdf2fb;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 24px 8px;
+        }
+        .card {
+          padding: 24px 16px;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .header-card h1 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="card header-card">
+        <div class="logo">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            overflow="visible"
+            style="display: block; width: 48px; height: 48px"
+            viewBox="0 0 95.1219 94.794"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="Group">
+              <path
+                id="Vector"
+                d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z"
+                fill="#131315"
+              />
+              <path
+                id="Vector_2"
+                d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z"
+                fill="#131315"
+              />
+            </g>
+          </svg>
+        </div>
+        <h1>Institute for Clinical Social Work</h1>
+        <div class="subtitle">Weekly Report</div>
+        <div class="date">October 26 to November 4, 2026</div>
+        <hr class="accent-line" />
+      </div>
+
+      <!-- Spotlight -->
+      <div class="card">
+        <div class="section-label">Spotlight</div>
+        <h2>MA &amp; PhD Ad Campaigns Are Live</h2>
+
+        <p>
+          The planned campaign transition is complete. JPC ad campaigns on both
+          Google and Meta have been paused, and all paid budget has shifted to
+          MA and PhD recruitment for the fall 2027 cohort. The new Google Ads
+          campaigns launched on October 29 and are already generating strong
+          results: 84 inquiry form conversions in the first week.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">84</div>
+            <div class="stat-label">Conversions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">157</div>
+            <div class="stat-label">MA &amp; PhD Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$376</div>
+            <div class="stat-label">MA &amp; PhD Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">92%</div>
+            <div class="stat-label">Mobile Traffic</div>
+          </div>
+        </div>
+
+        <p>
+          These conversions are tracked through the newly activated thank-you
+          page, meaning each one represents a completed inquiry form submission.
+          The split between MA and PhD is roughly equal, with the Masters
+          campaign leading on engagement at a 20.4% click-through rate. This is
+          a strong start and gives EI direct visibility into which keywords are
+          driving real inquiries by program.
+        </p>
+      </div>
+
+      <!-- Google Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Google Ads</h2>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">$489</div>
+            <div class="stat-label">Total Spend</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">294</div>
+            <div class="stat-label">Clicks</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">4,159</div>
+            <div class="stat-label">Impressions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">$1.66</div>
+            <div class="stat-label">Avg. CPC</div>
+          </div>
+        </div>
+
+        <p>
+          This period captures the transition: the Certificate Programs campaign
+          ran through October 28 before pausing, while the Masters and PhD
+          campaigns launched on October 29. Total spend across all three
+          campaigns was $488.86 with 294 clicks. The average CPC rose from $0.69
+          (Certificate Programs) to $1.66 overall, reflecting the shift to more
+          competitive degree-program keywords.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Campaign</th>
+              <th>Status</th>
+              <th class="num">Spend</th>
+              <th class="num">Clicks</th>
+              <th class="num">CTR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>Masters Campaign</strong></td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$190.81</td>
+              <td class="num">103</td>
+              <td class="num">20.36%</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>PhD Program</strong></td>
+              <td><span class="status status-active">Active</span></td>
+              <td class="num">$185.27</td>
+              <td class="num">54</td>
+              <td class="num">6.72%</td>
+            </tr>
+            <tr class="paused">
+              <td>Certificate Programs (Search)</td>
+              <td><span class="status status-paused">Paused</span></td>
+              <td class="num">$112.78</td>
+              <td class="num">137</td>
+              <td class="num">4.81%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="subsection">
+          <h3>Top Keywords (Active Campaigns)</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Keyword</th>
+                <th class="num">Cost</th>
+                <th class="num">Clicks</th>
+                <th class="num">CTR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>mental health counseling education</td>
+                <td class="num">$121.14</td>
+                <td class="num">66</td>
+                <td class="num">29.46%</td>
+              </tr>
+              <tr>
+                <td>clinical social work doctoral programs</td>
+                <td class="num">$88.08</td>
+                <td class="num">36</td>
+                <td class="num">6.47%</td>
+              </tr>
+              <tr>
+                <td>social work doctorate degree</td>
+                <td class="num">$44.79</td>
+                <td class="num">9</td>
+                <td class="num">7.20%</td>
+              </tr>
+              <tr>
+                <td>mental health counseling schools</td>
+                <td class="num">$30.64</td>
+                <td class="num">18</td>
+                <td class="num">30.00%</td>
+              </tr>
+              <tr>
+                <td>clinical counseling graduate program</td>
+                <td class="num">$27.19</td>
+                <td class="num">12</td>
+                <td class="num">21.05%</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The Masters campaign is seeing strong early traction: "mental health
+            counseling education" is the top spender at $121.14 with a 29.5%
+            CTR, and "mental health counseling schools" is delivering an equally
+            strong 30% CTR. On the PhD side, "clinical social work doctoral
+            programs" is the primary keyword at $88.08 with 36 clicks. These
+            keywords are more competitive than the certificate terms, but CTRs
+            are encouraging for the first week.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Ad Group Performance</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Ad Group</th>
+                <th>Campaign</th>
+                <th class="num">Spend</th>
+                <th class="num">Clicks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row">
+                <td><strong>Mental Health Graduate Programs</strong></td>
+                <td>Masters</td>
+                <td class="num">$151.79</td>
+                <td class="num">84</td>
+              </tr>
+              <tr>
+                <td>Certificate Programs</td>
+                <td>Certificate (Paused)</td>
+                <td class="num">$106.41</td>
+                <td class="num">125</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Clinical Social Work Niche</strong></td>
+                <td>PhD</td>
+                <td class="num">$97.69</td>
+                <td class="num">38</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Social Work Doctoral Programs</strong></td>
+                <td>PhD</td>
+                <td class="num">$86.02</td>
+                <td class="num">15</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>
+                  <strong>Clinical Mental Health Counseling Masters</strong>
+                </td>
+                <td>Masters</td>
+                <td class="num">$36.65</td>
+                <td class="num">17</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The new ad groups are performing well out of the gate. Mental Health
+            Graduate Programs leads with 84 clicks at $1.81 per click. The two
+            PhD ad groups (Clinical Social Work Niche and Social Work Doctoral
+            Programs) combine for 53 clicks. The Certificate Programs ad group
+            shows residual spend from October 26 to 28, before the campaign was
+            paused.
+          </p>
+        </div>
+      </div>
+
+      <!-- Meta Ads -->
+      <div class="card">
+        <div class="section-label">Performance Marketing</div>
+        <h2>Meta Ads (Facebook / Instagram)</h2>
+
+        <div class="callout-amber">
+          <div class="callout-label">Campaign Paused</div>
+          <p>
+            The JPC Meta campaign has been turned off as planned. The paid ads
+            team is researching whether Meta should be used for broad MA/PhD
+            awareness or for a more targeted Pathways push. The younger Pathways
+            audience may be more active on Facebook (school groups, campus
+            communities), which could make it the stronger fit. An updated Meta
+            strategy will be shared once the team has a recommendation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pathways Campaign -->
+      <div class="card">
+        <div class="section-label">Ad Campaigns</div>
+        <h2>Pathways Campaign Launch</h2>
+
+        <p>
+          The Pathways to Psychodynamic Study program is the next campaign to go
+          live. EI is targeting a launch by
+          <strong>November 16</strong>. This is a brand new campaign with no
+          historical data, so the team is doing keyword research and building
+          the campaign structure from scratch. The
+          <a
+            href="https://docs.google.com/document/d/1dtiKGajz0Hu_kJ8YS8qNDw4zprvrYt02Ma9Ut1t0Lb4/edit?usp=sharing"
+            target="_blank"
+            >go-to-market brief</a
+          >
+          has been completed and sent to the paid ads team.
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-value">18</div>
+            <div class="stat-label">Enrollment Cap</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">Jan 27</div>
+            <div class="stat-label">Program Start</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">70/30</div>
+            <div class="stat-label">MA-PhD / Pathways Split</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">6 of 18</div>
+            <div class="stat-label">Matriculated to MA (2026)</div>
+          </div>
+        </div>
+
+        <p>
+          <a
+            href="https://docs.google.com/document/d/1RYk4tNbDIgfkdKQOmDmoGhXAflxgJwCA9RpT5N76jBE/edit?usp=sharing"
+            target="_blank"
+            >Review Pathways website copy updates</a
+          >
+        </p>
+      </div>
+
+      <!-- Email Campaigns -->
+      <div class="card">
+        <div class="section-label">Email Marketing</div>
+        <h2>Email Campaigns</h2>
+
+        <div class="subsection">
+          <h3>Greenstone Lecture (Dr. Daniel Gaztambide)</h3>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value">420</div>
+              <div class="stat-label">Sent</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">27.6%</div>
+              <div class="stat-label">Open Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">4.0%</div>
+              <div class="stat-label">Click Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">0%</div>
+              <div class="stat-label">Bounce Rate</div>
+            </div>
+          </div>
+
+          <p>
+            The Loyola University Chicago / Greenstone lecture email featuring
+            Dr. Daniel Gaztambide on decolonial psychoanalytic theory was sent
+            to 420 targeted contacts. It delivered a 27.6% open rate (116
+            opened) and a 4.0% click rate (17 clicked) with zero bounces. This
+            is a strong result, well above the typical promotional baseline.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Nathan Dougal Faculty Spotlight</h3>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value">1,553</div>
+              <div class="stat-label">Sent</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">13.7%</div>
+              <div class="stat-label">Open Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">0.91%</div>
+              <div class="stat-label">Click Rate</div>
+            </div>
+          </div>
+
+          <p>
+            Sent on November 3 to 1,553 recipients, including the colder MA/PhD
+            prospect lists from past enrollment cycles (confirmed with Jesse as
+            the intended "prospective students" audience). The campaign is still
+            early, with a resend to engaged non-openers scheduled for Friday,
+            November 6. Nathan Dougal's event is November 7, so the resend is
+            timed to capture last-minute RSVPs.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>Continue the Conversation Beyond Minding &amp; Mending</h3>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-value">25</div>
+              <div class="stat-label">Sent</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">48%</div>
+              <div class="stat-label">Open Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">8%</div>
+              <div class="stat-label">Click Rate</div>
+            </div>
+          </div>
+
+          <p>
+            This targeted JPC conversion campaign was sent on November 2 to 25
+            Mind and Mending event RSVPs (the list Elri exported). Nearly half
+            opened the email and 8% clicked through. A resend to non-openers is
+            scheduled for today (November 4). These contacts have been added to
+            Mailchimp and tagged as "JPC" and "JPC Fall 2026" so they can
+            receive relevant future sends as part of the broader JPC segment.
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h3>MA &amp; PhD Applications Open</h3>
+
+          <p>
+            The email draft is complete and ready for review:
+            <a
+              href="https://docs.google.com/document/d/1bpVT8I9LQjd7F2tY5kUBjmjw9C3FQrjzVi0FjpeTpgk/edit?usp=sharing"
+              target="_blank"
+              >View draft</a
+            >. This will announce that applications are now open for the fall
+            2027 MA and PhD cohorts. The send can be scheduled once Jesse
+            reviews and approves.
+          </p>
+        </div>
+      </div>
+      <!-- Action Items -->
+      <div class="card">
+        <div class="section-label">Action Items</div>
+        <h2>This Week</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Owner</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Pathways website copy:</strong> remove "explore without
+                committing" language, align with Lexi's framing.
+                <a
+                  href="https://docs.google.com/document/d/1RYk4tNbDIgfkdKQOmDmoGhXAflxgJwCA9RpT5N76jBE/edit?usp=sharing"
+                  target="_blank"
+                  >Review proposed changes</a
+                >
+              </td>
+              <td>Jesse to review, EI (Fida) to implement</td>
+              <td><span class="status status-pending">Today</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Outlook templates:</strong>
+                <a
+                  href="https://drive.google.com/drive/folders/11d0j1WKf8JMdJrUtTm18UU-vOLsH_xiN"
+                  target="_blank"
+                  >Review templates</a
+                >
+              </td>
+              <td>EI (Designer)</td>
+              <td><span class="status status-pending">Today</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>MA &amp; PhD Applications Open email:</strong>
+                <a
+                  href="https://docs.google.com/document/d/1bpVT8I9LQjd7F2tY5kUBjmjw9C3FQrjzVi0FjpeTpgk/edit?usp=sharing"
+                  target="_blank"
+                  >Review draft</a
+                >, schedule send this week
+              </td>
+              <td>Jesse to review</td>
+              <td><span class="status status-pending">This Week</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Pathways campaign build:</strong> keyword research and
+                campaign structure, target launch by Nov 16
+              </td>
+              <td>EI (Paid Ads)</td>
+              <td><span class="status status-active">In Progress</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Meta strategy recommendation:</strong> MA/PhD awareness
+                vs. Pathways targeting
+              </td>
+              <td>EI (Paid Ads)</td>
+              <td><span class="status status-active">In Progress</span></td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Inquiry form investigation:</strong> Fida looking into
+                submission form issue flagged by Sam (main website form, not ad
+                landing page)
+              </td>
+              <td>EI (Fida)</td>
+              <td><span class="status status-active">In Progress</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Friday Follow-Up -->
+      <div class="card">
+        <div class="section-label">Friday Follow-Up</div>
+        <h2>MSW Deep Dive &amp; Carried Items</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Prep / Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MSW launch positioning</strong></td>
+              <td>
+                Board approval expected this month. Public recruiting begins end
+                of summer 2027 for fall 2028. Key question: how to announce the
+                MSW without cannibalizing the MA 2027 cohort. Kaelene preparing
+                pushback points and differentiation framing.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>MSW vs. MA messaging</strong></td>
+              <td>
+                95% curriculum overlap. Need a clear elevator pitch on what the
+                MSW adds and which audience it reaches that the MA does not.
+                Goal: have a tight response ready for faculty and board
+                questions.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Website storytelling</strong></td>
+              <td>
+                Lexi was out sick; Kaelene will send storytelling / news tab
+                concept later this week. Photo consent confirmed (opt-out
+                policy, no opt-outs received).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout-blue">
+          <div class="callout-label">Scheduling Note</div>
+          <p>
+            Kaelene is out of office Tuesday, November 10 through Friday,
+            November 13. All open items will be handed off or resolved before
+            then.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
