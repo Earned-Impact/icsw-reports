@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICSW - November 2026 Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #F0F0F0;
+      font-family: 'Poppins', sans-serif;
+      color: #131315;
+      font-size: 15px;
+      line-height: 1.6;
+      padding: 48px 24px;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+
+    .header-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      page-break-inside: avoid;
+    }
+    .header-card .logo { margin-bottom: 16px; }
+    .header-card h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px;
+      color: #131315;
+      margin-bottom: 4px;
+    }
+    .header-card .subtitle {
+      font-family: 'Poppins', sans-serif;
+      color: #909DA3;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .header-card .date {
+      font-family: 'Roboto Mono', monospace;
+      color: #909DA3;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .header-card .accent-line {
+      border: none;
+      border-top: 3px solid #FF70DB;
+      margin: 0;
+    }
+
+    .section-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-left: 3px solid #FF70DB;
+      page-break-inside: avoid;
+    }
+    .section-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      color: #131315;
+      margin-bottom: 16px;
+    }
+    .section-card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: #131315;
+      margin-bottom: 12px;
+    }
+    .section-card p { margin-bottom: 12px; }
+    .section-card p:last-child { margin-bottom: 0; }
+
+    .label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      color: #909DA3;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 16px 8px;
+      background: #F0F0F0;
+      border-radius: 8px;
+    }
+    .stat-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: #131315;
+    }
+    .stat-label {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      color: #909DA3;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+    .data-table th {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 11px;
+      color: #909DA3;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 2px solid #F0F0F0;
+    }
+    .data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #F0F0F0;
+      font-size: 14px;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .highlight-box {
+      background: #F0F0F0;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .highlight-box h3 { margin-bottom: 12px; }
+    .highlight-box p:last-child { margin-bottom: 0; }
+
+    .section-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .section-card ul li {
+      padding: 10px 0 10px 20px;
+      position: relative;
+      border-bottom: 1px solid #F0F0F0;
+      line-height: 1.5;
+    }
+    .section-card ul li:last-child { border-bottom: none; }
+    .section-card ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FF70DB;
+    }
+
+    .subsection { margin-top: 24px; }
+
+    .status-tag {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-left: 8px;
+      position: relative;
+      top: -1px;
+    }
+    .status-done {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+    .status-progress {
+      background: #FFF3E0;
+      color: #E65100;
+    }
+    .status-sent {
+      background: #E3F2FD;
+      color: #1565C0;
+    }
+
+    a { color: #2079A0; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .email-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .email-stats-grid { grid-template-columns: repeat(3, 1fr); }
+      body { padding: 24px 16px; }
+      .header-card, .section-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header-card">
+      <div class="logo">
+        <svg preserveAspectRatio="xMidYMid meet" overflow="visible" style="display: block; width: 48px; height: 48px;" viewBox="0 0 95.1219 94.794" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <path d="M71.3443 0.000195313H74.6538C85.9545 0.000195313 95.1219 9.13708 95.1219 20.4002V74.394C95.1219 85.6571 85.9545 94.794 74.6538 94.794H71.3443V0.000195313Z" fill="#131315"/>
+            <path d="M59.4555 22.3882V1.32169C59.4555 0.597633 58.8674 0 58.1294 0H23.7776C10.6434 0 0 10.608 0 23.6984V71.0953C0 84.1858 10.6434 94.7938 23.7776 94.7938H58.1294C58.8558 94.7938 59.4555 94.2076 59.4555 93.4721V72.4055C59.4555 71.6815 58.8674 71.0838 58.1294 71.0838H25.1037C24.3772 71.0838 23.7776 70.4977 23.7776 69.7621V60.5448C23.7776 59.8208 24.3657 59.2231 25.1037 59.2231H58.1294C58.8558 59.2231 59.4555 58.637 59.4555 57.9014V36.8349C59.4555 36.1108 58.8674 35.5132 58.1294 35.5132H25.1037C24.3772 35.5132 23.7776 34.927 23.7776 34.1915V24.9742C23.7776 24.2501 24.3657 23.6525 25.1037 23.6525H58.1294C58.8558 23.6525 59.4555 23.0663 59.4555 22.3308V22.3882Z" fill="#131315"/>
+          </g>
+        </svg>
+      </div>
+      <h1>ICSW</h1>
+      <div class="subtitle">November Report</div>
+      <div class="date">November 1 to 25, 2026 (Month to Date)</div>
+      <hr class="accent-line">
+    </div>
+
+    <!-- Google Ads -->
+    <div class="section-card">
+      <h2>Google Ads</h2>
+      <span class="label">November 1 to 25, 2026 MTD</span>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-value">27</div>
+          <div class="stat-label">Conversions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">618</div>
+          <div class="stat-label">Clicks</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">6,210</div>
+          <div class="stat-label">Impressions</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">$1,510</div>
+          <div class="stat-label">Spend</div>
+        </div>
+      </div>
+
+      <p>Google Ads has generated 27 conversions through the first 25 days of November across the PhD and Masters campaigns. Budget continues to be concentrated entirely on Google Ads (Meta remains paused) to maximize high-intent search traffic during enrollment season. Both campaigns are pacing evenly in spend, with the Masters campaign pulling slightly more clicks.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Campaign</th>
+            <th>Spend</th>
+            <th>Clicks</th>
+            <th>CTR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Masters Campaign</td>
+            <td>$759.62</td>
+            <td>326</td>
+            <td>16.54%</td>
+          </tr>
+          <tr>
+            <td>PhD Program</td>
+            <td>$751.36</td>
+            <td>292</td>
+            <td>6.89%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <h3>Where Are Ads Showing?</h3>
+        <p>84.5% of clicks are coming through <strong>Google Search Partners</strong>. These are other search engines and websites that partner with Google to show ads (such as YouTube search results, Google Maps, and smaller search engines). The remaining 15.5% come from Google Search directly. This is normal and means the ads are reaching people searching for programs across a wider range of places beyond just google.com. Mobile devices account for 88.8% of all ad clicks.</p>
+      </div>
+    </div>
+
+    <!-- Meta Ads -->
+    <div class="section-card">
+      <h2>Meta Ads</h2>
+      <p>Meta advertising remains paused for November. The full budget continues to be allocated to Google Ads to support the MA and PhD campaigns during enrollment season.</p>
+    </div>
+
+    <!-- Email Campaign -->
+    <div class="section-card">
+      <h2>Email Campaign: Child and Adolescent Dean's Series</h2>
+      <span class="label">Sent November 24, 2026 / Promoting December 12 Event</span>
+
+      <div class="email-stats-grid">
+        <div class="stat-box">
+          <div class="stat-value">20.6%</div>
+          <div class="stat-label">Open Rate</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">0.92%</div>
+          <div class="stat-label">Click Rate</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">0.23%</div>
+          <div class="stat-label">Bounce Rate</div>
+        </div>
+      </div>
+
+      <p>The email promoting the December 12 Child and Adolescent Dean's Distinguished Speaker Series went out on November 24. Early results show 89 opens (20.6% open rate) and 4 clicks (0.92% click rate) with only 1 bounce. The low bounce rate reflects the cleaned list, and the open rate is solid for a first send promoting a specific event date.</p>
+    </div>
+
+    <!-- Child and Adolescent Dean's Series -->
+    <div class="section-card">
+      <h2>Child and Adolescent Dean's Series</h2>
+      <span class="label">Dean's Distinguished Speaker Series / 9 CE Credits / January 2027</span>
+
+      <p>Promotion for Kevin's Child and Adolescent Dean's Distinguished Speaker Series continues ahead of the January start. This program falls under continuing education units (not a certificate program) and is currently the only Dean's Series on the calendar for the spring.</p>
+
+      <div class="subsection">
+        <h3>Social Media <span class="status-tag status-done">Live</span></h3>
+        <p>Lexi's social post for the Child and Adolescent Series is live. The creative and messaging from this post continues to be used as a reference point for alignment across other promotional channels.</p>
+      </div>
+
+      <div class="subsection">
+        <h3>Email Campaign <span class="status-tag status-sent">Sent</span></h3>
+        <p>The email campaign for the series was sent on November 24, promoting the December 12 event. See performance stats above. A follow-up send may be warranted closer to the event date to drive additional registrations.</p>
+      </div>
+
+    </div>
+
+    <!-- Website -->
+    <div class="section-card">
+      <h2>Website</h2>
+
+      <p>Several website items remain in progress. Here is the current status of each:</p>
+
+      <div class="subsection">
+        <h3>Faculty Page Ordering <span class="status-tag status-done">Complete</span></h3>
+        <p>Faculty listings are now in alphabetical order. Randy implemented this change and it is live on the site.</p>
+      </div>
+
+      <div class="subsection">
+        <h3>Dissertation Ordering <span class="status-tag status-progress">In Progress</span></h3>
+        <p>Dissertations will be grouped by year (most recent first), with alphabetical ordering within each year group. The team is exploring the best way to implement this, potentially using expandable year sections that display alphabetically when opened.</p>
+      </div>
+
+      <div class="subsection">
+        <h3>Forms and Documents <span class="status-tag status-progress">In Progress</span></h3>
+        <p>The "Academic Documents" tab will be renamed to "Handbooks and Catalogs" per Denise's request. Documents will also be reorganized so they are separated by section. Fida is picking this up from Randy's initial work.</p>
+      </div>
+
+      <div class="subsection">
+        <h3>Course Schedule Display <span class="status-tag status-progress">In Progress</span></h3>
+        <p>Denise reported that the course schedule images appear very small on her MacBook Air. Fida is investigating what could be triggering the display problem on her specific setup.</p>
+      </div>
+
+      <div class="subsection">
+        <h3>Annual Appeal Page <span class="status-tag status-progress">In Progress</span></h3>
+        <p>Fida is reviewing the Annual Appeal page for design improvements. The goal is to build a reusable template from this page so it can be repeated year over year without starting from scratch.</p>
+      </div>
+    </div>
+
+    <!-- Outlook Templates -->
+    <div class="section-card">
+      <h2>Outlook Templates</h2>
+      <p>Design templates for the Weekly Notables and newsletter formats have been delivered for review. Multiple design variations were provided. Once ICSW selects a preferred direction, the next step is a walkthrough with Randy on how to build them out in Outlook.</p>
+      <p><a href="https://drive.google.com/drive/folders/1V8aoyJCfj5fbimJSN2kr0QQZm9j7mGK4?usp=sharing">View template designs in Google Drive</a></p>
+    </div>
+
+    <!-- In the Pipeline -->
+    <div class="section-card">
+      <h2>In the Pipeline</h2>
+      <ul>
+        <li><strong>Pathways Campaign:</strong> Campaign build is in progress and set to go live by end of this week or start of next week.</li>
+        <li><strong>Dean's Series Follow-Up Email:</strong> Would ICSW like a second email send closer to the December 12 event to drive additional registrations?</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
